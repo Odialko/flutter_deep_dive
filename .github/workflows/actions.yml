@@ -1,0 +1,39 @@
+name: flutter_deep_dive
+
+on:
+  push:
+    branches-ignore:
+      - main
+  pull_request:
+    branches-ignore:
+      - main
+
+jobs:
+  build:
+    # This job will run on ubuntu virtual machine
+    runs-on: ubuntu-latest
+    steps:
+    # Setup Java environment in order to build the Android app.
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    # Setup the flutter environment.
+    - name: Set up Flutter
+      uses: subosito/flutter-action@v2
+      with:
+        flutter-version: '3.3.10'
+
+    # Get flutter dependencies.
+    - name: Install dependencies
+      run: flutter pub get
+
+    # Run widget tests for our flutter project.
+    - name: Run tests
+      run: flutter test
+
+    # Build apk.
+    - name: Build apk
+      run: flutter build apk --debug
+
+    - name: Build appbundle
+      run: flutter build appbundle #building flutter bundle
