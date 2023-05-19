@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_deep_dive/generated/l10n.dart';
+import 'package:flutter_deep_dive/src/ui/flutter_deep_dive_theme.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 class App extends StatelessWidget {
@@ -17,9 +18,9 @@ class App extends StatelessWidget {
         GlobalCupertinoLocalizations.delegate,
       ],
       supportedLocales: S.delegate.supportedLocales,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      // theme: ThemeData(
+      //   primarySwatch: Colors.blue,
+      // ),
       home: const MyHomePage(),
     );
   }
@@ -44,17 +45,24 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
+    final theme = FDDTheme.of(context);
 
     return Scaffold(
+      backgroundColor: theme.colors.beige,
       appBar: AppBar(
-        title: Text(s.firstTitle),
+        backgroundColor: theme.colors.powderPink,
+        title: Text(
+          s.firstTitle,
+          style: theme.darkPinkTextTheme.font3Emphasized,
+        ),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
+            Text(
               'You have pushed the button this many times:',
+              style: theme.cocoaTextTheme.font3,
             ),
             Text(
               '$_counter',
