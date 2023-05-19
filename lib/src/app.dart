@@ -9,19 +9,24 @@ class App extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Deep Dive',
-      localizationsDelegates: const [
-        S.delegate,
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
-      ],
-      supportedLocales: S.delegate.supportedLocales,
-      // theme: ThemeData(
-      //   primarySwatch: Colors.blue,
-      // ),
-      home: const MyHomePage(),
+    return FDDTheme(
+      child: Builder(builder: (context) {
+        return MaterialApp(
+          title: 'Flutter Deep Dive',
+          localizationsDelegates: const [
+            S.delegate,
+            GlobalMaterialLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
+            GlobalCupertinoLocalizations.delegate,
+          ],
+          supportedLocales: S.delegate.supportedLocales,
+
+          /// for ThemeMode https://www.kodeco.com/16628777-
+          /// theming-a-flutter-app-getting-started
+          theme: FDDTheme.lightTheme,
+          home: const MyHomePage(),
+        );
+      }),
     );
   }
 }
@@ -48,12 +53,12 @@ class _MyHomePageState extends State<MyHomePage> {
     final theme = FDDTheme.of(context);
 
     return Scaffold(
-      backgroundColor: theme.colors.beige,
+      // backgroundColor: theme.colors.beige,
       appBar: AppBar(
-        backgroundColor: theme.colors.powderPink,
+        // backgroundColor: theme.colors.powderPink,
         title: Text(
           s.firstTitle,
-          style: theme.darkPinkTextTheme.font3Emphasized,
+          style: theme.cocoaTextTheme.font3Emphasized,
         ),
       ),
       body: Center(
@@ -66,7 +71,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Text(
               '$_counter',
-              style: Theme.of(context).textTheme.headline4,
+              style: theme.cocoaTextTheme.font0,
             ),
           ],
         ),
@@ -75,7 +80,7 @@ class _MyHomePageState extends State<MyHomePage> {
         onPressed: _incrementCounter,
         tooltip: 'Increment',
         child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      ),
     );
   }
 }
