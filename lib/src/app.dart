@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_deep_dive/generated/l10n.dart';
+import 'package:flutter_deep_dive/src/router/parent/mobile.dart';
 import 'package:flutter_deep_dive/src/ui/flutter_deep_dive_theme.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
@@ -11,8 +12,9 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return FDDTheme(
       child: Builder(builder: (context) {
-        return MaterialApp(
+        return MaterialApp.router(
           title: 'Flutter Deep Dive',
+          routerConfig: router,
           localizationsDelegates: const [
             S.delegate,
             GlobalMaterialLocalizations.delegate,
@@ -24,63 +26,8 @@ class App extends StatelessWidget {
           /// for ThemeMode https://www.kodeco.com/16628777-
           /// theming-a-flutter-app-getting-started
           theme: FDDTheme.lightTheme,
-          home: const MyHomePage(),
         );
       }),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    final s = S.of(context);
-    final theme = FDDTheme.of(context);
-
-    return Scaffold(
-      // backgroundColor: theme.colors.beige,
-      appBar: AppBar(
-        // backgroundColor: theme.colors.powderPink,
-        title: Text(
-          s.firstTitle,
-          style: theme.cocoaTextTheme.font3Emphasized,
-        ),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
-              style: theme.cocoaTextTheme.font3,
-            ),
-            Text(
-              '$_counter',
-              style: theme.cocoaTextTheme.font0,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),
     );
   }
 }
