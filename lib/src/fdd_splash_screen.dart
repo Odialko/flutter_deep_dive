@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_deep_dive/src/constants/fdd_splash.dart';
 import 'package:flutter_deep_dive/src/router/routes.dart';
 import 'package:go_router/go_router.dart';
 import 'package:rive_splash_screen/rive_splash_screen.dart';
@@ -10,13 +11,17 @@ class FDDSplashScreen extends StatefulWidget {
   State<FDDSplashScreen> createState() => _FDDSplashScreenState();
 }
 
-class _FDDSplashScreenState extends State<FDDSplashScreen> with SingleTickerProviderStateMixin {
+class _FDDSplashScreenState extends State<FDDSplashScreen>
+    with SingleTickerProviderStateMixin {
   late AnimationController _animationController;
 
   @override
   void initState() {
     super.initState();
-    _animationController = AnimationController(vsync: this, duration: const Duration(milliseconds: 1500));
+    _animationController = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 1500),
+    );
   }
 
   @override
@@ -35,8 +40,8 @@ class _FDDSplashScreenState extends State<FDDSplashScreen> with SingleTickerProv
         onSuccess: (data) {
           context.goNamed(Routes.welcome);
         },
-        name: 'assets/splash/login_screen_character.riv',
-        endAnimation: 'success',
+        name: FDDSplash.splashAnimation,
+        endAnimation: FDDSplash.endAnimation,
         isLoading: false,
       ),
     );
