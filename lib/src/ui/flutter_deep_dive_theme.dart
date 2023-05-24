@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class FDDTheme extends InheritedWidget {
   FDDTheme({super.key, FDDThemeData? data, required super.child})
@@ -35,6 +36,7 @@ class FDDTheme extends InheritedWidget {
     return ThemeData(
       primarySwatch: Palette.createMaterialColor(_FDDColors.lightCyan),
       scaffoldBackgroundColor: _FDDColors.beige,
+      textTheme: GoogleFonts.aBeeZeeTextTheme(),
     );
   }
   //
