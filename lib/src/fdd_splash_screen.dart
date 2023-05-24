@@ -1,49 +1,43 @@
 import 'package:flutter/material.dart';
-import 'package:rive/rive.dart';
+import 'package:flutter_deep_dive/src/router/routes.dart';
+import 'package:go_router/go_router.dart';
+import 'package:rive_splash_screen/rive_splash_screen.dart';
 
 class FDDSplashScreen extends StatefulWidget {
   const FDDSplashScreen({Key? key}) : super(key: key);
 
   @override
-  _FDDSplashScreenState createState() => _FDDSplashScreenState();
+  State<FDDSplashScreen> createState() => _FDDSplashScreenState();
 }
 
-class _FDDSplashScreenState extends State<FDDSplashScreen> {
-  /// Controller for playback
-  late RiveAnimationController _controller;
-
-  /// Is the animation currently playing?
-  bool _isPlaying = false;
+class _FDDSplashScreenState extends State<FDDSplashScreen> with SingleTickerProviderStateMixin {
+  late AnimationController _animationController;
 
   @override
   void initState() {
     super.initState();
-    _controller = OneShotAnimation(
-      'bounce',
-      autoplay: false,
-      onStop: () => setState(() => _isPlaying = false),
-      onStart: () => setState(() => _isPlaying = true),
-    );
+    _animationController = AnimationController(vsync: this, duration: const Duration(milliseconds: 1500));
+  }
+
+  @override
+  void dispose() {
+    _animationController.dispose();
+    super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('One-Shot Example'),
-      ),
-      body: Center(
-        child: RiveAnimation.network(
-          'https://cdn.rive.app/animations/vehicles.riv',
-          animations: const ['idle', 'curves'],
-          controllers: [_controller],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        // disable the button while playing the animation
-        onPressed: () => _isPlaying ? null : _controller.isActive = true,
-        tooltip: 'Play',
-        child: const Icon(Icons.arrow_upward),
+    _animationController.forward();
+    return FadeTransition(
+      opacity: _animationController,
+      child: SplashScreen.callback(
+        onError: (error, stacktrace) => null,
+        onSuccess: (data) {
+          context.goNamed(Routes.welcome);
+        },
+        name: 'assets/splash/login_screen_character.riv',
+        endAnimation: 'success',
+        isLoading: false,
       ),
     );
   }
