@@ -19,6 +19,8 @@ dependencies:
   flutter_riverpod: ^2.3.6
   rive_splash_screen: ^0.1.1
   google_fonts: ^3.0.1
+  firebase_core: ^1.10.0
+  firebase_auth: ^3.3.4
 
 dev_dependencies:
   flutter_test:
