@@ -43,7 +43,7 @@ class _FDDSplashScreenState extends State<FDDSplashScreen>
         child: SplashScreen.callback(
           onError: (error, stacktrace) => null,
           onSuccess: (data) {
-            context.goNamed(Routes.welcome);
+            context.goNamed(Routes.auth);
           },
           name: FDDSplash.splashAnimation,
           endAnimation: FDDSplash.endAnimation,

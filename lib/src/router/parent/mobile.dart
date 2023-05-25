@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_deep_dive/src/fdd_splash_screen.dart';
 import 'package:flutter_deep_dive/src/router/routes.dart';
+import 'package:flutter_deep_dive/src/ui/authentication/auth_screen.dart';
 import 'package:flutter_deep_dive/src/ui/home/home_screen.dart';
 import 'package:flutter_deep_dive/src/ui/welcome/welcome_screen.dart';
 // import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -15,6 +16,11 @@ final GoRouter router = GoRouter(
       name: Routes.splash,
       path: Routes.splash,
       builder: (context, state) => const FDDSplashScreen(),
+    ),
+    GoRoute(
+      name: Routes.auth,
+      path: Routes.auth,
+      builder: (context, state) => AuthScreen(),
     ),
     GoRoute(
       name: '/',
