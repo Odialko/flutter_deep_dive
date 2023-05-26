@@ -19,7 +19,7 @@ class AuthRepository {
       } else if (e.code == 'wrong-password') {
         throw AuthException('Wrong password');
       } else {
-        throw AuthException('An Error occured. Try Again later');
+        throw AuthException('An Error occurred. Try Again later');
       }
     }
   }
@@ -38,7 +38,7 @@ class AuthRepository {
       } else if (e.code == 'wrong-password') {
         throw AuthException('Wrong password');
       } else {
-        throw AuthException('An Error occured. Try Again later');
+        throw AuthException('An Error occurred. Try Again later');
       }
     }
   }
