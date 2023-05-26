@@ -13,8 +13,8 @@ class WelcomeScreen extends StatelessWidget {
       ),
       body: Center(
         child: ElevatedButton(
-          child: const Text('Go to HomeScreen'),
-          onPressed: () => context.goNamed(Routes.home),
+          child: const Text('Go to Login'),
+          onPressed: () => context.goNamed(Routes.login),
         ),
       ),
     );
