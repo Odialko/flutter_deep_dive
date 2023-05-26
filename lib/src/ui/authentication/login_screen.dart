@@ -1,27 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_deep_dive/src/router/routes.dart';
 import 'package:flutter_deep_dive/src/ui/authentication/auth_store.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:go_router/go_router.dart';
 
-class AuthScreen extends ConsumerWidget {
+class LoginScreen extends ConsumerWidget {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
-  AuthScreen({super.key});
+  LoginScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final authStore = ref.read(authStoreProvider.notifier);
 
-    ref.listen(authStoreProvider, (previous, next) {
-      next.loginState.whenOrNull(
-        success: (email) => context.goNamed(Routes.welcome),
-      );
-      next.registrationState.whenOrNull(
-        success: (email) => context.goNamed(Routes.welcome),
-      );
-    });
+    // ref.listen(authStoreProvider, (previous, next) {
+    //   next.loginState.whenOrNull(
+    //     success: (email) => context.goNamed(Routes.welcome),
+    //   );
+    //   next.registrationState.whenOrNull(
+    //     success: (email) => context.goNamed(Routes.welcome),
+    //   );
+    // });
 
     return Scaffold(
       appBar: AppBar(
@@ -42,20 +40,27 @@ class AuthScreen extends ConsumerWidget {
               obscureText: true,
             ),
             const SizedBox(height: 16.0),
-            ElevatedButton(
-              onPressed: () {
-                authStore.registration(
-                    emailController.text, passwordController.text);
-              },
-              child: const Text('Register'),
-            ),
+            // ElevatedButton(
+            //   onPressed: () {
+            //     authStore.registration(
+            //         emailController.text, passwordController.text);
+            //   },
+            //   child: const Text('Register'),
+            // ),
             ElevatedButton(
               onPressed: () {
                 authStore.login(emailController.text, passwordController.text);
               },
               child: const Text('Login'),
             ),
+            ElevatedButton(
+              onPressed: () {
+                authStore.signOut();
+              },
+              child: const Text('SigOut'),
+            ),
           ],
+
         ),
       ),
     );
