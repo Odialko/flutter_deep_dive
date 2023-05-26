@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_deep_dive/src/ui/authentication/auth_provider.dart';
+import 'package:flutter_deep_dive/src/router/routes.dart';
+import 'package:flutter_deep_dive/src/ui/authentication/auth_store.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
 class AuthScreen extends ConsumerWidget {
   final TextEditingController emailController = TextEditingController();
@@ -8,37 +10,19 @@ class AuthScreen extends ConsumerWidget {
 
   AuthScreen({super.key});
 
-  void _register(WidgetRef ref) async {
-    final auth = ref.read(firebaseAuthProvider);
-    try {
-      await auth.createUserWithEmailAndPassword(
-        email: emailController.text.trim(),
-        password: passwordController.text,
-      );
-      // Registration successful, you can navigate to the next screen or perform any other desired action.
-    } catch (e) {
-      // Handle registration error, such as displaying an error message.
-      // print('****************************Registration Error: $e');
-    }
-  }
-
-  void _login(WidgetRef ref) async {
-    final auth = ref.read(firebaseAuthProvider);
-    try {
-      await auth.signInWithEmailAndPassword(
-        email: emailController.text.trim(),
-        password: passwordController.text,
-      );
-
-      // Login successful, you can navigate to the next screen or perform any other desired action.
-    } catch (e) {
-      // Handle login error, such as displaying an error message.
-      // print('*********************************Login Error: $e');
-    }
-  }
-
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final authStore = ref.read(authStoreProvider.notifier);
+
+    ref.listen(authStoreProvider, (previous, next) {
+      next.loginState.whenOrNull(
+        success: (email) => context.goNamed(Routes.welcome),
+      );
+      next.registrationState.whenOrNull(
+        success: (email) => context.goNamed(Routes.welcome),
+      );
+    });
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Authentication'),
@@ -59,11 +43,16 @@ class AuthScreen extends ConsumerWidget {
             ),
             const SizedBox(height: 16.0),
             ElevatedButton(
-              onPressed: () => _register(ref),
+              onPressed: () {
+                authStore.registration(
+                    emailController.text, passwordController.text);
+              },
               child: const Text('Register'),
             ),
             ElevatedButton(
-              onPressed: () => _login(ref),
+              onPressed: () {
+                authStore.login(emailController.text, passwordController.text);
+              },
               child: const Text('Login'),
             ),
           ],

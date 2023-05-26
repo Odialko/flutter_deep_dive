@@ -21,11 +21,15 @@ dependencies:
   google_fonts: ^3.0.1
   firebase_core: ^2.13.0
   firebase_auth: ^4.6.1
+  freezed_annotation: any
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.1
+  build_runner: any
+  freezed: any
+  json_serializable: any
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
