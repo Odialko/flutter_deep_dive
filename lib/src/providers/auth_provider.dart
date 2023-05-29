@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_deep_dive/src/repositories/auth_repository.dart';
+import 'package:flutter_deep_dive/src/router/router_notifier.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 final authRepositoryProvider = Provider<AuthRepository>(
@@ -9,3 +10,6 @@ final authRepositoryProvider = Provider<AuthRepository>(
 final authStateChangesProvider = StreamProvider<User?>((ref) {
   return ref.watch(authRepositoryProvider).authStateChange;
 });
+
+final routerNotifierProvider =
+    ChangeNotifierProvider((ref) => RouterNotifier(ref));

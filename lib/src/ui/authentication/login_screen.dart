@@ -11,16 +11,6 @@ class LoginScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final authStore = ref.read(authStoreProvider.notifier);
-
-    // ref.listen(authStoreProvider, (previous, next) {
-    //   next.loginState.whenOrNull(
-    //     success: (email) => context.goNamed(Routes.welcome),
-    //   );
-    //   next.registrationState.whenOrNull(
-    //     success: (email) => context.goNamed(Routes.welcome),
-    //   );
-    // });
-
     return Scaffold(
       appBar: AppBar(
         title: const Text('Authentication'),
@@ -60,7 +50,6 @@ class LoginScreen extends ConsumerWidget {
               child: const Text('SigOut'),
             ),
           ],
-
         ),
       ),
     );

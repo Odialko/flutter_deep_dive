@@ -1,5 +1,4 @@
 import 'package:flutter_deep_dive/src/providers/auth_provider.dart';
-import 'package:flutter_deep_dive/src/repositories/auth_repository.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -57,13 +56,11 @@ class AuthStoreNotifier extends StateNotifier<AuthStoreState> {
     try {
       state = state.copyWith(loginState: const LoginState.loading());
 
-      final responce =
+      final response =
           await ref.read(authRepositoryProvider).login(email, password);
-      print('============>>>> ${responce}');
       state = state.copyWith(
-          loginState: LoginState.success(email: responce?.email ?? ''));
+          loginState: LoginState.success(email: response?.email ?? ''));
     } catch (e) {
-      print('============>>>> ${e}');
       state = state.copyWith(
           loginState: const LoginState.error(errorText: 'Error'));
     }
@@ -76,14 +73,12 @@ class AuthStoreNotifier extends StateNotifier<AuthStoreState> {
       state =
           state.copyWith(registrationState: const RegistrationState.loading());
 
-      final responce =
+      final response =
           await ref.read(authRepositoryProvider).register(email, password);
-      print('============>>>> ${responce}');
       state = state.copyWith(
           registrationState:
-              RegistrationState.success(email: responce?.email ?? ''));
+              RegistrationState.success(email: response?.email ?? ''));
     } catch (e) {
-      print('============>>>> ${e}');
       state = state.copyWith(
           loginState: const LoginState.error(errorText: 'Error'));
     }
