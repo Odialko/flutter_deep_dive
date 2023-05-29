@@ -7,7 +7,6 @@ import 'package:flutter_deep_dive/src/ui/authentication/forgot_password_screen.d
 import 'package:flutter_deep_dive/src/ui/authentication/login_screen.dart';
 import 'package:flutter_deep_dive/src/ui/authentication/register_screen.dart';
 import 'package:flutter_deep_dive/src/ui/home/home_screen.dart';
-import 'package:flutter_deep_dive/src/ui/welcome/welcome_screen.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
@@ -19,11 +18,6 @@ final router = Provider<GoRouter>((ref) {
         name: Routes.splash,
         path: Routes.splash,
         builder: (context, state) => const FDDSplashScreen(),
-      ),
-      GoRoute(
-        name: Routes.welcome,
-        path: Routes.welcome,
-        builder: (context, state) => const WelcomeScreen(),
       ),
       GoRoute(
         name: Routes.login,
