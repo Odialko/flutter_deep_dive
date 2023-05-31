@@ -27,7 +27,7 @@ final router = Provider<GoRouter>((ref) {
           GoRoute(
             name: Routes.register,
             path: Routes.register,
-            builder: (context, state) => const RegisterScreen(),
+            builder: (context, state) => RegisterScreen(),
           ),
           GoRoute(
             name: Routes.forgotPass,
