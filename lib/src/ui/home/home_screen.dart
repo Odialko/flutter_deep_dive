@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_deep_dive/src/providers/auth_provider.dart';
 import 'package:flutter_deep_dive/src/ui/authentication/auth_store.dart';
 import 'package:flutter_deep_dive/src/ui/flutter_deep_dive_theme.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -9,7 +10,9 @@ class HomeScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final authStore = ref.read(authStoreProvider.notifier);
+    final userState = ref.read(userProvider);
     final themeData = FDDTheme.of(context);
+
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -20,7 +23,7 @@ class HomeScreen extends ConsumerWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Text(
-            'Home Screen',
+            'Hello: ${userState?.email ?? '-'}',
             style: themeData.cocoaTextTheme.font0,
           ),
           ElevatedButton(
