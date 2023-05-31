@@ -3,7 +3,8 @@ import 'package:flutter_deep_dive/src/ui/authentication/auth_store.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class RegisterScreen extends ConsumerWidget {
-  const RegisterScreen({Key? key}) : super(key: key);
+  RegisterScreen({Key? key}) : super(key: key);
+
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
