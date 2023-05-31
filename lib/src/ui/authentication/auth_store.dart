@@ -1,3 +1,4 @@
+import 'package:flutter_deep_dive/src/models/user_model.dart';
 import 'package:flutter_deep_dive/src/providers/auth_provider.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -8,6 +9,17 @@ final authStoreProvider =
     StateNotifierProvider<AuthStoreNotifier, AuthStoreState>((ref) {
   return AuthStoreNotifier(ref: ref);
 });
+
+@freezed
+class ResetPasswordState with _$ResetPasswordState {
+  const factory ResetPasswordState.init() = ResetPasswordStateInit;
+  const factory ResetPasswordState.loading() = ResetPasswordStateLoading;
+  const factory ResetPasswordState.success({
+    required String email,
+  }) = ResetPasswordStateSuccess;
+  const factory ResetPasswordState.error({required String errorText}) =
+      ResetPasswordStateError;
+}
 
 @freezed
 class LoginState with _$LoginState {
@@ -35,6 +47,7 @@ class AuthStoreState with _$AuthStoreState {
   const factory AuthStoreState({
     required LoginState loginState,
     required RegistrationState registrationState,
+    required ResetPasswordState resetPasswordState,
   }) = _AuthStoreState;
 }
 
@@ -45,6 +58,7 @@ class AuthStoreNotifier extends StateNotifier<AuthStoreState> {
           const AuthStoreState(
             loginState: LoginState.init(),
             registrationState: RegistrationState.init(),
+            resetPasswordState: ResetPasswordState.init(),
           ),
         );
 
@@ -58,11 +72,17 @@ class AuthStoreNotifier extends StateNotifier<AuthStoreState> {
 
       final response =
           await ref.read(authRepositoryProvider).login(email, password);
+
+      // TODO(VIK): only for login for testing rewrite after Error handling
+      final userModel = UserModel(email: response?.email ?? '');
+      // Update the value of userProvider using UserNotifier
+      ref.read(userProvider.notifier).setUser(userModel);
+
       state = state.copyWith(
-          loginState: LoginState.success(email: response?.email ?? ''));
+          loginState: LoginState.success(email: userModel.email));
     } catch (e) {
       state = state.copyWith(
-          loginState: const LoginState.error(errorText: 'Error'));
+          loginState: const LoginState.error(errorText: '-----------Error'));
     }
   }
 
@@ -80,7 +100,27 @@ class AuthStoreNotifier extends StateNotifier<AuthStoreState> {
               RegistrationState.success(email: response?.email ?? ''));
     } catch (e) {
       state = state.copyWith(
-          loginState: const LoginState.error(errorText: 'Error'));
+          registrationState: const RegistrationState.error(errorText: 'Error'));
+    }
+  }
+
+  Future<void> resetPassword(String email) async {
+    state = state.copyWith(
+      resetPasswordState: const ResetPasswordState.init(),
+    );
+
+    try {
+      state = state.copyWith(
+        resetPasswordState: const ResetPasswordState.loading(),
+      );
+
+      await ref.read(authRepositoryProvider).resetPassword(email);
+      state = state.copyWith(
+          resetPasswordState: const ResetPasswordState.success(email: 'test'));
+    } catch (e) {
+      state = state.copyWith(
+        resetPasswordState: const ResetPasswordState.error(errorText: 'Error'),
+      );
     }
   }
 

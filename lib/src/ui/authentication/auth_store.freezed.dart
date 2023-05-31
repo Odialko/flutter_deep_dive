@@ -15,6 +15,604 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
+mixin _$ResetPasswordState {
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() init,
+    required TResult Function() loading,
+    required TResult Function(String email) success,
+    required TResult Function(String errorText) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? init,
+    TResult? Function()? loading,
+    TResult? Function(String email)? success,
+    TResult? Function(String errorText)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? init,
+    TResult Function()? loading,
+    TResult Function(String email)? success,
+    TResult Function(String errorText)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ResetPasswordStateInit value) init,
+    required TResult Function(ResetPasswordStateLoading value) loading,
+    required TResult Function(ResetPasswordStateSuccess value) success,
+    required TResult Function(ResetPasswordStateError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ResetPasswordStateInit value)? init,
+    TResult? Function(ResetPasswordStateLoading value)? loading,
+    TResult? Function(ResetPasswordStateSuccess value)? success,
+    TResult? Function(ResetPasswordStateError value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ResetPasswordStateInit value)? init,
+    TResult Function(ResetPasswordStateLoading value)? loading,
+    TResult Function(ResetPasswordStateSuccess value)? success,
+    TResult Function(ResetPasswordStateError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ResetPasswordStateCopyWith<$Res> {
+  factory $ResetPasswordStateCopyWith(
+          ResetPasswordState value, $Res Function(ResetPasswordState) then) =
+      _$ResetPasswordStateCopyWithImpl<$Res, ResetPasswordState>;
+}
+
+/// @nodoc
+class _$ResetPasswordStateCopyWithImpl<$Res, $Val extends ResetPasswordState>
+    implements $ResetPasswordStateCopyWith<$Res> {
+  _$ResetPasswordStateCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+}
+
+/// @nodoc
+abstract class _$$ResetPasswordStateInitCopyWith<$Res> {
+  factory _$$ResetPasswordStateInitCopyWith(_$ResetPasswordStateInit value,
+          $Res Function(_$ResetPasswordStateInit) then) =
+      __$$ResetPasswordStateInitCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$ResetPasswordStateInitCopyWithImpl<$Res>
+    extends _$ResetPasswordStateCopyWithImpl<$Res, _$ResetPasswordStateInit>
+    implements _$$ResetPasswordStateInitCopyWith<$Res> {
+  __$$ResetPasswordStateInitCopyWithImpl(_$ResetPasswordStateInit _value,
+      $Res Function(_$ResetPasswordStateInit) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$ResetPasswordStateInit implements ResetPasswordStateInit {
+  const _$ResetPasswordStateInit();
+
+  @override
+  String toString() {
+    return 'ResetPasswordState.init()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$ResetPasswordStateInit);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() init,
+    required TResult Function() loading,
+    required TResult Function(String email) success,
+    required TResult Function(String errorText) error,
+  }) {
+    return init();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? init,
+    TResult? Function()? loading,
+    TResult? Function(String email)? success,
+    TResult? Function(String errorText)? error,
+  }) {
+    return init?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? init,
+    TResult Function()? loading,
+    TResult Function(String email)? success,
+    TResult Function(String errorText)? error,
+    required TResult orElse(),
+  }) {
+    if (init != null) {
+      return init();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ResetPasswordStateInit value) init,
+    required TResult Function(ResetPasswordStateLoading value) loading,
+    required TResult Function(ResetPasswordStateSuccess value) success,
+    required TResult Function(ResetPasswordStateError value) error,
+  }) {
+    return init(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ResetPasswordStateInit value)? init,
+    TResult? Function(ResetPasswordStateLoading value)? loading,
+    TResult? Function(ResetPasswordStateSuccess value)? success,
+    TResult? Function(ResetPasswordStateError value)? error,
+  }) {
+    return init?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ResetPasswordStateInit value)? init,
+    TResult Function(ResetPasswordStateLoading value)? loading,
+    TResult Function(ResetPasswordStateSuccess value)? success,
+    TResult Function(ResetPasswordStateError value)? error,
+    required TResult orElse(),
+  }) {
+    if (init != null) {
+      return init(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ResetPasswordStateInit implements ResetPasswordState {
+  const factory ResetPasswordStateInit() = _$ResetPasswordStateInit;
+}
+
+/// @nodoc
+abstract class _$$ResetPasswordStateLoadingCopyWith<$Res> {
+  factory _$$ResetPasswordStateLoadingCopyWith(
+          _$ResetPasswordStateLoading value,
+          $Res Function(_$ResetPasswordStateLoading) then) =
+      __$$ResetPasswordStateLoadingCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$ResetPasswordStateLoadingCopyWithImpl<$Res>
+    extends _$ResetPasswordStateCopyWithImpl<$Res, _$ResetPasswordStateLoading>
+    implements _$$ResetPasswordStateLoadingCopyWith<$Res> {
+  __$$ResetPasswordStateLoadingCopyWithImpl(_$ResetPasswordStateLoading _value,
+      $Res Function(_$ResetPasswordStateLoading) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$ResetPasswordStateLoading implements ResetPasswordStateLoading {
+  const _$ResetPasswordStateLoading();
+
+  @override
+  String toString() {
+    return 'ResetPasswordState.loading()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ResetPasswordStateLoading);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() init,
+    required TResult Function() loading,
+    required TResult Function(String email) success,
+    required TResult Function(String errorText) error,
+  }) {
+    return loading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? init,
+    TResult? Function()? loading,
+    TResult? Function(String email)? success,
+    TResult? Function(String errorText)? error,
+  }) {
+    return loading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? init,
+    TResult Function()? loading,
+    TResult Function(String email)? success,
+    TResult Function(String errorText)? error,
+    required TResult orElse(),
+  }) {
+    if (loading != null) {
+      return loading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ResetPasswordStateInit value) init,
+    required TResult Function(ResetPasswordStateLoading value) loading,
+    required TResult Function(ResetPasswordStateSuccess value) success,
+    required TResult Function(ResetPasswordStateError value) error,
+  }) {
+    return loading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ResetPasswordStateInit value)? init,
+    TResult? Function(ResetPasswordStateLoading value)? loading,
+    TResult? Function(ResetPasswordStateSuccess value)? success,
+    TResult? Function(ResetPasswordStateError value)? error,
+  }) {
+    return loading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ResetPasswordStateInit value)? init,
+    TResult Function(ResetPasswordStateLoading value)? loading,
+    TResult Function(ResetPasswordStateSuccess value)? success,
+    TResult Function(ResetPasswordStateError value)? error,
+    required TResult orElse(),
+  }) {
+    if (loading != null) {
+      return loading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ResetPasswordStateLoading implements ResetPasswordState {
+  const factory ResetPasswordStateLoading() = _$ResetPasswordStateLoading;
+}
+
+/// @nodoc
+abstract class _$$ResetPasswordStateSuccessCopyWith<$Res> {
+  factory _$$ResetPasswordStateSuccessCopyWith(
+          _$ResetPasswordStateSuccess value,
+          $Res Function(_$ResetPasswordStateSuccess) then) =
+      __$$ResetPasswordStateSuccessCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String email});
+}
+
+/// @nodoc
+class __$$ResetPasswordStateSuccessCopyWithImpl<$Res>
+    extends _$ResetPasswordStateCopyWithImpl<$Res, _$ResetPasswordStateSuccess>
+    implements _$$ResetPasswordStateSuccessCopyWith<$Res> {
+  __$$ResetPasswordStateSuccessCopyWithImpl(_$ResetPasswordStateSuccess _value,
+      $Res Function(_$ResetPasswordStateSuccess) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? email = null,
+  }) {
+    return _then(_$ResetPasswordStateSuccess(
+      email: null == email
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ResetPasswordStateSuccess implements ResetPasswordStateSuccess {
+  const _$ResetPasswordStateSuccess({required this.email});
+
+  @override
+  final String email;
+
+  @override
+  String toString() {
+    return 'ResetPasswordState.success(email: $email)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ResetPasswordStateSuccess &&
+            (identical(other.email, email) || other.email == email));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, email);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ResetPasswordStateSuccessCopyWith<_$ResetPasswordStateSuccess>
+      get copyWith => __$$ResetPasswordStateSuccessCopyWithImpl<
+          _$ResetPasswordStateSuccess>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() init,
+    required TResult Function() loading,
+    required TResult Function(String email) success,
+    required TResult Function(String errorText) error,
+  }) {
+    return success(email);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? init,
+    TResult? Function()? loading,
+    TResult? Function(String email)? success,
+    TResult? Function(String errorText)? error,
+  }) {
+    return success?.call(email);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? init,
+    TResult Function()? loading,
+    TResult Function(String email)? success,
+    TResult Function(String errorText)? error,
+    required TResult orElse(),
+  }) {
+    if (success != null) {
+      return success(email);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ResetPasswordStateInit value) init,
+    required TResult Function(ResetPasswordStateLoading value) loading,
+    required TResult Function(ResetPasswordStateSuccess value) success,
+    required TResult Function(ResetPasswordStateError value) error,
+  }) {
+    return success(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ResetPasswordStateInit value)? init,
+    TResult? Function(ResetPasswordStateLoading value)? loading,
+    TResult? Function(ResetPasswordStateSuccess value)? success,
+    TResult? Function(ResetPasswordStateError value)? error,
+  }) {
+    return success?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ResetPasswordStateInit value)? init,
+    TResult Function(ResetPasswordStateLoading value)? loading,
+    TResult Function(ResetPasswordStateSuccess value)? success,
+    TResult Function(ResetPasswordStateError value)? error,
+    required TResult orElse(),
+  }) {
+    if (success != null) {
+      return success(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ResetPasswordStateSuccess implements ResetPasswordState {
+  const factory ResetPasswordStateSuccess({required final String email}) =
+      _$ResetPasswordStateSuccess;
+
+  String get email;
+  @JsonKey(ignore: true)
+  _$$ResetPasswordStateSuccessCopyWith<_$ResetPasswordStateSuccess>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ResetPasswordStateErrorCopyWith<$Res> {
+  factory _$$ResetPasswordStateErrorCopyWith(_$ResetPasswordStateError value,
+          $Res Function(_$ResetPasswordStateError) then) =
+      __$$ResetPasswordStateErrorCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String errorText});
+}
+
+/// @nodoc
+class __$$ResetPasswordStateErrorCopyWithImpl<$Res>
+    extends _$ResetPasswordStateCopyWithImpl<$Res, _$ResetPasswordStateError>
+    implements _$$ResetPasswordStateErrorCopyWith<$Res> {
+  __$$ResetPasswordStateErrorCopyWithImpl(_$ResetPasswordStateError _value,
+      $Res Function(_$ResetPasswordStateError) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? errorText = null,
+  }) {
+    return _then(_$ResetPasswordStateError(
+      errorText: null == errorText
+          ? _value.errorText
+          : errorText // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ResetPasswordStateError implements ResetPasswordStateError {
+  const _$ResetPasswordStateError({required this.errorText});
+
+  @override
+  final String errorText;
+
+  @override
+  String toString() {
+    return 'ResetPasswordState.error(errorText: $errorText)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ResetPasswordStateError &&
+            (identical(other.errorText, errorText) ||
+                other.errorText == errorText));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, errorText);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ResetPasswordStateErrorCopyWith<_$ResetPasswordStateError> get copyWith =>
+      __$$ResetPasswordStateErrorCopyWithImpl<_$ResetPasswordStateError>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() init,
+    required TResult Function() loading,
+    required TResult Function(String email) success,
+    required TResult Function(String errorText) error,
+  }) {
+    return error(errorText);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? init,
+    TResult? Function()? loading,
+    TResult? Function(String email)? success,
+    TResult? Function(String errorText)? error,
+  }) {
+    return error?.call(errorText);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? init,
+    TResult Function()? loading,
+    TResult Function(String email)? success,
+    TResult Function(String errorText)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(errorText);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ResetPasswordStateInit value) init,
+    required TResult Function(ResetPasswordStateLoading value) loading,
+    required TResult Function(ResetPasswordStateSuccess value) success,
+    required TResult Function(ResetPasswordStateError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ResetPasswordStateInit value)? init,
+    TResult? Function(ResetPasswordStateLoading value)? loading,
+    TResult? Function(ResetPasswordStateSuccess value)? success,
+    TResult? Function(ResetPasswordStateError value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ResetPasswordStateInit value)? init,
+    TResult Function(ResetPasswordStateLoading value)? loading,
+    TResult Function(ResetPasswordStateSuccess value)? success,
+    TResult Function(ResetPasswordStateError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ResetPasswordStateError implements ResetPasswordState {
+  const factory ResetPasswordStateError({required final String errorText}) =
+      _$ResetPasswordStateError;
+
+  String get errorText;
+  @JsonKey(ignore: true)
+  _$$ResetPasswordStateErrorCopyWith<_$ResetPasswordStateError> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$LoginState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
@@ -1208,6 +1806,8 @@ abstract class RegistrationStateError implements RegistrationState {
 mixin _$AuthStoreState {
   LoginState get loginState => throw _privateConstructorUsedError;
   RegistrationState get registrationState => throw _privateConstructorUsedError;
+  ResetPasswordState get resetPasswordState =>
+      throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $AuthStoreStateCopyWith<AuthStoreState> get copyWith =>
@@ -1220,10 +1820,14 @@ abstract class $AuthStoreStateCopyWith<$Res> {
           AuthStoreState value, $Res Function(AuthStoreState) then) =
       _$AuthStoreStateCopyWithImpl<$Res, AuthStoreState>;
   @useResult
-  $Res call({LoginState loginState, RegistrationState registrationState});
+  $Res call(
+      {LoginState loginState,
+      RegistrationState registrationState,
+      ResetPasswordState resetPasswordState});
 
   $LoginStateCopyWith<$Res> get loginState;
   $RegistrationStateCopyWith<$Res> get registrationState;
+  $ResetPasswordStateCopyWith<$Res> get resetPasswordState;
 }
 
 /// @nodoc
@@ -1241,6 +1845,7 @@ class _$AuthStoreStateCopyWithImpl<$Res, $Val extends AuthStoreState>
   $Res call({
     Object? loginState = null,
     Object? registrationState = null,
+    Object? resetPasswordState = null,
   }) {
     return _then(_value.copyWith(
       loginState: null == loginState
@@ -1251,6 +1856,10 @@ class _$AuthStoreStateCopyWithImpl<$Res, $Val extends AuthStoreState>
           ? _value.registrationState
           : registrationState // ignore: cast_nullable_to_non_nullable
               as RegistrationState,
+      resetPasswordState: null == resetPasswordState
+          ? _value.resetPasswordState
+          : resetPasswordState // ignore: cast_nullable_to_non_nullable
+              as ResetPasswordState,
     ) as $Val);
   }
 
@@ -1269,6 +1878,15 @@ class _$AuthStoreStateCopyWithImpl<$Res, $Val extends AuthStoreState>
       return _then(_value.copyWith(registrationState: value) as $Val);
     });
   }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ResetPasswordStateCopyWith<$Res> get resetPasswordState {
+    return $ResetPasswordStateCopyWith<$Res>(_value.resetPasswordState,
+        (value) {
+      return _then(_value.copyWith(resetPasswordState: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
@@ -1279,12 +1897,17 @@ abstract class _$$_AuthStoreStateCopyWith<$Res>
       __$$_AuthStoreStateCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({LoginState loginState, RegistrationState registrationState});
+  $Res call(
+      {LoginState loginState,
+      RegistrationState registrationState,
+      ResetPasswordState resetPasswordState});
 
   @override
   $LoginStateCopyWith<$Res> get loginState;
   @override
   $RegistrationStateCopyWith<$Res> get registrationState;
+  @override
+  $ResetPasswordStateCopyWith<$Res> get resetPasswordState;
 }
 
 /// @nodoc
@@ -1300,6 +1923,7 @@ class __$$_AuthStoreStateCopyWithImpl<$Res>
   $Res call({
     Object? loginState = null,
     Object? registrationState = null,
+    Object? resetPasswordState = null,
   }) {
     return _then(_$_AuthStoreState(
       loginState: null == loginState
@@ -1310,6 +1934,10 @@ class __$$_AuthStoreStateCopyWithImpl<$Res>
           ? _value.registrationState
           : registrationState // ignore: cast_nullable_to_non_nullable
               as RegistrationState,
+      resetPasswordState: null == resetPasswordState
+          ? _value.resetPasswordState
+          : resetPasswordState // ignore: cast_nullable_to_non_nullable
+              as ResetPasswordState,
     ));
   }
 }
@@ -1318,16 +1946,20 @@ class __$$_AuthStoreStateCopyWithImpl<$Res>
 
 class _$_AuthStoreState implements _AuthStoreState {
   const _$_AuthStoreState(
-      {required this.loginState, required this.registrationState});
+      {required this.loginState,
+      required this.registrationState,
+      required this.resetPasswordState});
 
   @override
   final LoginState loginState;
   @override
   final RegistrationState registrationState;
+  @override
+  final ResetPasswordState resetPasswordState;
 
   @override
   String toString() {
-    return 'AuthStoreState(loginState: $loginState, registrationState: $registrationState)';
+    return 'AuthStoreState(loginState: $loginState, registrationState: $registrationState, resetPasswordState: $resetPasswordState)';
   }
 
   @override
@@ -1338,11 +1970,14 @@ class _$_AuthStoreState implements _AuthStoreState {
             (identical(other.loginState, loginState) ||
                 other.loginState == loginState) &&
             (identical(other.registrationState, registrationState) ||
-                other.registrationState == registrationState));
+                other.registrationState == registrationState) &&
+            (identical(other.resetPasswordState, resetPasswordState) ||
+                other.resetPasswordState == resetPasswordState));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, loginState, registrationState);
+  int get hashCode => Object.hash(
+      runtimeType, loginState, registrationState, resetPasswordState);
 
   @JsonKey(ignore: true)
   @override
@@ -1353,13 +1988,17 @@ class _$_AuthStoreState implements _AuthStoreState {
 
 abstract class _AuthStoreState implements AuthStoreState {
   const factory _AuthStoreState(
-      {required final LoginState loginState,
-      required final RegistrationState registrationState}) = _$_AuthStoreState;
+          {required final LoginState loginState,
+          required final RegistrationState registrationState,
+          required final ResetPasswordState resetPasswordState}) =
+      _$_AuthStoreState;
 
   @override
   LoginState get loginState;
   @override
   RegistrationState get registrationState;
+  @override
+  ResetPasswordState get resetPasswordState;
   @override
   @JsonKey(ignore: true)
   _$$_AuthStoreStateCopyWith<_$_AuthStoreState> get copyWith =>

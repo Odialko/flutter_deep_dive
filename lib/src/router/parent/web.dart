@@ -3,7 +3,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_deep_dive/src/fdd_splash_screen.dart';
 import 'package:flutter_deep_dive/src/router/routes.dart';
-import 'package:flutter_deep_dive/src/ui/authentication/forgot_password_screen.dart';
+import 'package:flutter_deep_dive/src/ui/authentication/reset_password_screen.dart';
 import 'package:flutter_deep_dive/src/ui/authentication/login_screen.dart';
 import 'package:flutter_deep_dive/src/ui/authentication/register_screen.dart';
 import 'package:flutter_deep_dive/src/ui/home/home_screen.dart';
@@ -30,9 +30,9 @@ final router = Provider<GoRouter>((ref) {
             builder: (context, state) => RegisterScreen(),
           ),
           GoRoute(
-            name: Routes.forgotPass,
-            path: Routes.forgotPass,
-            builder: (context, state) => const ForgotPasswordScreen(),
+            name: Routes.resetPass,
+            path: Routes.resetPass,
+            builder: (context, state) => ResetPasswordScreen(),
           ),
         ],
       ),

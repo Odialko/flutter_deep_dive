@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter_deep_dive/src/models/user_model.dart';
 
 class AuthRepository {
   const AuthRepository(this._auth);
@@ -6,13 +7,16 @@ class AuthRepository {
   final FirebaseAuth _auth;
   Stream<User?> get authStateChange => _auth.idTokenChanges();
 
-  Future<User?> register(String email, String password) async {
+  Future<UserModel?> register(String email, String password) async {
     try {
-      final result = await _auth.createUserWithEmailAndPassword(
+      final response = await _auth.createUserWithEmailAndPassword(
         email: email,
         password: password,
       );
-      return result.user;
+      if (response.user?.email != null) {
+        return UserModel(email: response.user!.email ?? '');
+      }
+      throw Exception('User not created');
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
         throw AuthException('User not found');
@@ -26,12 +30,15 @@ class AuthRepository {
 
   Future<User?> login(String email, String password) async {
     try {
-      final result = await _auth.signInWithEmailAndPassword(
+      final response = await _auth.signInWithEmailAndPassword(
         email: email,
         password: password,
       );
-      return result.user;
-      // Login successful, you can navigate to the next screen or perform any other desired action.
+      return response.user;
+      // if (response.user?.email != null) {
+      //   return UserModel(email: response.user!.email ?? '');
+      // }
+      // throw Exception('User not logedIn');
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
         throw AuthException('User not found');
@@ -44,7 +51,31 @@ class AuthRepository {
   }
 
   Future<void> signOut() async {
-    await _auth.signOut();
+    try {
+      await _auth.signOut();
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'user-not-found') {
+        throw AuthException('User not found');
+      } else if (e.code == 'wrong-password') {
+        throw AuthException('Wrong password');
+      } else {
+        throw AuthException('An Error occurred. Try Again later');
+      }
+    }
+  }
+
+  Future<void> resetPassword(String email) async {
+    try {
+      await _auth.sendPasswordResetEmail(email: email);
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'user-not-found') {
+        throw AuthException('User not found');
+      } else if (e.code == 'wrong-password') {
+        throw AuthException('Wrong password');
+      } else {
+        throw AuthException('An Error occurred. Try Again later');
+      }
+    }
   }
 }
 

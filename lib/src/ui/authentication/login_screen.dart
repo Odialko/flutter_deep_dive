@@ -45,6 +45,13 @@ class LoginScreen extends ConsumerWidget {
               },
               child: const Text('To registration'),
             ),
+            const SizedBox(height: 16.0),
+            ElevatedButton(
+              onPressed: () {
+                context.goNamed(Routes.resetPass);
+              },
+              child: const Text('To forget password'),
+            ),
           ],
         ),
       ),
