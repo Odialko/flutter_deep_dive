@@ -1,7 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_deep_dive/src/fdd_splash_screen.dart';
+import 'package:flutter_deep_dive/src/ui/fdd_splash/fdd_splash_screen.dart';
 import 'package:flutter_deep_dive/src/providers/auth_provider.dart';
 import 'package:flutter_deep_dive/src/router/redirect.dart';
 import 'package:flutter_deep_dive/src/router/routes.dart';
