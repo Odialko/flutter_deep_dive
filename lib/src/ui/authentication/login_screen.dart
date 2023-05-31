@@ -36,12 +36,6 @@ class LoginScreen extends ConsumerWidget {
               },
               child: const Text('Login'),
             ),
-            ElevatedButton(
-              onPressed: () {
-                authStore.signOut();
-              },
-              child: const Text('SigOut'),
-            ),
           ],
         ),
       ),
