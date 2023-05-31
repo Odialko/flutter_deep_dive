@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_deep_dive/src/router/routes.dart';
 import 'package:flutter_deep_dive/src/ui/authentication/auth_store.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
 class LoginScreen extends ConsumerWidget {
   final TextEditingController emailController = TextEditingController();
@@ -35,6 +37,13 @@ class LoginScreen extends ConsumerWidget {
                 authStore.login(emailController.text, passwordController.text);
               },
               child: const Text('Login'),
+            ),
+            const SizedBox(height: 16.0),
+            ElevatedButton(
+              onPressed: () {
+                context.goNamed(Routes.register);
+              },
+              child: const Text('To registration'),
             ),
           ],
         ),
