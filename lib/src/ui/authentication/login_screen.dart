@@ -30,13 +30,6 @@ class LoginScreen extends ConsumerWidget {
               obscureText: true,
             ),
             const SizedBox(height: 16.0),
-            // ElevatedButton(
-            //   onPressed: () {
-            //     authStore.registration(
-            //         emailController.text, passwordController.text);
-            //   },
-            //   child: const Text('Register'),
-            // ),
             ElevatedButton(
               onPressed: () {
                 authStore.login(emailController.text, passwordController.text);
