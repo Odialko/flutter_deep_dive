@@ -95,6 +95,10 @@ class AuthStoreNotifier extends StateNotifier<AuthStoreState> {
 
       final response =
           await ref.read(authRepositoryProvider).register(email, password);
+      final userModel = UserModel(email: response?.email ?? '');
+      // Update the value of userProvider using UserNotifier
+      ref.read(userProvider.notifier).setUser(userModel);
+
       state = state.copyWith(
           registrationState:
               RegistrationState.success(email: response?.email ?? ''));
