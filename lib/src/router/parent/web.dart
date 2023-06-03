@@ -1,7 +1,7 @@
-import 'dart:developer';
-
-import 'package:flutter/material.dart';
+import 'package:flutter_deep_dive/src/ui/error/error_screen.dart';
 import 'package:flutter_deep_dive/src/ui/fdd_splash/fdd_splash_screen.dart';
+import 'package:flutter_deep_dive/src/providers/auth_provider.dart';
+import 'package:flutter_deep_dive/src/router/redirect.dart';
 import 'package:flutter_deep_dive/src/router/routes.dart';
 import 'package:flutter_deep_dive/src/ui/authentication/reset_password_screen.dart';
 import 'package:flutter_deep_dive/src/ui/authentication/login_screen.dart';
@@ -11,14 +11,22 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 final router = Provider<GoRouter>((ref) {
+  final needRefresh = ref.read(routerNotifierProvider);
+
   return GoRouter(
     initialLocation: Routes.splash,
+    refreshListenable: needRefresh,
     routes: [
       GoRoute(
         name: Routes.splash,
         path: Routes.splash,
         builder: (context, state) => const FDDSplashScreen(),
       ),
+      // GoRoute(
+      //   name: Routes.welcome,
+      //   path: Routes.welcome,
+      //   builder: (context, state) => const WelcomeScreen(),
+      // ),
       GoRoute(
         name: Routes.login,
         path: Routes.login,
@@ -37,16 +45,16 @@ final router = Provider<GoRouter>((ref) {
         ],
       ),
       GoRoute(
-        name: '/home',
-        path: '/home',
+        name: Routes.home,
+        path: Routes.home,
         builder: (context, state) => const HomeScreen(),
       ),
     ],
-    // redirect: (state) => authRedirect(state),
     errorBuilder: (context, state) {
-      log('state', name: '==============================> ${state.error}');
-      return Container();
+      return ErrorScreen(
+        errorText: state.error.toString(),
+      );
     },
-    // errorBuilder: (context, state) => const ErrorScreen(),
+    redirect: (context, state) => authRedirect(context, state, ref),
   );
 });
