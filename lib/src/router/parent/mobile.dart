@@ -1,6 +1,4 @@
-import 'dart:developer';
-
-import 'package:flutter/material.dart';
+import 'package:flutter_deep_dive/src/ui/error/error_screen.dart';
 import 'package:flutter_deep_dive/src/ui/fdd_splash/fdd_splash_screen.dart';
 import 'package:flutter_deep_dive/src/providers/auth_provider.dart';
 import 'package:flutter_deep_dive/src/router/redirect.dart';
@@ -46,6 +44,11 @@ final router = Provider<GoRouter>((ref) {
           ),
         ],
       ),
+      // GoRoute(
+      //   name: Routes.error,
+      //   path: Routes.error,
+      //   builder: (context, state) => FDDFullScreenDialog(),
+      // ),
       GoRoute(
         name: Routes.home,
         path: Routes.home,
@@ -53,8 +56,9 @@ final router = Provider<GoRouter>((ref) {
       ),
     ],
     errorBuilder: (context, state) {
-      log('state', name: '==============================> ${state.error}');
-      return Container();
+      return ErrorScreen(
+        errorText: state.error.toString(),
+      );
     },
     redirect: (context, state) => authRedirect(context, state, ref),
   );
