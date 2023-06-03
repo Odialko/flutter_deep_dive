@@ -17,7 +17,6 @@ class App extends ConsumerWidget {
       child: Builder(builder: (context) {
         return MaterialApp.router(
           title: 'Flutter Deep Dive',
-          // routerConfig: router,
           routeInformationProvider: appRouter.routeInformationProvider,
           routeInformationParser: appRouter.routeInformationParser,
           routerDelegate: appRouter.routerDelegate,

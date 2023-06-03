@@ -7,4 +7,5 @@ class Routes {
   static const register = 'register';
   static const resetPass = 'reset-pass';
   static const home = '/home';
+  static const error = '/error';
 }

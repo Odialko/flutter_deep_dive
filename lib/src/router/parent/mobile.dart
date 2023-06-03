@@ -44,6 +44,11 @@ final router = Provider<GoRouter>((ref) {
           ),
         ],
       ),
+      // GoRoute(
+      //   name: Routes.error,
+      //   path: Routes.error,
+      //   builder: (context, state) => FDDFullScreenDialog(),
+      // ),
       GoRoute(
         name: Routes.home,
         path: Routes.home,
