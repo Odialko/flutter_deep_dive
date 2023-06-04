@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_deep_dive/generated/l10n.dart';
 import 'package:flutter_deep_dive/src/ui/authentication/auth_store.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -10,8 +11,10 @@ class ResetPasswordScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final authStore = ref.read(authStoreProvider.notifier);
+    final s = S.of(context);
     return Scaffold(
       appBar: AppBar(
+        /// TMP String
         title: const Text('Authentication'),
       ),
       body: Padding(
@@ -21,7 +24,7 @@ class ResetPasswordScreen extends ConsumerWidget {
           children: [
             TextFormField(
               controller: emailController,
-              decoration: const InputDecoration(labelText: 'Email'),
+              decoration: InputDecoration(labelText: s.auth_email),
             ),
             const SizedBox(height: 16.0),
             ElevatedButton(
@@ -29,7 +32,7 @@ class ResetPasswordScreen extends ConsumerWidget {
                 // context.goNamed(Routes.register);
                 authStore.resetPassword(emailController.text);
               },
-              child: const Text('reset password'),
+              child: Text(s.reset_btn_label),
             ),
           ],
         ),

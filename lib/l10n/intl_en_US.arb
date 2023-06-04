@@ -1,4 +1,43 @@
 {
   "@@locale": "en_US",
-  "firstTitle": "Flutter Demo Home Page"
+  "app_name": "Multi Apps",
+  "@app_name": {
+    "type": "text",
+    "context": "App name"
+  },
+  "login_btn_label": "Login",
+  "@login_btn_label": {
+    "type": "text",
+    "context": "Button label"
+  },
+  "login_reg_nav": "Not registered",
+  "@login_reg_nav": {
+    "type": "text",
+    "context": "Button label to registration"
+  },
+  "login_forget_pass": "Do you forget password?",
+  "@login_forget_pass": {
+    "type": "text",
+    "context": "Button label to reset password"
+  },
+  "auth_email": "Email",
+  "@auth_email": {
+    "type": "text",
+    "context": "Input field name"
+  },
+  "auth_pass": "Password",
+  "@auth_pass": {
+    "type": "text",
+    "context": "Input field name"
+  },
+  "register_btn_label": "Sign up",
+  "@register_btn_label": {
+    "type": "text",
+    "context": "Button label to Sign up"
+  },
+  "reset_btn_label": "Reset password",
+  "@reset_btn_label": {
+    "type": "text",
+    "context": "Button label to reset password"
+  }
 }

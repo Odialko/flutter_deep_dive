@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_deep_dive/generated/l10n.dart';
 import 'package:flutter_deep_dive/src/router/routes.dart';
 import 'package:flutter_deep_dive/src/ui/authentication/auth_store.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -13,8 +14,10 @@ class LoginScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final authStore = ref.read(authStoreProvider.notifier);
+    final s = S.of(context);
     return Scaffold(
       appBar: AppBar(
+        /// TMP name
         title: const Text('Authentication'),
       ),
       body: Padding(
@@ -24,11 +27,11 @@ class LoginScreen extends ConsumerWidget {
           children: [
             TextFormField(
               controller: emailController,
-              decoration: const InputDecoration(labelText: 'Email'),
+              decoration: InputDecoration(labelText: s.auth_email),
             ),
             TextFormField(
               controller: passwordController,
-              decoration: const InputDecoration(labelText: 'Password'),
+              decoration: InputDecoration(labelText: s.auth_pass),
               obscureText: true,
             ),
             const SizedBox(height: 16.0),
@@ -36,21 +39,21 @@ class LoginScreen extends ConsumerWidget {
               onPressed: () {
                 authStore.login(emailController.text, passwordController.text);
               },
-              child: const Text('Login'),
+              child: Text(s.login_btn_label),
             ),
             const SizedBox(height: 16.0),
             ElevatedButton(
               onPressed: () {
                 context.goNamed(Routes.register);
               },
-              child: const Text('To registration'),
+              child: Text(s.login_reg_nav),
             ),
             const SizedBox(height: 16.0),
             ElevatedButton(
               onPressed: () {
                 context.goNamed(Routes.resetPass);
               },
-              child: const Text('To forget password'),
+              child: Text(s.login_forget_pass),
             ),
           ],
         ),

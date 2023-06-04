@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_deep_dive/generated/l10n.dart';
 import 'package:flutter_deep_dive/src/ui/authentication/auth_store.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -11,8 +12,10 @@ class RegisterScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final authStore = ref.read(authStoreProvider.notifier);
+    final s = S.of(context);
     return Scaffold(
       appBar: AppBar(
+        /// TMP String
         title: const Text('Authentication'),
       ),
       body: Padding(
@@ -22,11 +25,11 @@ class RegisterScreen extends ConsumerWidget {
           children: [
             TextFormField(
               controller: emailController,
-              decoration: const InputDecoration(labelText: 'Email'),
+              decoration: InputDecoration(labelText: s.auth_email),
             ),
             TextFormField(
               controller: passwordController,
-              decoration: const InputDecoration(labelText: 'Password'),
+              decoration: InputDecoration(labelText: s.auth_pass),
               obscureText: true,
             ),
             const SizedBox(height: 16.0),
@@ -35,7 +38,7 @@ class RegisterScreen extends ConsumerWidget {
                 authStore.registration(
                     emailController.text, passwordController.text);
               },
-              child: const Text('Register'),
+              child: Text(s.register_btn_label),
             ),
           ],
         ),

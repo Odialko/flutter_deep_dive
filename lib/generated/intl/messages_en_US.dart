@@ -22,7 +22,15 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "firstTitle":
-            MessageLookupByLibrary.simpleMessage("Flutter Demo Home Page")
+        "app_name": MessageLookupByLibrary.simpleMessage("Multi Apps"),
+        "auth_email": MessageLookupByLibrary.simpleMessage("Email"),
+        "auth_pass": MessageLookupByLibrary.simpleMessage("Password"),
+        "login_btn_label": MessageLookupByLibrary.simpleMessage("Login"),
+        "login_forget_pass":
+            MessageLookupByLibrary.simpleMessage("Do you forget password?"),
+        "login_reg_nav": MessageLookupByLibrary.simpleMessage("Not registered"),
+        "register_btn_label": MessageLookupByLibrary.simpleMessage("Sign up"),
+        "reset_btn_label":
+            MessageLookupByLibrary.simpleMessage("Reset password")
       };
 }

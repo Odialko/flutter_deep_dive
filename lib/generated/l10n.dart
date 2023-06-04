@@ -50,11 +50,81 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
-  /// `Flutter Demo Home Page`
-  String get firstTitle {
+  /// `Multi Apps`
+  String get app_name {
     return Intl.message(
-      'Flutter Demo Home Page',
-      name: 'firstTitle',
+      'Multi Apps',
+      name: 'app_name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Login`
+  String get login_btn_label {
+    return Intl.message(
+      'Login',
+      name: 'login_btn_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Not registered`
+  String get login_reg_nav {
+    return Intl.message(
+      'Not registered',
+      name: 'login_reg_nav',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Do you forget password?`
+  String get login_forget_pass {
+    return Intl.message(
+      'Do you forget password?',
+      name: 'login_forget_pass',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Email`
+  String get auth_email {
+    return Intl.message(
+      'Email',
+      name: 'auth_email',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password`
+  String get auth_pass {
+    return Intl.message(
+      'Password',
+      name: 'auth_pass',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign up`
+  String get register_btn_label {
+    return Intl.message(
+      'Sign up',
+      name: 'register_btn_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reset password`
+  String get reset_btn_label {
+    return Intl.message(
+      'Reset password',
+      name: 'reset_btn_label',
       desc: '',
       args: [],
     );
