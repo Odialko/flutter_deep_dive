@@ -16,7 +16,7 @@ class App extends ConsumerWidget {
     return FDDTheme(
       child: Builder(builder: (context) {
         return MaterialApp.router(
-          title: 'Flutter Deep Dive',
+          title: 'Multi Apps',
           routeInformationProvider: appRouter.routeInformationProvider,
           routeInformationParser: appRouter.routeInformationParser,
           routerDelegate: appRouter.routerDelegate,
