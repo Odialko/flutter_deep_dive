@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_deep_dive/src/providers/auth_provider.dart';
 import 'package:flutter_deep_dive/src/ui/authentication/auth_store.dart';
+import 'package:flutter_deep_dive/src/ui/common/full_screen_dialog.dart';
 import 'package:flutter_deep_dive/src/ui/flutter_deep_dive_theme.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
 class HomeScreen extends ConsumerWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -31,6 +33,20 @@ class HomeScreen extends ConsumerWidget {
               authStore.signOut();
             },
             child: const Text('SigOut'),
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          ElevatedButton(
+            onPressed: () {
+              FDDFullScreenDialog.displayDialog(
+                context: context,
+                title: 'Test Dialog',
+                voidCallback: context.pop,
+                buttonLabel: 'Close dialog'
+              );
+            },
+            child: const Text('FullScreen dialog'),
           ),
         ],
       ),
