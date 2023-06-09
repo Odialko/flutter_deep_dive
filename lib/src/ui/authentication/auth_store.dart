@@ -73,7 +73,6 @@ class AuthStoreNotifier extends StateNotifier<AuthStoreState> {
       final response =
           await ref.read(authRepositoryProvider).login(email, password);
 
-      // TODO(VIK): only for login for testing rewrite after Error handling
       final userModel = UserModel(email: response?.email ?? '');
       // Update the value of userProvider using UserNotifier
       ref.read(userProvider.notifier).setUser(userModel);
