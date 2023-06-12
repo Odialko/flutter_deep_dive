@@ -67,7 +67,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '853811735380',
     projectId: 'flutter-deep-dive',
     storageBucket: 'flutter-deep-dive.appspot.com',
-    iosClientId: '853811735380-3t8a2ac88e458846pv2ngjrap4v6ct4u.apps.googleusercontent.com',
+    iosClientId:
+        '853811735380-3t8a2ac88e458846pv2ngjrap4v6ct4u.apps.googleusercontent.com',
     iosBundleId: 'com.viktor.deepdive.flutterDeepDive',
   );
 
@@ -77,7 +78,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '853811735380',
     projectId: 'flutter-deep-dive',
     storageBucket: 'flutter-deep-dive.appspot.com',
-    iosClientId: '853811735380-3t8a2ac88e458846pv2ngjrap4v6ct4u.apps.googleusercontent.com',
+    iosClientId:
+        '853811735380-3t8a2ac88e458846pv2ngjrap4v6ct4u.apps.googleusercontent.com',
     iosBundleId: 'com.viktor.deepdive.flutterDeepDive',
   );
 }
