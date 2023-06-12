@@ -40,11 +40,10 @@ class HomeScreen extends ConsumerWidget {
           ElevatedButton(
             onPressed: () {
               FDDFullScreenDialog.displayDialog(
-                context: context,
-                title: 'Test Dialog',
-                voidCallback: context.pop,
-                buttonLabel: 'Close dialog'
-              );
+                  context: context,
+                  title: 'Test Dialog',
+                  voidCallback: context.pop,
+                  buttonLabel: 'Close dialog');
             },
             child: const Text('FullScreen dialog'),
           ),

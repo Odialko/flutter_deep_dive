@@ -30,7 +30,8 @@ class FDDTheme extends InheritedWidget {
   bool updateShouldNotify(InheritedWidget oldWidget) {
     return data == (oldWidget as FDDTheme).data;
   }
-/// for ThemeMode
+
+  /// for ThemeMode
   static ThemeData get lightTheme {
     return ThemeData(
       primarySwatch: Palette.createMaterialColor(_FDDColors.lightCyan),
