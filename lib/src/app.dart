@@ -27,6 +27,7 @@ class App extends ConsumerWidget {
             GlobalCupertinoLocalizations.delegate,
           ],
           supportedLocales: S.delegate.supportedLocales,
+
           /// for ThemeMode https://www.kodeco.com/16628777-
           /// theming-a-flutter-app-getting-started
           theme: FDDTheme.lightTheme,
