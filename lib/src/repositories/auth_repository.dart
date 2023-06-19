@@ -34,11 +34,16 @@ class AuthRepository {
         email: email,
         password: password,
       );
+
+// Result
+
       return response.user;
       // if (response.user?.email != null) {
       //   return UserModel(email: response.user!.email ?? '');
       // }
       // throw Exception('User not logedIn');
+
+
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
         throw AuthException('User not found');
