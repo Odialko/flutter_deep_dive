@@ -7,3 +7,5 @@ final internetConnectionProvider = StreamProvider
   final connectivity = Connectivity();
   return connectivity.onConnectivityChanged;
 });
+
+// TODO(Vik): Need to be done like in  player

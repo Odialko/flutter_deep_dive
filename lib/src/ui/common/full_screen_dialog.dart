@@ -39,11 +39,11 @@ class FDDFullScreenDialog {
                       title ?? '',
                       style: themeData.darkPinkTextTheme.font3Emphasized,
                     ),
-                    if (voidCallback != null)
+                    if (voidCallback != null && buttonLabel != null)
                       ElevatedButton(
                         onPressed: voidCallback,
                         child: Text(
-                          buttonLabel ?? '',
+                          buttonLabel,
                           style: themeData.cocoaTextTheme.font4Emphasized,
                         ),
                       ),
