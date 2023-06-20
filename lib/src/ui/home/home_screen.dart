@@ -32,7 +32,9 @@ class HomeScreen extends ConsumerWidget {
             onPressed: () {
               authStore.signOut();
             },
-            child: const Text('SigOut'),
+            child: const Text(
+              'SigOut',
+            ),
           ),
           const SizedBox(
             height: 20,
