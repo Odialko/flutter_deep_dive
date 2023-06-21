@@ -18,7 +18,9 @@ class HomeScreen extends ConsumerWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text('Home'),
+        title: const Text(
+          'Home',
+        ),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -42,10 +44,11 @@ class HomeScreen extends ConsumerWidget {
           ElevatedButton(
             onPressed: () {
               FDDFullScreenDialog.displayDialog(
-                  context: context,
-                  title: 'Test Dialog',
-                  voidCallback: context.pop,
-                  buttonLabel: 'Close dialog');
+                context: context,
+                title: 'Test Dialog',
+                voidCallback: context.pop,
+                buttonLabel: 'Close dialog',
+              );
             },
             child: const Text('FullScreen dialog'),
           ),
