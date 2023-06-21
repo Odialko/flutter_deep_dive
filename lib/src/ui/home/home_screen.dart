@@ -18,14 +18,14 @@ class HomeScreen extends ConsumerWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text('Home'),
+        title: const Text('Home',),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Text(
-            'Hello: ${userState?.email ?? '-'}',
+            'Hello: ${userState?.email ?? '-',}',
             style: themeData.cocoaTextTheme.font0,
           ),
           ElevatedButton(
@@ -45,7 +45,7 @@ class HomeScreen extends ConsumerWidget {
                   context: context,
                   title: 'Test Dialog',
                   voidCallback: context.pop,
-                  buttonLabel: 'Close dialog');
+                  buttonLabel: 'Close dialog',);
             },
             child: const Text('FullScreen dialog'),
           ),
