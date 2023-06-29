@@ -8,6 +8,7 @@ import 'package:go_router/go_router.dart';
 
 
 // need to be rewrite
+// add side menu
 class HomeScreen extends ConsumerWidget {
   const HomeScreen({Key? key})
       : super(key: key);
