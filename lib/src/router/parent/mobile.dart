@@ -22,11 +22,6 @@ final router = Provider<GoRouter>((ref) {
         path: Routes.splash,
         builder: (context, state) => const FDDSplashScreen(),
       ),
-      // GoRoute(
-      //   name: Routes.welcome,
-      //   path: Routes.welcome,
-      //   builder: (context, state) => const WelcomeScreen(),
-      // ),
       GoRoute(
         name: Routes.login,
         path: Routes.login,
@@ -44,11 +39,6 @@ final router = Provider<GoRouter>((ref) {
           ),
         ],
       ),
-      // GoRoute(
-      //   name: Routes.error,
-      //   path: Routes.error,
-      //   builder: (context, state) => FDDFullScreenDialog(),
-      // ),
       GoRoute(
         name: Routes.home,
         path: Routes.home,
