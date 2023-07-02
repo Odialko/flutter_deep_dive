@@ -1,12 +1,12 @@
-import 'package:flutter_deep_dive/src/ui/error/error_screen.dart';
-import 'package:flutter_deep_dive/src/ui/fdd_splash/fdd_splash_screen.dart';
 import 'package:flutter_deep_dive/src/providers/auth_provider.dart';
 import 'package:flutter_deep_dive/src/router/redirect.dart';
 import 'package:flutter_deep_dive/src/router/routes.dart';
 import 'package:flutter_deep_dive/src/ui/authentication/reset_password_screen.dart';
 import 'package:flutter_deep_dive/src/ui/authentication/login_screen.dart';
 import 'package:flutter_deep_dive/src/ui/authentication/register_screen.dart';
+import 'package:flutter_deep_dive/src/ui/common/error/error_screen.dart';
 import 'package:flutter_deep_dive/src/ui/home/home_screen.dart';
+import 'package:flutter_deep_dive/src/ui/splash/fdd_splash_screen.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 

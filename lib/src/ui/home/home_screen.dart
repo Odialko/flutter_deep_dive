@@ -1,63 +1,57 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_deep_dive/src/providers/auth_provider.dart';
-import 'package:flutter_deep_dive/src/ui/authentication/auth_store.dart';
-import 'package:flutter_deep_dive/src/ui/common/full_screen_dialog.dart';
+import 'package:flutter_deep_dive/src/models/menu.dart';
+import 'package:flutter_deep_dive/src/ui/about_us/about_us.dart';
+import 'package:flutter_deep_dive/src/ui/article/articles_screen.dart';
 import 'package:flutter_deep_dive/src/ui/flutter_deep_dive_theme.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:go_router/go_router.dart';
+import 'package:flutter_deep_dive/src/ui/learning/learning_screen.dart';
+import 'package:flutter_deep_dive/src/ui/menu/menu_screen.dart';
+import 'package:flutter_deep_dive/src/utils/menu_items.dart';
+import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 
-
-// need to be rewrite
-// add side menu
-class HomeScreen extends ConsumerWidget {
-  const HomeScreen({Key? key})
-      : super(key: key);
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final authStore = ref.read(authStoreProvider.notifier);
-    final userState = ref.read(userProvider);
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  Menu currentItem = MenuItems.articles;
+  final _drawerController = ZoomDrawerController();
+
+  @override
+  Widget build(BuildContext context) {
     final themeData = FDDTheme.of(context);
 
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: const Text(
-          'Home',
+      backgroundColor: themeData.colors.lightCreamy,
+      body: ZoomDrawer(
+        controller: _drawerController,
+        mainScreen: getScreen(),
+        menuScreen: MenuScreen(
+          currentItem: currentItem,
+          onSelectedItem: (item) {
+            setState(() {
+              currentItem = item;
+            });
+            _drawerController.toggle!();
+          },
         ),
-      ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Text(
-            'Hello: ${userState?.email ?? '-'}',
-            style: themeData.cocoaTextTheme.font0,
-          ),
-          ElevatedButton(
-            onPressed: () {
-              authStore.signOut();
-            },
-            child: const Text(
-              'SigOut',
-            ),
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          ElevatedButton(
-            onPressed: () {
-              FDDFullScreenDialog.displayDialog(
-                context: context,
-                title: 'Test Dialog',
-                voidCallback: context.pop,
-                buttonLabel: 'Close dialog',
-              );
-            },
-            child: const Text('FullScreen dialog'),
-          ),
-        ],
+        showShadow: true,
       ),
     );
+  }
+
+  Widget getScreen() {
+    switch (currentItem.title) {
+      case 'News':
+        return const ArticlesScreen();
+      case 'Learning':
+        return const LearningScreen();
+      case 'About Us':
+        return const AboutUsScreen();
+      default:
+        return const ArticlesScreen();
+    }
   }
 }
