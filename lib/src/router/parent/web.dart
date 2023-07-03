@@ -47,7 +47,7 @@ final router = Provider<GoRouter>((ref) {
       GoRoute(
         name: Routes.home,
         path: Routes.home,
-        builder: (context, state) => const HomeScreen(),
+        builder: (context, state) => HomeScreen(),
       ),
     ],
     errorBuilder: (context, state) {
