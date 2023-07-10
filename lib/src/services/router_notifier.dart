@@ -9,6 +9,7 @@ class RouterNotifier extends ChangeNotifier {
     ref.listen(authStateChangesProvider, (previous, next) {
       if (next.value != null) {
         final userModel = UserModel(email: next.value?.email ?? '');
+
         // Update the value of userProvider using UserNotifier
         ref.read(userProvider.notifier).setUser(userModel);
       }
