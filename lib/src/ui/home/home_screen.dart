@@ -29,6 +29,7 @@ class HomeScreen extends ConsumerWidget {
           },
         ),
         showShadow: true,
+        drawerShadowsBackgroundColor: themeData.colors.powderPink,
       ),
     );
   }
