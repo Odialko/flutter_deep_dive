@@ -81,8 +81,8 @@ class FDDDefaultBackendException extends FDDGenericException {
   }
 }
 
-class  FDDBackendException extends FDDGenericException {
-  const  FDDBackendException({
+class FDDBackendException extends FDDGenericException {
+  const FDDBackendException({
     required super.title,
     required super.message,
     this.callback,
@@ -127,9 +127,9 @@ class FDDInvalidResponseException extends FDDGenericException {
 class FDDUnknownException extends FDDGenericException {
   const FDDUnknownException({super.error})
       : super(
-    title: 'Something went wrong!',
-    message: 'Something unusual happened! just try again',
-  );
+          title: 'Something went wrong!',
+          message: 'Something unusual happened! just try again',
+        );
 
   @override
   String buildTranslatedMessage(BuildContext context) {
