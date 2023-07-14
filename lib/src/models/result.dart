@@ -13,7 +13,8 @@ typedef BackendExceptionBuilder = FDDBackendException? Function(
 @freezed
 class Result<T> with _$Result<T> {
   const factory Result.data(T value) = _ResultData<T>;
-  const factory Result.error(FDDGenericException fddException) = _ResultError<T>;
+  const factory Result.error(FDDGenericException fddException) =
+      _ResultError<T>;
 
   static Future<Result<D>> repositoryGuard<R, D extends Object?>({
     required FutureOr<Response<R>> Function() responseBuilder,
