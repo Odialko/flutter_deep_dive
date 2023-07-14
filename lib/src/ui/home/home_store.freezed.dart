@@ -17,7 +17,6 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$HomeStore {
   Menu get currentItem => throw _privateConstructorUsedError;
-  bool get isMenuOpen => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $HomeStoreCopyWith<HomeStore> get copyWith =>
@@ -29,7 +28,7 @@ abstract class $HomeStoreCopyWith<$Res> {
   factory $HomeStoreCopyWith(HomeStore value, $Res Function(HomeStore) then) =
       _$HomeStoreCopyWithImpl<$Res, HomeStore>;
   @useResult
-  $Res call({Menu currentItem, bool isMenuOpen});
+  $Res call({Menu currentItem});
 
   $MenuCopyWith<$Res> get currentItem;
 }
@@ -48,17 +47,12 @@ class _$HomeStoreCopyWithImpl<$Res, $Val extends HomeStore>
   @override
   $Res call({
     Object? currentItem = null,
-    Object? isMenuOpen = null,
   }) {
     return _then(_value.copyWith(
       currentItem: null == currentItem
           ? _value.currentItem
           : currentItem // ignore: cast_nullable_to_non_nullable
               as Menu,
-      isMenuOpen: null == isMenuOpen
-          ? _value.isMenuOpen
-          : isMenuOpen // ignore: cast_nullable_to_non_nullable
-              as bool,
     ) as $Val);
   }
 
@@ -78,7 +72,7 @@ abstract class _$$_HomeStoreCopyWith<$Res> implements $HomeStoreCopyWith<$Res> {
       __$$_HomeStoreCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({Menu currentItem, bool isMenuOpen});
+  $Res call({Menu currentItem});
 
   @override
   $MenuCopyWith<$Res> get currentItem;
@@ -96,17 +90,12 @@ class __$$_HomeStoreCopyWithImpl<$Res>
   @override
   $Res call({
     Object? currentItem = null,
-    Object? isMenuOpen = null,
   }) {
     return _then(_$_HomeStore(
       currentItem: null == currentItem
           ? _value.currentItem
           : currentItem // ignore: cast_nullable_to_non_nullable
               as Menu,
-      isMenuOpen: null == isMenuOpen
-          ? _value.isMenuOpen
-          : isMenuOpen // ignore: cast_nullable_to_non_nullable
-              as bool,
     ));
   }
 }
@@ -114,19 +103,15 @@ class __$$_HomeStoreCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_HomeStore implements _HomeStore {
-  const _$_HomeStore(
-      {this.currentItem = MenuItems.articles, this.isMenuOpen = false});
+  const _$_HomeStore({this.currentItem = MenuItems.articles});
 
   @override
   @JsonKey()
   final Menu currentItem;
-  @override
-  @JsonKey()
-  final bool isMenuOpen;
 
   @override
   String toString() {
-    return 'HomeStore(currentItem: $currentItem, isMenuOpen: $isMenuOpen)';
+    return 'HomeStore(currentItem: $currentItem)';
   }
 
   @override
@@ -135,13 +120,11 @@ class _$_HomeStore implements _HomeStore {
         (other.runtimeType == runtimeType &&
             other is _$_HomeStore &&
             (identical(other.currentItem, currentItem) ||
-                other.currentItem == currentItem) &&
-            (identical(other.isMenuOpen, isMenuOpen) ||
-                other.isMenuOpen == isMenuOpen));
+                other.currentItem == currentItem));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, currentItem, isMenuOpen);
+  int get hashCode => Object.hash(runtimeType, currentItem);
 
   @JsonKey(ignore: true)
   @override
@@ -151,13 +134,10 @@ class _$_HomeStore implements _HomeStore {
 }
 
 abstract class _HomeStore implements HomeStore {
-  const factory _HomeStore({final Menu currentItem, final bool isMenuOpen}) =
-      _$_HomeStore;
+  const factory _HomeStore({final Menu currentItem}) = _$_HomeStore;
 
   @override
   Menu get currentItem;
-  @override
-  bool get isMenuOpen;
   @override
   @JsonKey(ignore: true)
   _$$_HomeStoreCopyWith<_$_HomeStore> get copyWith =>
