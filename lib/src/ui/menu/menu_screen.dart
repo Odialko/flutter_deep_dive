@@ -38,7 +38,9 @@ class MenuScreen extends ConsumerWidget {
               flex: 2,
             ),
             Container(
-              padding: const EdgeInsets.symmetric(horizontal: 16,),
+              padding: const EdgeInsets.symmetric(
+                horizontal: 16,
+              ),
               width: MediaQuery.of(context).size.width,
               child: ElevatedButton(
                 onPressed: () {
