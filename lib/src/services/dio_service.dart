@@ -18,8 +18,6 @@ class DioService {
       );
 
       if (response.statusCode == 200) {
-        print('=================makeRequest===== ${response.runtimeType}');
-        print('=================makeRequest===== ${response.data}');
         return response;
       } else {
         throw Exception('Failed to load top stories');
