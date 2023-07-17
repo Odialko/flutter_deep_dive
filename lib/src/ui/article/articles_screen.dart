@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_deep_dive/src/models/article.dart';
 import 'package:flutter_deep_dive/src/ui/article/article_store.dart';
 import 'package:flutter_deep_dive/src/ui/common/burger/burger_widget.dart';
 import 'package:flutter_deep_dive/src/ui/flutter_deep_dive_theme.dart';
@@ -21,9 +22,6 @@ class ArticlesScreen extends ConsumerWidget {
         leading: const BurgerWidget(),
       ),
       body: articleStore.articleState.when(
-        init: () => const Center(
-          child: Text('Init'),
-        ),
         loading: () => Center(
           child: Container(
             margin: const EdgeInsets.only(right: 20),
@@ -35,9 +33,24 @@ class ArticlesScreen extends ConsumerWidget {
           ),
         ),
         error: (String? errorText) => Text(errorText ?? 'some error'),
-        loaded: () => const Center(
-          child: Text('Loaded'),
-        ),
+        loaded: (List<Article> articles) {
+
+          // TODO: implement list view correct
+          return ListView(
+            children: [
+              for (var article in articles) ...[
+                Row(
+                  children: [
+                    Text(article.title ?? ''),
+                  ],
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+              ],
+            ],
+          );
+        },
       ),
     );
   }

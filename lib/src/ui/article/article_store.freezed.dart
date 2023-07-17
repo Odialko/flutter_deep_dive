@@ -18,32 +18,28 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$ArticleState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() init,
     required TResult Function() loading,
     required TResult Function(String? errorText) error,
-    required TResult Function() loaded,
+    required TResult Function(List<Article> articlesList) loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? init,
     TResult? Function()? loading,
     TResult? Function(String? errorText)? error,
-    TResult? Function()? loaded,
+    TResult? Function(List<Article> articlesList)? loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? init,
     TResult Function()? loading,
     TResult Function(String? errorText)? error,
-    TResult Function()? loaded,
+    TResult Function(List<Article> articlesList)? loaded,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ArticleStateInit value) init,
     required TResult Function(ArticleStateLoading value) loading,
     required TResult Function(ArticleStateError value) error,
     required TResult Function(ArticleStateLoaded value) loaded,
@@ -51,7 +47,6 @@ mixin _$ArticleState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ArticleStateInit value)? init,
     TResult? Function(ArticleStateLoading value)? loading,
     TResult? Function(ArticleStateError value)? error,
     TResult? Function(ArticleStateLoaded value)? loaded,
@@ -59,7 +54,6 @@ mixin _$ArticleState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ArticleStateInit value)? init,
     TResult Function(ArticleStateLoading value)? loading,
     TResult Function(ArticleStateError value)? error,
     TResult Function(ArticleStateLoaded value)? loaded,
@@ -84,120 +78,6 @@ class _$ArticleStateCopyWithImpl<$Res, $Val extends ArticleState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
-}
-
-/// @nodoc
-abstract class _$$ArticleStateInitCopyWith<$Res> {
-  factory _$$ArticleStateInitCopyWith(
-          _$ArticleStateInit value, $Res Function(_$ArticleStateInit) then) =
-      __$$ArticleStateInitCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$ArticleStateInitCopyWithImpl<$Res>
-    extends _$ArticleStateCopyWithImpl<$Res, _$ArticleStateInit>
-    implements _$$ArticleStateInitCopyWith<$Res> {
-  __$$ArticleStateInitCopyWithImpl(
-      _$ArticleStateInit _value, $Res Function(_$ArticleStateInit) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$ArticleStateInit implements ArticleStateInit {
-  const _$ArticleStateInit();
-
-  @override
-  String toString() {
-    return 'ArticleState.init()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$ArticleStateInit);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() init,
-    required TResult Function() loading,
-    required TResult Function(String? errorText) error,
-    required TResult Function() loaded,
-  }) {
-    return init();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? init,
-    TResult? Function()? loading,
-    TResult? Function(String? errorText)? error,
-    TResult? Function()? loaded,
-  }) {
-    return init?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? init,
-    TResult Function()? loading,
-    TResult Function(String? errorText)? error,
-    TResult Function()? loaded,
-    required TResult orElse(),
-  }) {
-    if (init != null) {
-      return init();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(ArticleStateInit value) init,
-    required TResult Function(ArticleStateLoading value) loading,
-    required TResult Function(ArticleStateError value) error,
-    required TResult Function(ArticleStateLoaded value) loaded,
-  }) {
-    return init(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ArticleStateInit value)? init,
-    TResult? Function(ArticleStateLoading value)? loading,
-    TResult? Function(ArticleStateError value)? error,
-    TResult? Function(ArticleStateLoaded value)? loaded,
-  }) {
-    return init?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(ArticleStateInit value)? init,
-    TResult Function(ArticleStateLoading value)? loading,
-    TResult Function(ArticleStateError value)? error,
-    TResult Function(ArticleStateLoaded value)? loaded,
-    required TResult orElse(),
-  }) {
-    if (init != null) {
-      return init(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class ArticleStateInit implements ArticleState {
-  const factory ArticleStateInit() = _$ArticleStateInit;
 }
 
 /// @nodoc
@@ -238,10 +118,9 @@ class _$ArticleStateLoading implements ArticleStateLoading {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() init,
     required TResult Function() loading,
     required TResult Function(String? errorText) error,
-    required TResult Function() loaded,
+    required TResult Function(List<Article> articlesList) loaded,
   }) {
     return loading();
   }
@@ -249,10 +128,9 @@ class _$ArticleStateLoading implements ArticleStateLoading {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? init,
     TResult? Function()? loading,
     TResult? Function(String? errorText)? error,
-    TResult? Function()? loaded,
+    TResult? Function(List<Article> articlesList)? loaded,
   }) {
     return loading?.call();
   }
@@ -260,10 +138,9 @@ class _$ArticleStateLoading implements ArticleStateLoading {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? init,
     TResult Function()? loading,
     TResult Function(String? errorText)? error,
-    TResult Function()? loaded,
+    TResult Function(List<Article> articlesList)? loaded,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -275,7 +152,6 @@ class _$ArticleStateLoading implements ArticleStateLoading {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ArticleStateInit value) init,
     required TResult Function(ArticleStateLoading value) loading,
     required TResult Function(ArticleStateError value) error,
     required TResult Function(ArticleStateLoaded value) loaded,
@@ -286,7 +162,6 @@ class _$ArticleStateLoading implements ArticleStateLoading {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ArticleStateInit value)? init,
     TResult? Function(ArticleStateLoading value)? loading,
     TResult? Function(ArticleStateError value)? error,
     TResult? Function(ArticleStateLoaded value)? loaded,
@@ -297,7 +172,6 @@ class _$ArticleStateLoading implements ArticleStateLoading {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ArticleStateInit value)? init,
     TResult Function(ArticleStateLoading value)? loading,
     TResult Function(ArticleStateError value)? error,
     TResult Function(ArticleStateLoaded value)? loaded,
@@ -379,10 +253,9 @@ class _$ArticleStateError implements ArticleStateError {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() init,
     required TResult Function() loading,
     required TResult Function(String? errorText) error,
-    required TResult Function() loaded,
+    required TResult Function(List<Article> articlesList) loaded,
   }) {
     return error(errorText);
   }
@@ -390,10 +263,9 @@ class _$ArticleStateError implements ArticleStateError {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? init,
     TResult? Function()? loading,
     TResult? Function(String? errorText)? error,
-    TResult? Function()? loaded,
+    TResult? Function(List<Article> articlesList)? loaded,
   }) {
     return error?.call(errorText);
   }
@@ -401,10 +273,9 @@ class _$ArticleStateError implements ArticleStateError {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? init,
     TResult Function()? loading,
     TResult Function(String? errorText)? error,
-    TResult Function()? loaded,
+    TResult Function(List<Article> articlesList)? loaded,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -416,7 +287,6 @@ class _$ArticleStateError implements ArticleStateError {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ArticleStateInit value) init,
     required TResult Function(ArticleStateLoading value) loading,
     required TResult Function(ArticleStateError value) error,
     required TResult Function(ArticleStateLoaded value) loaded,
@@ -427,7 +297,6 @@ class _$ArticleStateError implements ArticleStateError {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ArticleStateInit value)? init,
     TResult? Function(ArticleStateLoading value)? loading,
     TResult? Function(ArticleStateError value)? error,
     TResult? Function(ArticleStateLoaded value)? loaded,
@@ -438,7 +307,6 @@ class _$ArticleStateError implements ArticleStateError {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ArticleStateInit value)? init,
     TResult Function(ArticleStateLoading value)? loading,
     TResult Function(ArticleStateError value)? error,
     TResult Function(ArticleStateLoaded value)? loaded,
@@ -466,6 +334,8 @@ abstract class _$$ArticleStateLoadedCopyWith<$Res> {
   factory _$$ArticleStateLoadedCopyWith(_$ArticleStateLoaded value,
           $Res Function(_$ArticleStateLoaded) then) =
       __$$ArticleStateLoadedCopyWithImpl<$Res>;
+  @useResult
+  $Res call({List<Article> articlesList});
 }
 
 /// @nodoc
@@ -475,60 +345,91 @@ class __$$ArticleStateLoadedCopyWithImpl<$Res>
   __$$ArticleStateLoadedCopyWithImpl(
       _$ArticleStateLoaded _value, $Res Function(_$ArticleStateLoaded) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? articlesList = null,
+  }) {
+    return _then(_$ArticleStateLoaded(
+      articlesList: null == articlesList
+          ? _value._articlesList
+          : articlesList // ignore: cast_nullable_to_non_nullable
+              as List<Article>,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$ArticleStateLoaded implements ArticleStateLoaded {
-  const _$ArticleStateLoaded();
+  const _$ArticleStateLoaded({final List<Article> articlesList = const []})
+      : _articlesList = articlesList;
+
+  final List<Article> _articlesList;
+  @override
+  @JsonKey()
+  List<Article> get articlesList {
+    if (_articlesList is EqualUnmodifiableListView) return _articlesList;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_articlesList);
+  }
 
   @override
   String toString() {
-    return 'ArticleState.loaded()';
+    return 'ArticleState.loaded(articlesList: $articlesList)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$ArticleStateLoaded);
+        (other.runtimeType == runtimeType &&
+            other is _$ArticleStateLoaded &&
+            const DeepCollectionEquality()
+                .equals(other._articlesList, _articlesList));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_articlesList));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ArticleStateLoadedCopyWith<_$ArticleStateLoaded> get copyWith =>
+      __$$ArticleStateLoadedCopyWithImpl<_$ArticleStateLoaded>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() init,
     required TResult Function() loading,
     required TResult Function(String? errorText) error,
-    required TResult Function() loaded,
+    required TResult Function(List<Article> articlesList) loaded,
   }) {
-    return loaded();
+    return loaded(articlesList);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? init,
     TResult? Function()? loading,
     TResult? Function(String? errorText)? error,
-    TResult? Function()? loaded,
+    TResult? Function(List<Article> articlesList)? loaded,
   }) {
-    return loaded?.call();
+    return loaded?.call(articlesList);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? init,
     TResult Function()? loading,
     TResult Function(String? errorText)? error,
-    TResult Function()? loaded,
+    TResult Function(List<Article> articlesList)? loaded,
     required TResult orElse(),
   }) {
     if (loaded != null) {
-      return loaded();
+      return loaded(articlesList);
     }
     return orElse();
   }
@@ -536,7 +437,6 @@ class _$ArticleStateLoaded implements ArticleStateLoaded {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ArticleStateInit value) init,
     required TResult Function(ArticleStateLoading value) loading,
     required TResult Function(ArticleStateError value) error,
     required TResult Function(ArticleStateLoaded value) loaded,
@@ -547,7 +447,6 @@ class _$ArticleStateLoaded implements ArticleStateLoaded {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ArticleStateInit value)? init,
     TResult? Function(ArticleStateLoading value)? loading,
     TResult? Function(ArticleStateError value)? error,
     TResult? Function(ArticleStateLoaded value)? loaded,
@@ -558,7 +457,6 @@ class _$ArticleStateLoaded implements ArticleStateLoaded {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ArticleStateInit value)? init,
     TResult Function(ArticleStateLoading value)? loading,
     TResult Function(ArticleStateError value)? error,
     TResult Function(ArticleStateLoaded value)? loaded,
@@ -572,7 +470,13 @@ class _$ArticleStateLoaded implements ArticleStateLoaded {
 }
 
 abstract class ArticleStateLoaded implements ArticleState {
-  const factory ArticleStateLoaded() = _$ArticleStateLoaded;
+  const factory ArticleStateLoaded({final List<Article> articlesList}) =
+      _$ArticleStateLoaded;
+
+  List<Article> get articlesList;
+  @JsonKey(ignore: true)
+  _$$ArticleStateLoadedCopyWith<_$ArticleStateLoaded> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
