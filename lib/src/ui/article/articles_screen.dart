@@ -34,13 +34,15 @@ class ArticlesScreen extends ConsumerWidget {
         ),
         error: (String? errorText) => Text(errorText ?? 'some error'),
         loaded: (List<Article> articles) {
-
           // TODO: implement list view correct
           return ListView(
             children: [
               for (var article in articles) ...[
                 Row(
                   children: [
+                    article.multimedia != null && article.multimedia!.isNotEmpty
+                        ? Image.network(article.multimedia![0].url ?? '')
+                        : Container(),
                     Text(article.title ?? ''),
                   ],
                 ),
