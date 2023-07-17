@@ -9,20 +9,19 @@ class DioService {
     _dio.interceptors.add(DioInterceptor());
   }
 
-  Future<Response> makeRequest<T>({
-    String call = '/content/all/automobiles.json',
-    Map<String, dynamic>? queryParameters,
+  Future<Response> getArticles<T>({
+    String call = '/content/all/all.json',
+    String limit = '20',
+    String offset = '0',
   }) async {
     try {
       final response = await _dio.get(
-        'https://api.nytimes.com/svc/news/v3$call',
-        queryParameters: queryParameters,
+        'https://api.nytimes.com/svc/news/v3$call?limit=$limit&offset=$offset',
       );
-
       if (response.statusCode == 200) {
         return response;
       } else {
-        throw Exception('Failed to load top stories');
+        throw Exception('Dio Ex: => Failed to load top stories');
       }
     } catch (e) {
       throw Exception('Failed to connect to the API');

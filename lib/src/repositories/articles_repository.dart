@@ -10,7 +10,7 @@ class ArticlesRepository {
 
   Future<Result<List<Article>>> getAllArticles() async {
     return Result.repositoryGuard(
-      responseBuilder: () => _dio.makeRequest(),
+      responseBuilder: () => _dio.getArticles(),
       dataBuilder: (Response response) {
         final data = response.data?['results'] as List<dynamic>;
         final articles = data
