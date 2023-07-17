@@ -10,6 +10,8 @@ typedef BackendExceptionBuilder = FDDBackendException? Function(
   DioException error,
 );
 
+
+// TODO(Vik): figure out errors better
 @freezed
 class Result<T> with _$Result<T> {
   const factory Result.data(T value) = _ResultData<T>;

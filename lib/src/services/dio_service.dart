@@ -1,5 +1,7 @@
 import 'package:dio/dio.dart';
 
+// TODO(Vik): rewrite Dio
+
 class DioService {
   final Dio _dio;
 
