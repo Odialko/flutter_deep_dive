@@ -34,25 +34,115 @@ class ArticlesScreen extends ConsumerWidget {
         ),
         error: (String? errorText) => Text(errorText ?? 'some error'),
         loaded: (List<Article> articles) {
-          // TODO: implement list view correct
-          return ListView(
-            children: [
-              for (var article in articles) ...[
-                Row(
-                  children: [
-                    article.multimedia != null && article.multimedia!.isNotEmpty
-                        ? Image.network(article.multimedia![0].url ?? '')
-                        : Container(),
-                    Text(article.title ?? ''),
-                  ],
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
+          return Padding(
+            padding: const EdgeInsets.only(
+              left: 20,
+              right: 20,
+            ),
+            child: ListView(
+              children: [
+                for (var article in articles) ...[
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  ArticleTile(
+                    article: article,
+                  ),
+                  if (articles.last == article)
+                    const SizedBox(
+                      height: 20,
+                    ),
+                ],
               ],
-            ],
+            ),
           );
         },
+      ),
+    );
+  }
+}
+
+class ArticleTile extends StatelessWidget {
+  const ArticleTile({
+    super.key,
+    required this.article,
+  });
+
+  final Article article;
+
+  @override
+  Widget build(BuildContext context) {
+    final themeData = FDDTheme.of(context);
+
+    return Container(
+      decoration: BoxDecoration(
+        color: themeData.colors.champagne,
+        borderRadius: const BorderRadius.all(Radius.circular(8)),
+      ),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          ClipRRect(
+            borderRadius: const BorderRadius.only(
+              topLeft: Radius.circular(8),
+              bottomLeft: Radius.circular(8),
+            ),
+            child: Image.network(
+              article.multimedia[0].url ?? '',
+              loadingBuilder: (BuildContext context, Widget child,
+                  ImageChunkEvent? loadingProgress) {
+                if (loadingProgress != null) {
+                  /// Here could be some placeHolder animation
+                  return Container(
+                    height: 75,
+                    width: 75,
+                    color: themeData.colors.creamy,
+                  );
+                }
+                return child;
+              },
+              errorBuilder: (
+                BuildContext context,
+                Object error,
+                StackTrace? stackTrace,
+              ) {
+                return Container(
+                  height: 75,
+                  width: 75,
+                  color: themeData.colors.creamy,
+                );
+              },
+            ),
+          ),
+          const SizedBox(
+            width: 20,
+          ),
+          Flexible(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(vertical: 8),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    article.title ?? '',
+                    style: themeData.cocoaTextTheme.font4Emphasized,
+                    overflow: TextOverflow.ellipsis,
+                    maxLines: 2,
+                  ),
+                  Text(
+                    article.abstract ?? '',
+                    style: themeData.cocoaTextTheme.font4,
+                    overflow: TextOverflow.ellipsis,
+                    maxLines: 1,
+                  ),
+                ],
+              ),
+            ),
+          ),
+          const SizedBox(
+            width: 8,
+          ),
+        ],
       ),
     );
   }
