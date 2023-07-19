@@ -2,6 +2,9 @@ import 'package:dio/dio.dart';
 
 // TODO(Vik): rewrite Dio
 
+/// newsAPI: 169390742d34466d980c5c867d6e2fa0
+/// nytimes: cPGg2RAxGV1J1csdeTh4YiPkNh1ws6Go
+
 class DioService {
   final Dio _dio;
 
