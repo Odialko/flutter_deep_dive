@@ -13,8 +13,7 @@ part 'article_store.freezed.dart';
 ///
 final articleStoreProvider =
     StateNotifierProvider<ArticleNotifier, ArticleStoreState>(
-  (ref) => ArticleNotifier(ref: ref)
-    ..getArticles(),
+  (ref) => ArticleNotifier(ref: ref)..getArticles(),
 );
 
 @freezed
@@ -44,26 +43,12 @@ class ArticleNotifier extends StateNotifier<ArticleStoreState> {
 
   final Ref ref;
 
-  Future<void> getArticles() async {
-    state = state.copyWith(articleState: const ArticleState.loading());
-    final repo = await ref.read(articlesProvider).getAllArticles();
-    repo.when(
-      data: (data) {
-        state = state.copyWith(
-          articleState: ArticleState.loaded(
-            articlesList: data,
-          ),
-        );
-      },
-      error: (error) {
-        state = state.copyWith(
-          articleState: ArticleState.error(errorText: error.title),
-        );
-      },
-    );
-  }
-
-  Future<void> updateArticles() async {
+  Future<void> getArticles({bool isUpdate = false}) async {
+    if (isUpdate) {
+      state = state.copyWith(
+        articleState: const ArticleState.loading(),
+      );
+    }
     final repo = await ref.read(articlesProvider).getAllArticles();
     repo.when(
       data: (data) {

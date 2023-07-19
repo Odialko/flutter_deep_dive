@@ -25,7 +25,7 @@ class ArticlesScreen extends ConsumerWidget {
       body: RefreshIndicator(
         color: themeData.colors.cocoa,
         onRefresh: () =>
-            articleStoreNotifier.updateArticles(), // Обробник оновлення
+            articleStoreNotifier.getArticles(isUpdate: true), // Обробник оновлення
         child: articleStore.articleState.when(
           loading: () => Center(
             child: Container(
