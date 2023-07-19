@@ -62,4 +62,22 @@ class ArticleNotifier extends StateNotifier<ArticleStoreState> {
       },
     );
   }
+
+  Future<void> updateArticles() async {
+    final repo = await ref.read(articlesProvider).getAllArticles();
+    repo.when(
+      data: (data) {
+        state = state.copyWith(
+          articleState: ArticleState.loaded(
+            articlesList: data,
+          ),
+        );
+      },
+      error: (error) {
+        state = state.copyWith(
+          articleState: ArticleState.error(errorText: error.title),
+        );
+      },
+    );
+  }
 }

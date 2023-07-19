@@ -11,6 +11,7 @@ class ArticlesScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final articleStore = ref.watch(articleStoreProvider);
+    final articleStoreNotifier = ref.read(articleStoreProvider.notifier);
 
     final themeData = FDDTheme.of(context);
     return Scaffold(
@@ -21,42 +22,47 @@ class ArticlesScreen extends ConsumerWidget {
         ),
         leading: const BurgerWidget(),
       ),
-      body: articleStore.articleState.when(
-        loading: () => Center(
-          child: Container(
-            margin: const EdgeInsets.only(right: 20),
-            width: 30,
-            height: 30,
-            child: CircularProgressIndicator(
-              color: themeData.colors.darkGray,
+      body: RefreshIndicator(
+        color: themeData.colors.cocoa,
+        onRefresh: () =>
+            articleStoreNotifier.updateArticles(), // Обробник оновлення
+        child: articleStore.articleState.when(
+          loading: () => Center(
+            child: Container(
+              margin: const EdgeInsets.only(right: 20),
+              width: 30,
+              height: 30,
+              child: CircularProgressIndicator(
+                color: themeData.colors.darkGray,
+              ),
             ),
           ),
-        ),
-        error: (String? errorText) => Text(errorText ?? 'some error'),
-        loaded: (List<Article> articles) {
-          return Padding(
-            padding: const EdgeInsets.only(
-              left: 20,
-              right: 20,
-            ),
-            child: ListView(
-              children: [
-                for (var article in articles) ...[
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  ArticleTile(
-                    article: article,
-                  ),
-                  if (articles.last == article)
+          error: (String? errorText) => Text(errorText ?? 'some error'),
+          loaded: (List<Article> articles) {
+            return Padding(
+              padding: const EdgeInsets.only(
+                left: 20,
+                right: 20,
+              ),
+              child: ListView(
+                children: [
+                  for (var article in articles) ...[
                     const SizedBox(
                       height: 20,
                     ),
+                    ArticleTile(
+                      article: article,
+                    ),
+                    if (articles.last == article)
+                      const SizedBox(
+                        height: 20,
+                      ),
+                  ],
                 ],
-              ],
-            ),
-          );
-        },
+              ),
+            );
+          },
+        ),
       ),
     );
   }
