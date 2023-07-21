@@ -30,6 +30,25 @@ class DioService {
       throw Exception('Failed to connect to the API');
     }
   }
+
+  Future<Response> getSpaceArticles<T>({
+    String call = '/content/all/all.json',
+    int limit = 50,
+    String offset = '0',
+  }) async {
+    try {
+      final response = await _dio.get(
+        'https://api.spaceflightnewsapi.net/v4/articles/?limit=$limit',
+      );
+      if (response.statusCode == 200) {
+        return response;
+      } else {
+        throw Exception('Dio Ex: => Failed to load top stories');
+      }
+    } catch (e) {
+      throw Exception('Failed to connect to the API');
+    }
+  }
 }
 
 class DioInterceptor extends Interceptor {

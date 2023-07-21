@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_deep_dive/src/models/article.dart';
+import 'package:flutter_deep_dive/src/models/space_article.dart';
 import 'package:flutter_deep_dive/src/ui/article/article_store.dart';
 import 'package:flutter_deep_dive/src/ui/common/burger/burger_widget.dart';
 import 'package:flutter_deep_dive/src/ui/flutter_deep_dive_theme.dart';
@@ -10,23 +11,24 @@ class ArticlesScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final articleStore = ref.watch(articleStoreProvider);
-    final articleStoreNotifier = ref.read(articleStoreProvider.notifier);
+    final spaceArticleStore = ref.watch(spaceArticleStoreProvider);
+    final spaceArticleStoreNotifier =
+        ref.read(spaceArticleStoreProvider.notifier);
 
     final themeData = FDDTheme.of(context);
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Articles Screen',
+          'Space Articles Screen',
           style: themeData.cocoaTextTheme.font4Emphasized,
         ),
         leading: const BurgerWidget(),
       ),
       body: RefreshIndicator(
         color: themeData.colors.cocoa,
-        onRefresh: () =>
-            articleStoreNotifier.getArticles(isUpdate: true), // Обробник оновлення
-        child: articleStore.articleState.when(
+        onRefresh: () => spaceArticleStoreNotifier.getSpaceArticles(
+            isUpdate: true), // Обробник оновлення
+        child: spaceArticleStore.spaceArticleState.when(
           loading: () => Center(
             child: Container(
               margin: const EdgeInsets.only(right: 20),
@@ -38,7 +40,7 @@ class ArticlesScreen extends ConsumerWidget {
             ),
           ),
           error: (String? errorText) => Text(errorText ?? 'some error'),
-          loaded: (List<Article> articles) {
+          loaded: (List<SpaceArticle> articles) {
             return Padding(
               padding: const EdgeInsets.only(
                 left: 20,
@@ -65,6 +67,57 @@ class ArticlesScreen extends ConsumerWidget {
         ),
       ),
     );
+    // return Scaffold(
+    //   appBar: AppBar(
+    //     title: Text(
+    //       'Articles Screen',
+    //       style: themeData.cocoaTextTheme.font4Emphasized,
+    //     ),
+    //     leading: const BurgerWidget(),
+    //   ),
+    //   body: RefreshIndicator(
+    //     color: themeData.colors.cocoa,
+    //     onRefresh: () =>
+    //         articleStoreNotifier.getArticles(isUpdate: true), // Обробник оновлення
+    //     child: articleStore.articleState.when(
+    //       loading: () => Center(
+    //         child: Container(
+    //           margin: const EdgeInsets.only(right: 20),
+    //           width: 30,
+    //           height: 30,
+    //           child: CircularProgressIndicator(
+    //             color: themeData.colors.darkGray,
+    //           ),
+    //         ),
+    //       ),
+    //       error: (String? errorText) => Text(errorText ?? 'some error'),
+    //       loaded: (List<Article> articles) {
+    //         return Padding(
+    //           padding: const EdgeInsets.only(
+    //             left: 20,
+    //             right: 20,
+    //           ),
+    //           child: ListView(
+    //             children: [
+    //               for (var article in articles) ...[
+    //                 const SizedBox(
+    //                   height: 20,
+    //                 ),
+    //                 ArticleTile(
+    //                   article: article,
+    //                 ),
+    //                 if (articles.last == article)
+    //                   const SizedBox(
+    //                     height: 20,
+    //                   ),
+    //               ],
+    //             ],
+    //           ),
+    //         );
+    //       },
+    //     ),
+    //   ),
+    // );
   }
 }
 
@@ -74,12 +127,11 @@ class ArticleTile extends StatelessWidget {
     required this.article,
   });
 
-  final Article article;
+  final SpaceArticle article;
 
   @override
   Widget build(BuildContext context) {
     final themeData = FDDTheme.of(context);
-
     return Container(
       decoration: BoxDecoration(
         color: themeData.colors.champagne,
@@ -93,31 +145,36 @@ class ArticleTile extends StatelessWidget {
               topLeft: Radius.circular(8),
               bottomLeft: Radius.circular(8),
             ),
-            child: Image.network(
-              article.multimedia[0].url ?? '',
-              loadingBuilder: (BuildContext context, Widget child,
-                  ImageChunkEvent? loadingProgress) {
-                if (loadingProgress != null) {
-                  /// Here could be some placeHolder animation
+            child: SizedBox(
+              height: 124,
+              width: 124,
+              child: Image.network(
+                article.imageUrl ?? '',
+                fit: BoxFit.cover,
+                loadingBuilder: (BuildContext context, Widget child,
+                    ImageChunkEvent? loadingProgress) {
+                  if (loadingProgress != null) {
+                    /// Here could be some placeHolder animation
+                    return Container(
+                      height: 75,
+                      width: 75,
+                      color: themeData.colors.creamy,
+                    );
+                  }
+                  return child;
+                },
+                errorBuilder: (
+                  BuildContext context,
+                  Object error,
+                  StackTrace? stackTrace,
+                ) {
                   return Container(
-                    height: 75,
-                    width: 75,
+                    height: 124,
+                    width: 124,
                     color: themeData.colors.creamy,
                   );
-                }
-                return child;
-              },
-              errorBuilder: (
-                BuildContext context,
-                Object error,
-                StackTrace? stackTrace,
-              ) {
-                return Container(
-                  height: 75,
-                  width: 75,
-                  color: themeData.colors.creamy,
-                );
-              },
+                },
+              ),
             ),
           ),
           const SizedBox(
@@ -135,11 +192,31 @@ class ArticleTile extends StatelessWidget {
                     overflow: TextOverflow.ellipsis,
                     maxLines: 2,
                   ),
+                  const SizedBox(
+                    height: 6,
+                  ),
                   Text(
-                    article.abstract ?? '',
+                    article.summary ?? '',
                     style: themeData.cocoaTextTheme.font4,
                     overflow: TextOverflow.ellipsis,
-                    maxLines: 1,
+                    maxLines: 2,
+                  ),
+                  const SizedBox(
+                    height: 6,
+                  ),
+                  RichText(
+                    text: TextSpan(
+                      text: 'Source: ',
+                      style: themeData.cocoaTextTheme.font4,
+                      children: [
+                        TextSpan(
+                          text: article.newsSite ?? '',
+                          style: themeData.cocoaTextTheme.font4Emphasized,
+                        )
+                      ],
+                    ),
+                    overflow: TextOverflow.ellipsis,
+                    maxLines: 2,
                   ),
                 ],
               ),
