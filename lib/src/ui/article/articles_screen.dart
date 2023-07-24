@@ -56,13 +56,10 @@ class ArticlesScreen extends ConsumerWidget {
                     ArticleTile(
                       article: article,
                       toArticle: () {
-                        print('======================================1');
                         newsStoreNotifier.setArticle(
                           spaceArticle: article,
                         );
                         context.pushNamed(Routes.article);
-                        print('======================================2');
-
                       }
                     ),
                     if (articles.last == article)

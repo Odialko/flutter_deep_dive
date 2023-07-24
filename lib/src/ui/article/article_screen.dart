@@ -10,7 +10,6 @@ class ArticleScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    print('================HER');
     final themeData = FDDTheme.of(context);
     final articleState = ref.watch(articleStoreProvider);
 
@@ -37,27 +36,25 @@ class ArticleScreen extends ConsumerWidget {
         loaded: (SpaceArticle article) {
           return Column(
             children: [
-              Container(
-                child: Image.network(article.imageUrl ?? ''),
-              ),
+              Image.network(article.imageUrl ?? ''),
               Padding(
-                padding: EdgeInsets.only(
+                padding: const EdgeInsets.only(
                   left: 20,
                   right: 20,
                 ),
                 child: Text(article.title ?? ''),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Padding(
-                padding: EdgeInsets.only(
+                padding: const EdgeInsets.only(
                   left: 20,
                   right: 20,
                 ),
                 child: Text(article.summary ?? ''),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
             ],

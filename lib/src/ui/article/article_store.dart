@@ -66,7 +66,6 @@ class NewsNotifier extends StateNotifier<NewsStoreState> {
   final Ref ref;
 
   void setArticle({required SpaceArticle spaceArticle}) {
-    print('=========setArticle=== ${spaceArticle}');
     state = state.copyWith(articleState: const ArticleState.loading());
     try {
       state = state.copyWith(

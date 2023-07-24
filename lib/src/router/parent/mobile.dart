@@ -13,7 +13,6 @@ import 'package:go_router/go_router.dart';
 
 final router = Provider<GoRouter>((ref) {
   final needRefresh = ref.read(routerNotifierProvider);
-  print('===================================Router 0');
 
   return GoRouter(
     initialLocation: Routes.splash,
@@ -50,7 +49,6 @@ final router = Provider<GoRouter>((ref) {
             name: Routes.article,
             path: Routes.article,
             builder: (_, state) {
-              print('===================================Router 2');
               return const ArticleScreen();
             },
           ),
