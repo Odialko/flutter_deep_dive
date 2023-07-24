@@ -1,6 +1,7 @@
 import 'package:flutter_deep_dive/src/providers/auth_provider.dart';
 import 'package:flutter_deep_dive/src/router/redirect.dart';
 import 'package:flutter_deep_dive/src/router/routes.dart';
+import 'package:flutter_deep_dive/src/ui/article/article_screen.dart';
 import 'package:flutter_deep_dive/src/ui/authentication/reset_password_screen.dart';
 import 'package:flutter_deep_dive/src/ui/authentication/login_screen.dart';
 import 'package:flutter_deep_dive/src/ui/authentication/register_screen.dart';
@@ -47,7 +48,7 @@ final router = Provider<GoRouter>((ref) {
           GoRoute(
             name: Routes.article,
             path: Routes.article,
-            builder: (context, state) => ArticleScreen(),
+            builder: (context, state) => const ArticleScreen(),
           ),
         ],
       ),
