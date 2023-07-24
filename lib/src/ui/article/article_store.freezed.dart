@@ -20,21 +20,21 @@ mixin _$ArticleState {
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
     required TResult Function(String? errorText) error,
-    required TResult Function(List<Article> articlesList) loaded,
+    required TResult Function(SpaceArticle spaceArticle) loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
     TResult? Function(String? errorText)? error,
-    TResult? Function(List<Article> articlesList)? loaded,
+    TResult? Function(SpaceArticle spaceArticle)? loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
     TResult Function(String? errorText)? error,
-    TResult Function(List<Article> articlesList)? loaded,
+    TResult Function(SpaceArticle spaceArticle)? loaded,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -120,7 +120,7 @@ class _$ArticleStateLoading implements ArticleStateLoading {
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
     required TResult Function(String? errorText) error,
-    required TResult Function(List<Article> articlesList) loaded,
+    required TResult Function(SpaceArticle spaceArticle) loaded,
   }) {
     return loading();
   }
@@ -130,7 +130,7 @@ class _$ArticleStateLoading implements ArticleStateLoading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
     TResult? Function(String? errorText)? error,
-    TResult? Function(List<Article> articlesList)? loaded,
+    TResult? Function(SpaceArticle spaceArticle)? loaded,
   }) {
     return loading?.call();
   }
@@ -140,7 +140,7 @@ class _$ArticleStateLoading implements ArticleStateLoading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
     TResult Function(String? errorText)? error,
-    TResult Function(List<Article> articlesList)? loaded,
+    TResult Function(SpaceArticle spaceArticle)? loaded,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -255,7 +255,7 @@ class _$ArticleStateError implements ArticleStateError {
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
     required TResult Function(String? errorText) error,
-    required TResult Function(List<Article> articlesList) loaded,
+    required TResult Function(SpaceArticle spaceArticle) loaded,
   }) {
     return error(errorText);
   }
@@ -265,7 +265,7 @@ class _$ArticleStateError implements ArticleStateError {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
     TResult? Function(String? errorText)? error,
-    TResult? Function(List<Article> articlesList)? loaded,
+    TResult? Function(SpaceArticle spaceArticle)? loaded,
   }) {
     return error?.call(errorText);
   }
@@ -275,7 +275,7 @@ class _$ArticleStateError implements ArticleStateError {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
     TResult Function(String? errorText)? error,
-    TResult Function(List<Article> articlesList)? loaded,
+    TResult Function(SpaceArticle spaceArticle)? loaded,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -335,7 +335,9 @@ abstract class _$$ArticleStateLoadedCopyWith<$Res> {
           $Res Function(_$ArticleStateLoaded) then) =
       __$$ArticleStateLoadedCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<Article> articlesList});
+  $Res call({SpaceArticle spaceArticle});
+
+  $SpaceArticleCopyWith<$Res> get spaceArticle;
 }
 
 /// @nodoc
@@ -349,35 +351,36 @@ class __$$ArticleStateLoadedCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? articlesList = null,
+    Object? spaceArticle = null,
   }) {
     return _then(_$ArticleStateLoaded(
-      articlesList: null == articlesList
-          ? _value._articlesList
-          : articlesList // ignore: cast_nullable_to_non_nullable
-              as List<Article>,
+      spaceArticle: null == spaceArticle
+          ? _value.spaceArticle
+          : spaceArticle // ignore: cast_nullable_to_non_nullable
+              as SpaceArticle,
     ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $SpaceArticleCopyWith<$Res> get spaceArticle {
+    return $SpaceArticleCopyWith<$Res>(_value.spaceArticle, (value) {
+      return _then(_value.copyWith(spaceArticle: value));
+    });
   }
 }
 
 /// @nodoc
 
 class _$ArticleStateLoaded implements ArticleStateLoaded {
-  const _$ArticleStateLoaded({final List<Article> articlesList = const []})
-      : _articlesList = articlesList;
+  const _$ArticleStateLoaded({required this.spaceArticle});
 
-  final List<Article> _articlesList;
   @override
-  @JsonKey()
-  List<Article> get articlesList {
-    if (_articlesList is EqualUnmodifiableListView) return _articlesList;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_articlesList);
-  }
+  final SpaceArticle spaceArticle;
 
   @override
   String toString() {
-    return 'ArticleState.loaded(articlesList: $articlesList)';
+    return 'ArticleState.loaded(spaceArticle: $spaceArticle)';
   }
 
   @override
@@ -385,13 +388,12 @@ class _$ArticleStateLoaded implements ArticleStateLoaded {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ArticleStateLoaded &&
-            const DeepCollectionEquality()
-                .equals(other._articlesList, _articlesList));
+            (identical(other.spaceArticle, spaceArticle) ||
+                other.spaceArticle == spaceArticle));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_articlesList));
+  int get hashCode => Object.hash(runtimeType, spaceArticle);
 
   @JsonKey(ignore: true)
   @override
@@ -405,9 +407,9 @@ class _$ArticleStateLoaded implements ArticleStateLoaded {
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
     required TResult Function(String? errorText) error,
-    required TResult Function(List<Article> articlesList) loaded,
+    required TResult Function(SpaceArticle spaceArticle) loaded,
   }) {
-    return loaded(articlesList);
+    return loaded(spaceArticle);
   }
 
   @override
@@ -415,9 +417,9 @@ class _$ArticleStateLoaded implements ArticleStateLoaded {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
     TResult? Function(String? errorText)? error,
-    TResult? Function(List<Article> articlesList)? loaded,
+    TResult? Function(SpaceArticle spaceArticle)? loaded,
   }) {
-    return loaded?.call(articlesList);
+    return loaded?.call(spaceArticle);
   }
 
   @override
@@ -425,11 +427,11 @@ class _$ArticleStateLoaded implements ArticleStateLoaded {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
     TResult Function(String? errorText)? error,
-    TResult Function(List<Article> articlesList)? loaded,
+    TResult Function(SpaceArticle spaceArticle)? loaded,
     required TResult orElse(),
   }) {
     if (loaded != null) {
-      return loaded(articlesList);
+      return loaded(spaceArticle);
     }
     return orElse();
   }
@@ -470,17 +472,17 @@ class _$ArticleStateLoaded implements ArticleStateLoaded {
 }
 
 abstract class ArticleStateLoaded implements ArticleState {
-  const factory ArticleStateLoaded({final List<Article> articlesList}) =
+  const factory ArticleStateLoaded({required final SpaceArticle spaceArticle}) =
       _$ArticleStateLoaded;
 
-  List<Article> get articlesList;
+  SpaceArticle get spaceArticle;
   @JsonKey(ignore: true)
   _$$ArticleStateLoadedCopyWith<_$ArticleStateLoaded> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-mixin _$SpaceArticleState {
+mixin _$SpaceArticlesState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
@@ -505,39 +507,39 @@ mixin _$SpaceArticleState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(SpaceArticleStateLoading value) loading,
-    required TResult Function(SpaceArticleStateError value) error,
-    required TResult Function(SpaceArticleStateLoaded value) loaded,
+    required TResult Function(SpaceArticlesStateLoading value) loading,
+    required TResult Function(SpaceArticlesStateError value) error,
+    required TResult Function(SpaceArticlesStateLoaded value) loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(SpaceArticleStateLoading value)? loading,
-    TResult? Function(SpaceArticleStateError value)? error,
-    TResult? Function(SpaceArticleStateLoaded value)? loaded,
+    TResult? Function(SpaceArticlesStateLoading value)? loading,
+    TResult? Function(SpaceArticlesStateError value)? error,
+    TResult? Function(SpaceArticlesStateLoaded value)? loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(SpaceArticleStateLoading value)? loading,
-    TResult Function(SpaceArticleStateError value)? error,
-    TResult Function(SpaceArticleStateLoaded value)? loaded,
+    TResult Function(SpaceArticlesStateLoading value)? loading,
+    TResult Function(SpaceArticlesStateError value)? error,
+    TResult Function(SpaceArticlesStateLoaded value)? loaded,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $SpaceArticleStateCopyWith<$Res> {
-  factory $SpaceArticleStateCopyWith(
-          SpaceArticleState value, $Res Function(SpaceArticleState) then) =
-      _$SpaceArticleStateCopyWithImpl<$Res, SpaceArticleState>;
+abstract class $SpaceArticlesStateCopyWith<$Res> {
+  factory $SpaceArticlesStateCopyWith(
+          SpaceArticlesState value, $Res Function(SpaceArticlesState) then) =
+      _$SpaceArticlesStateCopyWithImpl<$Res, SpaceArticlesState>;
 }
 
 /// @nodoc
-class _$SpaceArticleStateCopyWithImpl<$Res, $Val extends SpaceArticleState>
-    implements $SpaceArticleStateCopyWith<$Res> {
-  _$SpaceArticleStateCopyWithImpl(this._value, this._then);
+class _$SpaceArticlesStateCopyWithImpl<$Res, $Val extends SpaceArticlesState>
+    implements $SpaceArticlesStateCopyWith<$Res> {
+  _$SpaceArticlesStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -546,36 +548,37 @@ class _$SpaceArticleStateCopyWithImpl<$Res, $Val extends SpaceArticleState>
 }
 
 /// @nodoc
-abstract class _$$SpaceArticleStateLoadingCopyWith<$Res> {
-  factory _$$SpaceArticleStateLoadingCopyWith(_$SpaceArticleStateLoading value,
-          $Res Function(_$SpaceArticleStateLoading) then) =
-      __$$SpaceArticleStateLoadingCopyWithImpl<$Res>;
+abstract class _$$SpaceArticlesStateLoadingCopyWith<$Res> {
+  factory _$$SpaceArticlesStateLoadingCopyWith(
+          _$SpaceArticlesStateLoading value,
+          $Res Function(_$SpaceArticlesStateLoading) then) =
+      __$$SpaceArticlesStateLoadingCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$SpaceArticleStateLoadingCopyWithImpl<$Res>
-    extends _$SpaceArticleStateCopyWithImpl<$Res, _$SpaceArticleStateLoading>
-    implements _$$SpaceArticleStateLoadingCopyWith<$Res> {
-  __$$SpaceArticleStateLoadingCopyWithImpl(_$SpaceArticleStateLoading _value,
-      $Res Function(_$SpaceArticleStateLoading) _then)
+class __$$SpaceArticlesStateLoadingCopyWithImpl<$Res>
+    extends _$SpaceArticlesStateCopyWithImpl<$Res, _$SpaceArticlesStateLoading>
+    implements _$$SpaceArticlesStateLoadingCopyWith<$Res> {
+  __$$SpaceArticlesStateLoadingCopyWithImpl(_$SpaceArticlesStateLoading _value,
+      $Res Function(_$SpaceArticlesStateLoading) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$SpaceArticleStateLoading implements SpaceArticleStateLoading {
-  const _$SpaceArticleStateLoading();
+class _$SpaceArticlesStateLoading implements SpaceArticlesStateLoading {
+  const _$SpaceArticlesStateLoading();
 
   @override
   String toString() {
-    return 'SpaceArticleState.loading()';
+    return 'SpaceArticlesState.loading()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SpaceArticleStateLoading);
+            other is _$SpaceArticlesStateLoading);
   }
 
   @override
@@ -618,9 +621,9 @@ class _$SpaceArticleStateLoading implements SpaceArticleStateLoading {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(SpaceArticleStateLoading value) loading,
-    required TResult Function(SpaceArticleStateError value) error,
-    required TResult Function(SpaceArticleStateLoaded value) loaded,
+    required TResult Function(SpaceArticlesStateLoading value) loading,
+    required TResult Function(SpaceArticlesStateError value) error,
+    required TResult Function(SpaceArticlesStateLoaded value) loaded,
   }) {
     return loading(this);
   }
@@ -628,9 +631,9 @@ class _$SpaceArticleStateLoading implements SpaceArticleStateLoading {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(SpaceArticleStateLoading value)? loading,
-    TResult? Function(SpaceArticleStateError value)? error,
-    TResult? Function(SpaceArticleStateLoaded value)? loaded,
+    TResult? Function(SpaceArticlesStateLoading value)? loading,
+    TResult? Function(SpaceArticlesStateError value)? error,
+    TResult? Function(SpaceArticlesStateLoaded value)? loaded,
   }) {
     return loading?.call(this);
   }
@@ -638,9 +641,9 @@ class _$SpaceArticleStateLoading implements SpaceArticleStateLoading {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(SpaceArticleStateLoading value)? loading,
-    TResult Function(SpaceArticleStateError value)? error,
-    TResult Function(SpaceArticleStateLoaded value)? loaded,
+    TResult Function(SpaceArticlesStateLoading value)? loading,
+    TResult Function(SpaceArticlesStateError value)? error,
+    TResult Function(SpaceArticlesStateLoaded value)? loaded,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -650,25 +653,25 @@ class _$SpaceArticleStateLoading implements SpaceArticleStateLoading {
   }
 }
 
-abstract class SpaceArticleStateLoading implements SpaceArticleState {
-  const factory SpaceArticleStateLoading() = _$SpaceArticleStateLoading;
+abstract class SpaceArticlesStateLoading implements SpaceArticlesState {
+  const factory SpaceArticlesStateLoading() = _$SpaceArticlesStateLoading;
 }
 
 /// @nodoc
-abstract class _$$SpaceArticleStateErrorCopyWith<$Res> {
-  factory _$$SpaceArticleStateErrorCopyWith(_$SpaceArticleStateError value,
-          $Res Function(_$SpaceArticleStateError) then) =
-      __$$SpaceArticleStateErrorCopyWithImpl<$Res>;
+abstract class _$$SpaceArticlesStateErrorCopyWith<$Res> {
+  factory _$$SpaceArticlesStateErrorCopyWith(_$SpaceArticlesStateError value,
+          $Res Function(_$SpaceArticlesStateError) then) =
+      __$$SpaceArticlesStateErrorCopyWithImpl<$Res>;
   @useResult
   $Res call({String? errorText});
 }
 
 /// @nodoc
-class __$$SpaceArticleStateErrorCopyWithImpl<$Res>
-    extends _$SpaceArticleStateCopyWithImpl<$Res, _$SpaceArticleStateError>
-    implements _$$SpaceArticleStateErrorCopyWith<$Res> {
-  __$$SpaceArticleStateErrorCopyWithImpl(_$SpaceArticleStateError _value,
-      $Res Function(_$SpaceArticleStateError) _then)
+class __$$SpaceArticlesStateErrorCopyWithImpl<$Res>
+    extends _$SpaceArticlesStateCopyWithImpl<$Res, _$SpaceArticlesStateError>
+    implements _$$SpaceArticlesStateErrorCopyWith<$Res> {
+  __$$SpaceArticlesStateErrorCopyWithImpl(_$SpaceArticlesStateError _value,
+      $Res Function(_$SpaceArticlesStateError) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -676,7 +679,7 @@ class __$$SpaceArticleStateErrorCopyWithImpl<$Res>
   $Res call({
     Object? errorText = freezed,
   }) {
-    return _then(_$SpaceArticleStateError(
+    return _then(_$SpaceArticlesStateError(
       errorText: freezed == errorText
           ? _value.errorText
           : errorText // ignore: cast_nullable_to_non_nullable
@@ -687,22 +690,22 @@ class __$$SpaceArticleStateErrorCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SpaceArticleStateError implements SpaceArticleStateError {
-  const _$SpaceArticleStateError({this.errorText});
+class _$SpaceArticlesStateError implements SpaceArticlesStateError {
+  const _$SpaceArticlesStateError({this.errorText});
 
   @override
   final String? errorText;
 
   @override
   String toString() {
-    return 'SpaceArticleState.error(errorText: $errorText)';
+    return 'SpaceArticlesState.error(errorText: $errorText)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SpaceArticleStateError &&
+            other is _$SpaceArticlesStateError &&
             (identical(other.errorText, errorText) ||
                 other.errorText == errorText));
   }
@@ -713,8 +716,8 @@ class _$SpaceArticleStateError implements SpaceArticleStateError {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SpaceArticleStateErrorCopyWith<_$SpaceArticleStateError> get copyWith =>
-      __$$SpaceArticleStateErrorCopyWithImpl<_$SpaceArticleStateError>(
+  _$$SpaceArticlesStateErrorCopyWith<_$SpaceArticlesStateError> get copyWith =>
+      __$$SpaceArticlesStateErrorCopyWithImpl<_$SpaceArticlesStateError>(
           this, _$identity);
 
   @override
@@ -754,9 +757,9 @@ class _$SpaceArticleStateError implements SpaceArticleStateError {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(SpaceArticleStateLoading value) loading,
-    required TResult Function(SpaceArticleStateError value) error,
-    required TResult Function(SpaceArticleStateLoaded value) loaded,
+    required TResult Function(SpaceArticlesStateLoading value) loading,
+    required TResult Function(SpaceArticlesStateError value) error,
+    required TResult Function(SpaceArticlesStateLoaded value) loaded,
   }) {
     return error(this);
   }
@@ -764,9 +767,9 @@ class _$SpaceArticleStateError implements SpaceArticleStateError {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(SpaceArticleStateLoading value)? loading,
-    TResult? Function(SpaceArticleStateError value)? error,
-    TResult? Function(SpaceArticleStateLoaded value)? loaded,
+    TResult? Function(SpaceArticlesStateLoading value)? loading,
+    TResult? Function(SpaceArticlesStateError value)? error,
+    TResult? Function(SpaceArticlesStateLoaded value)? loaded,
   }) {
     return error?.call(this);
   }
@@ -774,9 +777,9 @@ class _$SpaceArticleStateError implements SpaceArticleStateError {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(SpaceArticleStateLoading value)? loading,
-    TResult Function(SpaceArticleStateError value)? error,
-    TResult Function(SpaceArticleStateLoaded value)? loaded,
+    TResult Function(SpaceArticlesStateLoading value)? loading,
+    TResult Function(SpaceArticlesStateError value)? error,
+    TResult Function(SpaceArticlesStateLoaded value)? loaded,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -786,31 +789,31 @@ class _$SpaceArticleStateError implements SpaceArticleStateError {
   }
 }
 
-abstract class SpaceArticleStateError implements SpaceArticleState {
-  const factory SpaceArticleStateError({final String? errorText}) =
-      _$SpaceArticleStateError;
+abstract class SpaceArticlesStateError implements SpaceArticlesState {
+  const factory SpaceArticlesStateError({final String? errorText}) =
+      _$SpaceArticlesStateError;
 
   String? get errorText;
   @JsonKey(ignore: true)
-  _$$SpaceArticleStateErrorCopyWith<_$SpaceArticleStateError> get copyWith =>
+  _$$SpaceArticlesStateErrorCopyWith<_$SpaceArticlesStateError> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$SpaceArticleStateLoadedCopyWith<$Res> {
-  factory _$$SpaceArticleStateLoadedCopyWith(_$SpaceArticleStateLoaded value,
-          $Res Function(_$SpaceArticleStateLoaded) then) =
-      __$$SpaceArticleStateLoadedCopyWithImpl<$Res>;
+abstract class _$$SpaceArticlesStateLoadedCopyWith<$Res> {
+  factory _$$SpaceArticlesStateLoadedCopyWith(_$SpaceArticlesStateLoaded value,
+          $Res Function(_$SpaceArticlesStateLoaded) then) =
+      __$$SpaceArticlesStateLoadedCopyWithImpl<$Res>;
   @useResult
   $Res call({List<SpaceArticle> spaceArticlesList});
 }
 
 /// @nodoc
-class __$$SpaceArticleStateLoadedCopyWithImpl<$Res>
-    extends _$SpaceArticleStateCopyWithImpl<$Res, _$SpaceArticleStateLoaded>
-    implements _$$SpaceArticleStateLoadedCopyWith<$Res> {
-  __$$SpaceArticleStateLoadedCopyWithImpl(_$SpaceArticleStateLoaded _value,
-      $Res Function(_$SpaceArticleStateLoaded) _then)
+class __$$SpaceArticlesStateLoadedCopyWithImpl<$Res>
+    extends _$SpaceArticlesStateCopyWithImpl<$Res, _$SpaceArticlesStateLoaded>
+    implements _$$SpaceArticlesStateLoadedCopyWith<$Res> {
+  __$$SpaceArticlesStateLoadedCopyWithImpl(_$SpaceArticlesStateLoaded _value,
+      $Res Function(_$SpaceArticlesStateLoaded) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -818,7 +821,7 @@ class __$$SpaceArticleStateLoadedCopyWithImpl<$Res>
   $Res call({
     Object? spaceArticlesList = null,
   }) {
-    return _then(_$SpaceArticleStateLoaded(
+    return _then(_$SpaceArticlesStateLoaded(
       spaceArticlesList: null == spaceArticlesList
           ? _value._spaceArticlesList
           : spaceArticlesList // ignore: cast_nullable_to_non_nullable
@@ -829,8 +832,8 @@ class __$$SpaceArticleStateLoadedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SpaceArticleStateLoaded implements SpaceArticleStateLoaded {
-  const _$SpaceArticleStateLoaded(
+class _$SpaceArticlesStateLoaded implements SpaceArticlesStateLoaded {
+  const _$SpaceArticlesStateLoaded(
       {final List<SpaceArticle> spaceArticlesList = const []})
       : _spaceArticlesList = spaceArticlesList;
 
@@ -846,14 +849,14 @@ class _$SpaceArticleStateLoaded implements SpaceArticleStateLoaded {
 
   @override
   String toString() {
-    return 'SpaceArticleState.loaded(spaceArticlesList: $spaceArticlesList)';
+    return 'SpaceArticlesState.loaded(spaceArticlesList: $spaceArticlesList)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SpaceArticleStateLoaded &&
+            other is _$SpaceArticlesStateLoaded &&
             const DeepCollectionEquality()
                 .equals(other._spaceArticlesList, _spaceArticlesList));
   }
@@ -865,9 +868,10 @@ class _$SpaceArticleStateLoaded implements SpaceArticleStateLoaded {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SpaceArticleStateLoadedCopyWith<_$SpaceArticleStateLoaded> get copyWith =>
-      __$$SpaceArticleStateLoadedCopyWithImpl<_$SpaceArticleStateLoaded>(
-          this, _$identity);
+  _$$SpaceArticlesStateLoadedCopyWith<_$SpaceArticlesStateLoaded>
+      get copyWith =>
+          __$$SpaceArticlesStateLoadedCopyWithImpl<_$SpaceArticlesStateLoaded>(
+              this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -906,9 +910,9 @@ class _$SpaceArticleStateLoaded implements SpaceArticleStateLoaded {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(SpaceArticleStateLoading value) loading,
-    required TResult Function(SpaceArticleStateError value) error,
-    required TResult Function(SpaceArticleStateLoaded value) loaded,
+    required TResult Function(SpaceArticlesStateLoading value) loading,
+    required TResult Function(SpaceArticlesStateError value) error,
+    required TResult Function(SpaceArticlesStateLoaded value) loaded,
   }) {
     return loaded(this);
   }
@@ -916,9 +920,9 @@ class _$SpaceArticleStateLoaded implements SpaceArticleStateLoaded {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(SpaceArticleStateLoading value)? loading,
-    TResult? Function(SpaceArticleStateError value)? error,
-    TResult? Function(SpaceArticleStateLoaded value)? loaded,
+    TResult? Function(SpaceArticlesStateLoading value)? loading,
+    TResult? Function(SpaceArticlesStateError value)? error,
+    TResult? Function(SpaceArticlesStateLoaded value)? loaded,
   }) {
     return loaded?.call(this);
   }
@@ -926,9 +930,9 @@ class _$SpaceArticleStateLoaded implements SpaceArticleStateLoaded {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(SpaceArticleStateLoading value)? loading,
-    TResult Function(SpaceArticleStateError value)? error,
-    TResult Function(SpaceArticleStateLoaded value)? loaded,
+    TResult Function(SpaceArticlesStateLoading value)? loading,
+    TResult Function(SpaceArticlesStateError value)? error,
+    TResult Function(SpaceArticlesStateLoaded value)? loaded,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -938,42 +942,44 @@ class _$SpaceArticleStateLoaded implements SpaceArticleStateLoaded {
   }
 }
 
-abstract class SpaceArticleStateLoaded implements SpaceArticleState {
-  const factory SpaceArticleStateLoaded(
-      {final List<SpaceArticle> spaceArticlesList}) = _$SpaceArticleStateLoaded;
+abstract class SpaceArticlesStateLoaded implements SpaceArticlesState {
+  const factory SpaceArticlesStateLoaded(
+          {final List<SpaceArticle> spaceArticlesList}) =
+      _$SpaceArticlesStateLoaded;
 
   List<SpaceArticle> get spaceArticlesList;
   @JsonKey(ignore: true)
-  _$$SpaceArticleStateLoadedCopyWith<_$SpaceArticleStateLoaded> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$SpaceArticlesStateLoadedCopyWith<_$SpaceArticlesStateLoaded>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-mixin _$ArticleStoreState {
+mixin _$NewsStoreState {
   ArticleState get articleState => throw _privateConstructorUsedError;
-  SpaceArticleState get spaceArticleState => throw _privateConstructorUsedError;
+  SpaceArticlesState get spaceArticlesState =>
+      throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $ArticleStoreStateCopyWith<ArticleStoreState> get copyWith =>
+  $NewsStoreStateCopyWith<NewsStoreState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ArticleStoreStateCopyWith<$Res> {
-  factory $ArticleStoreStateCopyWith(
-          ArticleStoreState value, $Res Function(ArticleStoreState) then) =
-      _$ArticleStoreStateCopyWithImpl<$Res, ArticleStoreState>;
+abstract class $NewsStoreStateCopyWith<$Res> {
+  factory $NewsStoreStateCopyWith(
+          NewsStoreState value, $Res Function(NewsStoreState) then) =
+      _$NewsStoreStateCopyWithImpl<$Res, NewsStoreState>;
   @useResult
-  $Res call({ArticleState articleState, SpaceArticleState spaceArticleState});
+  $Res call({ArticleState articleState, SpaceArticlesState spaceArticlesState});
 
   $ArticleStateCopyWith<$Res> get articleState;
-  $SpaceArticleStateCopyWith<$Res> get spaceArticleState;
+  $SpaceArticlesStateCopyWith<$Res> get spaceArticlesState;
 }
 
 /// @nodoc
-class _$ArticleStoreStateCopyWithImpl<$Res, $Val extends ArticleStoreState>
-    implements $ArticleStoreStateCopyWith<$Res> {
-  _$ArticleStoreStateCopyWithImpl(this._value, this._then);
+class _$NewsStoreStateCopyWithImpl<$Res, $Val extends NewsStoreState>
+    implements $NewsStoreStateCopyWith<$Res> {
+  _$NewsStoreStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -984,17 +990,17 @@ class _$ArticleStoreStateCopyWithImpl<$Res, $Val extends ArticleStoreState>
   @override
   $Res call({
     Object? articleState = null,
-    Object? spaceArticleState = null,
+    Object? spaceArticlesState = null,
   }) {
     return _then(_value.copyWith(
       articleState: null == articleState
           ? _value.articleState
           : articleState // ignore: cast_nullable_to_non_nullable
               as ArticleState,
-      spaceArticleState: null == spaceArticleState
-          ? _value.spaceArticleState
-          : spaceArticleState // ignore: cast_nullable_to_non_nullable
-              as SpaceArticleState,
+      spaceArticlesState: null == spaceArticlesState
+          ? _value.spaceArticlesState
+          : spaceArticlesState // ignore: cast_nullable_to_non_nullable
+              as SpaceArticlesState,
     ) as $Val);
   }
 
@@ -1008,106 +1014,107 @@ class _$ArticleStoreStateCopyWithImpl<$Res, $Val extends ArticleStoreState>
 
   @override
   @pragma('vm:prefer-inline')
-  $SpaceArticleStateCopyWith<$Res> get spaceArticleState {
-    return $SpaceArticleStateCopyWith<$Res>(_value.spaceArticleState, (value) {
-      return _then(_value.copyWith(spaceArticleState: value) as $Val);
+  $SpaceArticlesStateCopyWith<$Res> get spaceArticlesState {
+    return $SpaceArticlesStateCopyWith<$Res>(_value.spaceArticlesState,
+        (value) {
+      return _then(_value.copyWith(spaceArticlesState: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$$_ArticleStoreStateCopyWith<$Res>
-    implements $ArticleStoreStateCopyWith<$Res> {
-  factory _$$_ArticleStoreStateCopyWith(_$_ArticleStoreState value,
-          $Res Function(_$_ArticleStoreState) then) =
-      __$$_ArticleStoreStateCopyWithImpl<$Res>;
+abstract class _$$_NewsStoreStateCopyWith<$Res>
+    implements $NewsStoreStateCopyWith<$Res> {
+  factory _$$_NewsStoreStateCopyWith(
+          _$_NewsStoreState value, $Res Function(_$_NewsStoreState) then) =
+      __$$_NewsStoreStateCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({ArticleState articleState, SpaceArticleState spaceArticleState});
+  $Res call({ArticleState articleState, SpaceArticlesState spaceArticlesState});
 
   @override
   $ArticleStateCopyWith<$Res> get articleState;
   @override
-  $SpaceArticleStateCopyWith<$Res> get spaceArticleState;
+  $SpaceArticlesStateCopyWith<$Res> get spaceArticlesState;
 }
 
 /// @nodoc
-class __$$_ArticleStoreStateCopyWithImpl<$Res>
-    extends _$ArticleStoreStateCopyWithImpl<$Res, _$_ArticleStoreState>
-    implements _$$_ArticleStoreStateCopyWith<$Res> {
-  __$$_ArticleStoreStateCopyWithImpl(
-      _$_ArticleStoreState _value, $Res Function(_$_ArticleStoreState) _then)
+class __$$_NewsStoreStateCopyWithImpl<$Res>
+    extends _$NewsStoreStateCopyWithImpl<$Res, _$_NewsStoreState>
+    implements _$$_NewsStoreStateCopyWith<$Res> {
+  __$$_NewsStoreStateCopyWithImpl(
+      _$_NewsStoreState _value, $Res Function(_$_NewsStoreState) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? articleState = null,
-    Object? spaceArticleState = null,
+    Object? spaceArticlesState = null,
   }) {
-    return _then(_$_ArticleStoreState(
+    return _then(_$_NewsStoreState(
       articleState: null == articleState
           ? _value.articleState
           : articleState // ignore: cast_nullable_to_non_nullable
               as ArticleState,
-      spaceArticleState: null == spaceArticleState
-          ? _value.spaceArticleState
-          : spaceArticleState // ignore: cast_nullable_to_non_nullable
-              as SpaceArticleState,
+      spaceArticlesState: null == spaceArticlesState
+          ? _value.spaceArticlesState
+          : spaceArticlesState // ignore: cast_nullable_to_non_nullable
+              as SpaceArticlesState,
     ));
   }
 }
 
 /// @nodoc
 
-class _$_ArticleStoreState implements _ArticleStoreState {
-  const _$_ArticleStoreState(
-      {required this.articleState, required this.spaceArticleState});
+class _$_NewsStoreState implements _NewsStoreState {
+  const _$_NewsStoreState(
+      {required this.articleState, required this.spaceArticlesState});
 
   @override
   final ArticleState articleState;
   @override
-  final SpaceArticleState spaceArticleState;
+  final SpaceArticlesState spaceArticlesState;
 
   @override
   String toString() {
-    return 'ArticleStoreState(articleState: $articleState, spaceArticleState: $spaceArticleState)';
+    return 'NewsStoreState(articleState: $articleState, spaceArticlesState: $spaceArticlesState)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ArticleStoreState &&
+            other is _$_NewsStoreState &&
             (identical(other.articleState, articleState) ||
                 other.articleState == articleState) &&
-            (identical(other.spaceArticleState, spaceArticleState) ||
-                other.spaceArticleState == spaceArticleState));
+            (identical(other.spaceArticlesState, spaceArticlesState) ||
+                other.spaceArticlesState == spaceArticlesState));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, articleState, spaceArticleState);
+  int get hashCode =>
+      Object.hash(runtimeType, articleState, spaceArticlesState);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ArticleStoreStateCopyWith<_$_ArticleStoreState> get copyWith =>
-      __$$_ArticleStoreStateCopyWithImpl<_$_ArticleStoreState>(
-          this, _$identity);
+  _$$_NewsStoreStateCopyWith<_$_NewsStoreState> get copyWith =>
+      __$$_NewsStoreStateCopyWithImpl<_$_NewsStoreState>(this, _$identity);
 }
 
-abstract class _ArticleStoreState implements ArticleStoreState {
-  const factory _ArticleStoreState(
+abstract class _NewsStoreState implements NewsStoreState {
+  const factory _NewsStoreState(
           {required final ArticleState articleState,
-          required final SpaceArticleState spaceArticleState}) =
-      _$_ArticleStoreState;
+          required final SpaceArticlesState spaceArticlesState}) =
+      _$_NewsStoreState;
 
   @override
   ArticleState get articleState;
   @override
-  SpaceArticleState get spaceArticleState;
+  SpaceArticlesState get spaceArticlesState;
   @override
   @JsonKey(ignore: true)
-  _$$_ArticleStoreStateCopyWith<_$_ArticleStoreState> get copyWith =>
+  _$$_NewsStoreStateCopyWith<_$_NewsStoreState> get copyWith =>
       throw _privateConstructorUsedError;
 }

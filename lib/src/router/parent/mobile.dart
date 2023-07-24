@@ -43,6 +43,13 @@ final router = Provider<GoRouter>((ref) {
         name: Routes.home,
         path: Routes.home,
         builder: (context, state) => HomeScreen(),
+        routes: [
+          GoRoute(
+            name: Routes.article,
+            path: Routes.article,
+            builder: (context, state) => ArticleScreen(),
+          ),
+        ],
       ),
     ],
     errorBuilder: (context, state) {

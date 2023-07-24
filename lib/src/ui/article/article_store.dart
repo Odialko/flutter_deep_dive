@@ -12,15 +12,19 @@ part 'article_store.freezed.dart';
 /// Do not need .autoDispose as we have great provider cache
 /// the app works faster and we may implement PullToRefresh
 ///
-final articleStoreProvider =
-    StateNotifierProvider<ArticleNotifier, ArticleStoreState>(
-  (ref) => ArticleNotifier(ref: ref)..getArticles(),
-);
+// final articleStoreProvider =
+//     StateNotifierProvider<ArticleNotifier, NewsStoreState>(
+//   (ref) => NewsNotifier(ref: ref)..getArticles(),
+// );
 
 /// News about Space
-final spaceArticleStoreProvider =
-    StateNotifierProvider<ArticleNotifier, ArticleStoreState>(
-  (ref) => ArticleNotifier(ref: ref)..getSpaceArticles(),
+final newsStoreProvider = StateNotifierProvider<NewsNotifier, NewsStoreState>(
+  (ref) => NewsNotifier(ref: ref)..getSpaceArticles(),
+);
+
+final articleStoreProvider =
+    StateNotifierProvider.autoDispose<NewsNotifier, NewsStoreState>(
+  (ref) => NewsNotifier(ref: ref),
 );
 
 @freezed
@@ -28,80 +32,75 @@ class ArticleState with _$ArticleState {
   const factory ArticleState.loading() = ArticleStateLoading;
   const factory ArticleState.error({String? errorText}) = ArticleStateError;
   const factory ArticleState.loaded({
-    @Default([]) List<Article> articlesList,
+    required SpaceArticle spaceArticle,
   }) = ArticleStateLoaded;
 }
 
 @freezed
-class SpaceArticleState with _$SpaceArticleState {
-  const factory SpaceArticleState.loading() = SpaceArticleStateLoading;
-  const factory SpaceArticleState.error({String? errorText}) = SpaceArticleStateError;
-  const factory SpaceArticleState.loaded({
+class SpaceArticlesState with _$SpaceArticlesState {
+  const factory SpaceArticlesState.loading() = SpaceArticlesStateLoading;
+  const factory SpaceArticlesState.error({String? errorText}) =
+      SpaceArticlesStateError;
+  const factory SpaceArticlesState.loaded({
     @Default([]) List<SpaceArticle> spaceArticlesList,
-  }) = SpaceArticleStateLoaded;
+  }) = SpaceArticlesStateLoaded;
 }
 
 @freezed
-class ArticleStoreState with _$ArticleStoreState {
-  const factory ArticleStoreState({
+class NewsStoreState with _$NewsStoreState {
+  const factory NewsStoreState({
     required ArticleState articleState,
-    required SpaceArticleState spaceArticleState,
-  }) = _ArticleStoreState;
+    required SpaceArticlesState spaceArticlesState,
+  }) = _NewsStoreState;
 }
 
-class ArticleNotifier extends StateNotifier<ArticleStoreState> {
-  ArticleNotifier({
+class NewsNotifier extends StateNotifier<NewsStoreState> {
+  NewsNotifier({
     required this.ref,
   }) : super(
-          const ArticleStoreState(
+          const NewsStoreState(
             articleState: ArticleState.loading(),
-            spaceArticleState: SpaceArticleState.loading(),
+            spaceArticlesState: SpaceArticlesState.loading(),
           ),
         );
 
   final Ref ref;
 
-  Future<void> getArticles({bool isUpdate = false}) async {
-    if (isUpdate) {
+  void setArticle({required SpaceArticle spaceArticle}) {
+    state = state.copyWith(articleState: const ArticleState.loading());
+    try {
       state = state.copyWith(
-        articleState: const ArticleState.loading(),
+        articleState: ArticleState.loaded(spaceArticle: spaceArticle),
+      );
+    } catch (e) {
+      state = state.copyWith(
+        articleState: ArticleState.error(
+          errorText: e.toString(),
+        ),
       );
     }
-    final repo = await ref.read(articlesProvider).getAllArticles();
-    repo.when(
-      data: (data) {
-        state = state.copyWith(
-          articleState: ArticleState.loaded(
-            articlesList: data,
-          ),
-        );
-      },
-      error: (error) {
-        state = state.copyWith(
-          articleState: ArticleState.error(errorText: error.title),
-        );
-      },
-    );
   }
 
   Future<void> getSpaceArticles({bool isUpdate = false}) async {
     if (isUpdate) {
       state = state.copyWith(
-        spaceArticleState: const SpaceArticleState.loading(),
+        spaceArticlesState: const SpaceArticlesState.loading(),
       );
     }
-    final repo = await ref.read(articlesProvider).getSpaceArticles(limit: 50,);
+    final repo = await ref.read(articlesProvider).getSpaceArticles(
+          limit: 50,
+        );
     repo.when(
       data: (data) {
         state = state.copyWith(
-          spaceArticleState: SpaceArticleState.loaded(
+          spaceArticlesState: SpaceArticlesState.loaded(
             spaceArticlesList: data,
           ),
         );
       },
       error: (error) {
         state = state.copyWith(
-          spaceArticleState: SpaceArticleState.error(errorText: error.title),
+          spaceArticlesState: SpaceArticlesState.error(errorText: error.title),
         );
       },
     );

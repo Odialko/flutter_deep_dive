@@ -11,9 +11,9 @@ class ArticlesScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final spaceArticleStore = ref.watch(spaceArticleStoreProvider);
-    final spaceArticleStoreNotifier =
-        ref.read(spaceArticleStoreProvider.notifier);
+    final newsStore = ref.watch(newsStoreProvider);
+    final newsStoreNotifier =
+        ref.read(newsStoreProvider.notifier);
 
     final themeData = FDDTheme.of(context);
     return Scaffold(
@@ -26,9 +26,9 @@ class ArticlesScreen extends ConsumerWidget {
       ),
       body: RefreshIndicator(
         color: themeData.colors.cocoa,
-        onRefresh: () => spaceArticleStoreNotifier.getSpaceArticles(
+        onRefresh: () => newsStoreNotifier.getSpaceArticles(
             isUpdate: true), // Обробник оновлення
-        child: spaceArticleStore.spaceArticleState.when(
+        child: newsStore.spaceArticlesState.when(
           loading: () => Center(
             child: Container(
               margin: const EdgeInsets.only(right: 20),
@@ -67,57 +67,6 @@ class ArticlesScreen extends ConsumerWidget {
         ),
       ),
     );
-    // return Scaffold(
-    //   appBar: AppBar(
-    //     title: Text(
-    //       'Articles Screen',
-    //       style: themeData.cocoaTextTheme.font4Emphasized,
-    //     ),
-    //     leading: const BurgerWidget(),
-    //   ),
-    //   body: RefreshIndicator(
-    //     color: themeData.colors.cocoa,
-    //     onRefresh: () =>
-    //         articleStoreNotifier.getArticles(isUpdate: true), // Обробник оновлення
-    //     child: articleStore.articleState.when(
-    //       loading: () => Center(
-    //         child: Container(
-    //           margin: const EdgeInsets.only(right: 20),
-    //           width: 30,
-    //           height: 30,
-    //           child: CircularProgressIndicator(
-    //             color: themeData.colors.darkGray,
-    //           ),
-    //         ),
-    //       ),
-    //       error: (String? errorText) => Text(errorText ?? 'some error'),
-    //       loaded: (List<Article> articles) {
-    //         return Padding(
-    //           padding: const EdgeInsets.only(
-    //             left: 20,
-    //             right: 20,
-    //           ),
-    //           child: ListView(
-    //             children: [
-    //               for (var article in articles) ...[
-    //                 const SizedBox(
-    //                   height: 20,
-    //                 ),
-    //                 ArticleTile(
-    //                   article: article,
-    //                 ),
-    //                 if (articles.last == article)
-    //                   const SizedBox(
-    //                     height: 20,
-    //                   ),
-    //               ],
-    //             ],
-    //           ),
-    //         );
-    //       },
-    //     ),
-    //   ),
-    // );
   }
 }
 

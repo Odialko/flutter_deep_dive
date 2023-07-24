@@ -6,5 +6,6 @@ class Routes {
   static const register = 'register';
   static const resetPass = 'reset-pass';
   static const home = '/home';
+  static const article = 'article';
   static const error = '/error';
 }
