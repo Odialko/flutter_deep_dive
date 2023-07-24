@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:flutter_deep_dive/src/models/article.dart';
 import 'package:flutter_deep_dive/src/models/space_article.dart';
 import 'package:flutter_deep_dive/src/providers/articles_provider.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -67,6 +66,7 @@ class NewsNotifier extends StateNotifier<NewsStoreState> {
   final Ref ref;
 
   void setArticle({required SpaceArticle spaceArticle}) {
+    print('=========setArticle=== ${spaceArticle}');
     state = state.copyWith(articleState: const ArticleState.loading());
     try {
       state = state.copyWith(

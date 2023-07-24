@@ -10,7 +10,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'home_store.freezed.dart';
 
 final homeStoreProvider =
-    StateNotifierProvider.autoDispose<HomeNotifier, HomeStore>(
+    StateNotifierProvider<HomeNotifier, HomeStore>(
         (ref) => HomeNotifier());
 
 @freezed

@@ -1,5 +1,5 @@
 class Routes {
-  const Routes._();
+  // const Routes._();
 
   static const splash = '/splash';
   static const login = '/login';

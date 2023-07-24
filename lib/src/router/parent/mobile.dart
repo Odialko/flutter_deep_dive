@@ -13,6 +13,7 @@ import 'package:go_router/go_router.dart';
 
 final router = Provider<GoRouter>((ref) {
   final needRefresh = ref.read(routerNotifierProvider);
+  print('===================================Router 0');
 
   return GoRouter(
     initialLocation: Routes.splash,
@@ -21,39 +22,42 @@ final router = Provider<GoRouter>((ref) {
       GoRoute(
         name: Routes.splash,
         path: Routes.splash,
-        builder: (context, state) => const FDDSplashScreen(),
+        builder: (_, state) => const FDDSplashScreen(),
       ),
       GoRoute(
         name: Routes.login,
         path: Routes.login,
-        builder: (context, state) => LoginScreen(),
+        builder: (_, state) => LoginScreen(),
         routes: [
           GoRoute(
             name: Routes.register,
             path: Routes.register,
-            builder: (context, state) => RegisterScreen(),
+            builder: (_, state) => RegisterScreen(),
           ),
           GoRoute(
             name: Routes.resetPass,
             path: Routes.resetPass,
-            builder: (context, state) => ResetPasswordScreen(),
+            builder: (_, state) => ResetPasswordScreen(),
           ),
         ],
       ),
       GoRoute(
         name: Routes.home,
         path: Routes.home,
-        builder: (context, state) => HomeScreen(),
+        builder: (_, state) => HomeScreen(),
         routes: [
           GoRoute(
             name: Routes.article,
             path: Routes.article,
-            builder: (context, state) => const ArticleScreen(),
+            builder: (_, state) {
+              print('===================================Router 2');
+              return const ArticleScreen();
+            },
           ),
         ],
       ),
     ],
-    errorBuilder: (context, state) {
+    errorBuilder: (_, state) {
       return ErrorScreen(
         errorText: state.error.toString(),
       );

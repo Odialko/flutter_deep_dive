@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_deep_dive/src/models/space_article.dart';
 import 'package:flutter_deep_dive/src/ui/article/article_store.dart';
+import 'package:flutter_deep_dive/src/ui/common/burger/burger_widget.dart';
 import 'package:flutter_deep_dive/src/ui/flutter_deep_dive_theme.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -9,9 +10,9 @@ class ArticleScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    print('================HER');
     final themeData = FDDTheme.of(context);
     final articleState = ref.watch(articleStoreProvider);
-    final articleNotifier = ref.read(articleStoreProvider.notifier);
 
     return Scaffold(
       appBar: AppBar(
@@ -19,7 +20,7 @@ class ArticleScreen extends ConsumerWidget {
           'Space Articles Screen',
           style: themeData.cocoaTextTheme.font4Emphasized,
         ),
-        // leading: const BurgerWidget(),
+        leading: const BurgerWidget(),
       ),
       body: articleState.articleState.when(
         loading: () => Center(
