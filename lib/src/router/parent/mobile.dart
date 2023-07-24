@@ -1,6 +1,7 @@
 import 'package:flutter_deep_dive/src/providers/auth_provider.dart';
 import 'package:flutter_deep_dive/src/router/redirect.dart';
 import 'package:flutter_deep_dive/src/router/routes.dart';
+import 'package:flutter_deep_dive/src/ui/article/article_screen.dart';
 import 'package:flutter_deep_dive/src/ui/authentication/reset_password_screen.dart';
 import 'package:flutter_deep_dive/src/ui/authentication/login_screen.dart';
 import 'package:flutter_deep_dive/src/ui/authentication/register_screen.dart';
@@ -20,32 +21,41 @@ final router = Provider<GoRouter>((ref) {
       GoRoute(
         name: Routes.splash,
         path: Routes.splash,
-        builder: (context, state) => const FDDSplashScreen(),
+        builder: (_, state) => const FDDSplashScreen(),
       ),
       GoRoute(
         name: Routes.login,
         path: Routes.login,
-        builder: (context, state) => LoginScreen(),
+        builder: (_, state) => LoginScreen(),
         routes: [
           GoRoute(
             name: Routes.register,
             path: Routes.register,
-            builder: (context, state) => RegisterScreen(),
+            builder: (_, state) => RegisterScreen(),
           ),
           GoRoute(
             name: Routes.resetPass,
             path: Routes.resetPass,
-            builder: (context, state) => ResetPasswordScreen(),
+            builder: (_, state) => ResetPasswordScreen(),
           ),
         ],
       ),
       GoRoute(
         name: Routes.home,
         path: Routes.home,
-        builder: (context, state) => HomeScreen(),
+        builder: (_, state) => HomeScreen(),
+        routes: [
+          GoRoute(
+            name: Routes.article,
+            path: Routes.article,
+            builder: (_, state) {
+              return const ArticleScreen();
+            },
+          ),
+        ],
       ),
     ],
-    errorBuilder: (context, state) {
+    errorBuilder: (_, state) {
       return ErrorScreen(
         errorText: state.error.toString(),
       );

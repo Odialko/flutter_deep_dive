@@ -1,3 +1,4 @@
+import 'package:flutter_deep_dive/src/ui/article/article_screen.dart';
 import 'package:flutter_deep_dive/src/ui/common/error/error_screen.dart';
 import 'package:flutter_deep_dive/src/providers/auth_provider.dart';
 import 'package:flutter_deep_dive/src/router/redirect.dart';
@@ -48,6 +49,13 @@ final router = Provider<GoRouter>((ref) {
         name: Routes.home,
         path: Routes.home,
         builder: (context, state) => HomeScreen(),
+        routes: [
+          GoRoute(
+            name: Routes.article,
+            path: Routes.article,
+            builder: (context, state) => const ArticleScreen(),
+          ),
+        ],
       ),
     ],
     errorBuilder: (context, state) {
