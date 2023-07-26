@@ -22,7 +22,7 @@ final newsStoreProvider = StateNotifierProvider<NewsNotifier, NewsStoreState>(
 );
 
 final articleStoreProvider =
-    StateNotifierProvider.autoDispose<NewsNotifier, NewsStoreState>(
+    StateNotifierProvider<NewsNotifier, NewsStoreState>(
   (ref) => NewsNotifier(ref: ref),
 );
 
@@ -86,6 +86,9 @@ class NewsNotifier extends StateNotifier<NewsStoreState> {
         spaceArticlesState: const SpaceArticlesState.loading(),
       );
     }
+    state = state.copyWith(
+      articleState: const ArticleState.loading(),
+    );
     final repo = await ref.read(articlesProvider).getSpaceArticles(
           limit: 50,
         );

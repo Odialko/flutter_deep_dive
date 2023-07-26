@@ -25,9 +25,7 @@ String? authRedirect(
 
   if (isLoginFlow && !isAuth) return null;
 
+  if (!isAuth) return Routes.login;
 
-  /// there is a root of evil
   return isAuth && isLoginFlow ? Routes.home : null;
-
-  // return isAuth ? Routes.home : Routes.login;
 }
