@@ -17,7 +17,7 @@ class LoginScreen extends ConsumerWidget {
     final s = S.of(context);
     return Scaffold(
       appBar: AppBar(
-        title: const Text(s.authentication_label),
+        title: Text(s.authentication_label),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
