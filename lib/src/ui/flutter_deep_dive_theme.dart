@@ -154,6 +154,7 @@ class _FDDFontStyles {
 
 /// The default configuration that represents the FDD design system
 /// look and feel.
+
 final _baseTextTheme = FDDTextTheme(
   font0: _FDDFontStyles.font0,
   font1: _FDDFontStyles.font1,
