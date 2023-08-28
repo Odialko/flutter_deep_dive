@@ -70,6 +70,16 @@ class S {
     );
   }
 
+  /// `Authentication`
+  String get authentication_label {
+    return Intl.message(
+      'Authentication',
+      name: 'authentication_label',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Not registered`
   String get login_reg_nav {
     return Intl.message(
@@ -125,6 +135,26 @@ class S {
     return Intl.message(
       'Reset password',
       name: 'reset_btn_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Source: `
+  String get source_label {
+    return Intl.message(
+      'Source: ',
+      name: 'source_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Space Articles Screen`
+  String get articles_screen_label {
+    return Intl.message(
+      'Space Articles Screen',
+      name: 'articles_screen_label',
       desc: '',
       args: [],
     );

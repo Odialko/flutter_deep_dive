@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_deep_dive/generated/l10n.dart';
 import 'package:flutter_deep_dive/src/models/space_article.dart';
 import 'package:flutter_deep_dive/src/ui/article/article_store.dart';
 import 'package:flutter_deep_dive/src/ui/common/burger/burger_widget.dart';
@@ -11,12 +12,13 @@ class ArticleScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final themeData = FDDTheme.of(context);
+    final s = S.of(context);
     final articleState = ref.watch(articleStoreProvider);
 
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Space Articles Screen',
+          s.articles_screen_label,
           style: themeData.cocoaTextTheme.font4Emphasized,
         ),
         leading: const BurgerWidget(),

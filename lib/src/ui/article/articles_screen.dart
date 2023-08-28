@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_deep_dive/generated/l10n.dart';
 import 'package:flutter_deep_dive/src/models/space_article.dart';
 import 'package:flutter_deep_dive/src/router/routes.dart';
 import 'package:flutter_deep_dive/src/ui/article/article_store.dart';
@@ -16,10 +17,11 @@ class ArticlesScreen extends ConsumerWidget {
     final newsStoreNotifier = ref.read(newsStoreProvider.notifier);
 
     final themeData = FDDTheme.of(context);
+    final s = S.of(context);
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Space Articles Screen',
+          s.articles_screen_label,
           style: themeData.cocoaTextTheme.font4Emphasized,
         ),
         leading: const BurgerWidget(),
@@ -90,6 +92,7 @@ class ArticleTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final themeData = FDDTheme.of(context);
+    final s = S.of(context);
     return GestureDetector(
       onTap: toArticle,
       child: Container(
@@ -166,7 +169,7 @@ class ArticleTile extends StatelessWidget {
                     ),
                     RichText(
                       text: TextSpan(
-                        text: 'Source: ',
+                        text: s.source_label,
                         style: themeData.cocoaTextTheme.font4,
                         children: [
                           TextSpan(

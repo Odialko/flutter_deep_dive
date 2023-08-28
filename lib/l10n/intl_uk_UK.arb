@@ -1,4 +1,58 @@
 {
   "@@locale": "uk_UK",
-  "firstTitle": "Демонстраційна версія"
+  "app_name": "Мульти апка",
+  "@app_name": {
+    "type": "text",
+    "context": "Назва"
+  },
+  "login_btn_label": "Увійти",
+  "@login_btn_label": {
+    "type": "text",
+    "context": "Button label"
+  },
+  "authentication_label": "Авторизація",
+  "@authentication_label": {
+    "type": "text",
+    "context": "Label"
+  },
+  "login_reg_nav": "Не зареєстрований",
+  "@login_reg_nav": {
+    "type": "text",
+    "context": "Button label to registration"
+  },
+  "login_forget_pass": "Забув пароль?",
+  "@login_forget_pass": {
+    "type": "text",
+    "context": "Button label to reset password"
+  },
+  "auth_email": "Електронна пошта",
+  "@auth_email": {
+    "type": "text",
+    "context": "Input field name"
+  },
+  "auth_pass": "Пароль",
+  "@auth_pass": {
+    "type": "text",
+    "context": "Input field name"
+  },
+  "register_btn_label": "Зареєструватись",
+  "@register_btn_label": {
+    "type": "text",
+    "context": "Button label to Sign up"
+  },
+  "reset_btn_label": "Скинути пароль",
+  "@reset_btn_label": {
+    "type": "text",
+    "context": "Button label to reset password"
+  },
+  "source_label": "Джерело: ",
+  "@source_label": {
+    "type": "text",
+    "context": "Article's source"
+  },
+  "articles_screen_label": "Космос новини",
+  "@articles_screen_label": {
+    "type": "text",
+    "context": "Articles screen label"
+  }
 }
