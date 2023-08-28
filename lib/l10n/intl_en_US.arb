@@ -10,6 +10,11 @@
     "type": "text",
     "context": "Button label"
   },
+  "authentication_label": "Authentication",
+  "@authentication_label": {
+    "type": "text",
+    "context": "Label"
+  },
   "login_reg_nav": "Not registered",
   "@login_reg_nav": {
     "type": "text",
@@ -39,5 +44,15 @@
   "@reset_btn_label": {
     "type": "text",
     "context": "Button label to reset password"
+  },
+  "source_label": "Source: ",
+  "@source_label": {
+    "type": "text",
+    "context": "Article's source"
+  },
+  "articles_screen_label": "Space Articles Screen",
+  "@articles_screen_label": {
+    "type": "text",
+    "context": "Articles screen label"
   }
 }

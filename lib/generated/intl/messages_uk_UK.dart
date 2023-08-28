@@ -21,5 +21,23 @@ class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'uk_UK';
 
   final messages = _notInlinedMessages(_notInlinedMessages);
-  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{};
+  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "app_name": MessageLookupByLibrary.simpleMessage("Мульти апка"),
+        "articles_screen_label":
+            MessageLookupByLibrary.simpleMessage("Космос новини"),
+        "auth_email": MessageLookupByLibrary.simpleMessage("Електронна пошта"),
+        "auth_pass": MessageLookupByLibrary.simpleMessage("Пароль"),
+        "authentication_label":
+            MessageLookupByLibrary.simpleMessage("Авторизація"),
+        "login_btn_label": MessageLookupByLibrary.simpleMessage("Увійти"),
+        "login_forget_pass":
+            MessageLookupByLibrary.simpleMessage("Забув пароль?"),
+        "login_reg_nav":
+            MessageLookupByLibrary.simpleMessage("Не зареєстрований"),
+        "register_btn_label":
+            MessageLookupByLibrary.simpleMessage("Зареєструватись"),
+        "reset_btn_label":
+            MessageLookupByLibrary.simpleMessage("Скинути пароль"),
+        "source_label": MessageLookupByLibrary.simpleMessage("Джерело: ")
+      };
 }

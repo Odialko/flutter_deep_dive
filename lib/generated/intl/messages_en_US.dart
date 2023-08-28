@@ -23,14 +23,19 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "app_name": MessageLookupByLibrary.simpleMessage("Multi Apps"),
+        "articles_screen_label":
+            MessageLookupByLibrary.simpleMessage("Space Articles Screen"),
         "auth_email": MessageLookupByLibrary.simpleMessage("Email"),
         "auth_pass": MessageLookupByLibrary.simpleMessage("Password"),
+        "authentication_label":
+            MessageLookupByLibrary.simpleMessage("Authentication"),
         "login_btn_label": MessageLookupByLibrary.simpleMessage("Login"),
         "login_forget_pass":
             MessageLookupByLibrary.simpleMessage("Do you forget password?"),
         "login_reg_nav": MessageLookupByLibrary.simpleMessage("Not registered"),
         "register_btn_label": MessageLookupByLibrary.simpleMessage("Sign up"),
         "reset_btn_label":
-            MessageLookupByLibrary.simpleMessage("Reset password")
+            MessageLookupByLibrary.simpleMessage("Reset password"),
+        "source_label": MessageLookupByLibrary.simpleMessage("Source: ")
       };
 }
