@@ -30,6 +30,7 @@ class App extends ConsumerWidget {
 
           /// for ThemeMode https://www.kodeco.com/16628777-
           /// theming-a-flutter-app-getting-started
+          // theme: FDDTheme.darkTheme,
           theme: FDDTheme.lightTheme,
         );
       }),
