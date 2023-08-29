@@ -40,6 +40,12 @@
     "type": "text",
     "context": "Button label to Sign up"
   },
+
+  "sign_out_btn_label": "Вийти",
+  "@sign_out_btn_label": {
+    "type": "text",
+    "context": "Button label to Sign out"
+  },
   "reset_btn_label": "Скинути пароль",
   "@reset_btn_label": {
     "type": "text",

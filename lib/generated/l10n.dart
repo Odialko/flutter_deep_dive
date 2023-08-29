@@ -130,6 +130,16 @@ class S {
     );
   }
 
+  /// `Sign out`
+  String get sign_out_btn_label {
+    return Intl.message(
+      'Sign out',
+      name: 'sign_out_btn_label',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Reset password`
   String get reset_btn_label {
     return Intl.message(

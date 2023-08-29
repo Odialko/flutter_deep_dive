@@ -10,6 +10,10 @@ class MenuItems {
     icon: Icons.language,
     title: 'Learning',
   );
+  static const designPatterns = Menu(
+    icon: Icons.pattern,
+    title: 'Design Patterns',
+  );
   static const aboutUs = Menu(
     icon: Icons.info_outline,
     title: 'About Us',
@@ -18,6 +22,7 @@ class MenuItems {
   static const all = <Menu>[
     articles,
     learn,
+    designPatterns,
     aboutUs,
   ];
 }
