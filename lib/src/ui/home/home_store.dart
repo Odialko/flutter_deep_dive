@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_deep_dive/src/models/menu.dart';
 import 'package:flutter_deep_dive/src/ui/about_us/about_us.dart';
 import 'package:flutter_deep_dive/src/ui/article/articles_screen.dart';
+import 'package:flutter_deep_dive/src/ui/design_patterns/design_patterns_screen.dart';
 import 'package:flutter_deep_dive/src/ui/learning/learning_screen.dart';
 import 'package:flutter_deep_dive/src/utils/menu_items.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -35,6 +36,8 @@ class HomeNotifier extends StateNotifier<HomeStore> {
         return const ArticlesScreen();
       case 'Learning':
         return const LearningScreen();
+      case 'Design Patterns':
+        return const DesignPatternsScreen();
       case 'About Us':
         return const AboutUsScreen();
       default:

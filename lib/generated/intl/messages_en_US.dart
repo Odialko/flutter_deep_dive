@@ -36,6 +36,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "register_btn_label": MessageLookupByLibrary.simpleMessage("Sign up"),
         "reset_btn_label":
             MessageLookupByLibrary.simpleMessage("Reset password"),
+        "sign_out_btn_label": MessageLookupByLibrary.simpleMessage("Sign out"),
         "source_label": MessageLookupByLibrary.simpleMessage("Source: ")
       };
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_deep_dive/generated/l10n.dart';
 import 'package:flutter_deep_dive/src/models/menu.dart';
 import 'package:flutter_deep_dive/src/ui/authentication/auth_store.dart';
 import 'package:flutter_deep_dive/src/ui/flutter_deep_dive_theme.dart';
@@ -18,6 +19,7 @@ class MenuScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final themeData = FDDTheme.of(context);
+    final s = S.of(context);
     final authStore = ref.read(authStoreProvider.notifier);
 
     return Scaffold(
@@ -46,8 +48,8 @@ class MenuScreen extends ConsumerWidget {
                 onPressed: () {
                   authStore.signOut();
                 },
-                child: const Text(
-                  'SigOut',
+                child: Text(
+                  s.sign_out_btn_label,
                 ),
               ),
             ),

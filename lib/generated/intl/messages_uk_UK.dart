@@ -38,6 +38,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Зареєструватись"),
         "reset_btn_label":
             MessageLookupByLibrary.simpleMessage("Скинути пароль"),
+        "sign_out_btn_label": MessageLookupByLibrary.simpleMessage("Вийти"),
         "source_label": MessageLookupByLibrary.simpleMessage("Джерело: ")
       };
 }

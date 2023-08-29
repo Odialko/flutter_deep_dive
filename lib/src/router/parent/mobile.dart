@@ -52,6 +52,13 @@ final router = Provider<GoRouter>((ref) {
               return const ArticleScreen();
             },
           ),
+          // GoRoute(
+          //   name: Routes.designPatterns,
+          //   path: Routes.designPatterns,
+          //   builder: (_, state) {
+          //     return const DesignPatternsScreen();
+          //   },
+          // ),
         ],
       ),
     ],
