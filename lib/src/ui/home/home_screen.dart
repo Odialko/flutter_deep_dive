@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_deep_dive/src/ui/flutter_deep_dive_theme.dart';
 import 'package:flutter_deep_dive/src/ui/home/home_store.dart';
-import 'package:flutter_deep_dive/src/ui/menu/menu_screen.dart';
+import 'package:flutter_deep_dive/src/ui/home/menu/menu_screen.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 
