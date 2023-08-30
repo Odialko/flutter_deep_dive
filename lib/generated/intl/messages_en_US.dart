@@ -29,6 +29,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "auth_pass": MessageLookupByLibrary.simpleMessage("Password"),
         "authentication_label":
             MessageLookupByLibrary.simpleMessage("Authentication"),
+        "error_btn_label": MessageLookupByLibrary.simpleMessage("Go Back: "),
+        "error_label": MessageLookupByLibrary.simpleMessage("Error: "),
         "login_btn_label": MessageLookupByLibrary.simpleMessage("Login"),
         "login_forget_pass":
             MessageLookupByLibrary.simpleMessage("Do you forget password?"),

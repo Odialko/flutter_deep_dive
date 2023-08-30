@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_deep_dive/src/constants/constants.dart';
 import 'package:flutter_deep_dive/src/ui/flutter_deep_dive_theme.dart';
 
 class PatternListTile extends StatelessWidget {
@@ -11,7 +12,7 @@ class PatternListTile extends StatelessWidget {
     this.horizontalPadding,
     this.verticalPadding,
     this.dividerVerticalPadding,
-    this.dividerHeight = 2,
+    this.dividerHeight = LayoutConstants.dividerHeight,
   }) : super(key: key);
 
   final String title;
@@ -29,8 +30,8 @@ class PatternListTile extends StatelessWidget {
 
     return Container(
       padding: EdgeInsets.symmetric(
-        horizontal: horizontalPadding ?? 18,
-        vertical: verticalPadding ?? 18,
+        horizontal: horizontalPadding ?? LayoutConstants.mobileSidePadding,
+        vertical: verticalPadding ?? LayoutConstants.mobileSidePadding,
       ),
       child: GestureDetector(
         onTap: onPress,
@@ -43,7 +44,11 @@ class PatternListTile extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   leftIcon ?? Container(),
-                  leftIcon != null ? const SizedBox(width: 18.0) : Container(),
+                  leftIcon != null
+                      ? const SizedBox(
+                          width: LayoutConstants.widgetDeviationS,
+                        )
+                      : Container(),
                   Expanded(
                     child: Text(
                       title,
@@ -51,14 +56,19 @@ class PatternListTile extends StatelessWidget {
                       style: themeData.cocoaTextTheme.font3Emphasized,
                     ),
                   ),
-                  rightIcon != null ? const SizedBox(width: 18.0) : Container(),
+                  rightIcon != null
+                      ? const SizedBox(
+                          width: LayoutConstants.widgetDeviationS,
+                        )
+                      : Container(),
                   rightIcon ?? Container(),
                 ],
               ),
               if (dividerHeight != null)
                 Padding(
                   padding: EdgeInsets.symmetric(
-                    vertical: dividerVerticalPadding ?? 8,
+                    vertical: dividerVerticalPadding ??
+                        LayoutConstants.widgetDeviationXS,
                   ),
                   child: Divider(
                     height: dividerHeight,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_deep_dive/generated/l10n.dart';
+import 'package:flutter_deep_dive/src/constants/constants.dart';
 import 'package:flutter_deep_dive/src/models/menu.dart';
 import 'package:flutter_deep_dive/src/ui/authentication/auth_store.dart';
 import 'package:flutter_deep_dive/src/ui/flutter_deep_dive_theme.dart';
@@ -41,7 +42,7 @@ class MenuScreen extends ConsumerWidget {
             ),
             Container(
               padding: const EdgeInsets.symmetric(
-                horizontal: 16,
+                horizontal: LayoutConstants.mobileSidePadding,
               ),
               width: MediaQuery.of(context).size.width,
               child: ElevatedButton(
