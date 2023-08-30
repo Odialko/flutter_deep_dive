@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_deep_dive/src/constants/constants.dart';
 import 'package:flutter_deep_dive/src/ui/flutter_deep_dive_theme.dart';
 
 class FDDFullScreenDialog {
@@ -12,7 +13,6 @@ class FDDFullScreenDialog {
     showGeneralDialog(
       context: context,
       barrierDismissible: false,
-      transitionDuration: const Duration(milliseconds: 500),
       transitionBuilder: (context, animation, secondaryAnimation, child) {
         return FadeTransition(
           opacity: animation,
@@ -29,7 +29,9 @@ class FDDFullScreenDialog {
             child: Container(
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.height,
-              padding: const EdgeInsets.all(20),
+              padding: const EdgeInsets.all(
+                LayoutConstants.widgetDeviationS,
+              ),
               color: Colors.white,
               child: Center(
                 child: Column(

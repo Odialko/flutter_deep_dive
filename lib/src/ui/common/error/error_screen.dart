@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_deep_dive/generated/l10n.dart';
+import 'package:flutter_deep_dive/src/constants/constants.dart';
 import 'package:flutter_deep_dive/src/ui/flutter_deep_dive_theme.dart';
 import 'package:go_router/go_router.dart';
 
@@ -10,9 +12,10 @@ class ErrorScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final themeData = FDDTheme.of(context);
+    final s = S.of(context);
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Error'),
+        title: Text(s.error_label),
       ),
       body: Center(
         child: Column(
@@ -22,10 +25,12 @@ class ErrorScreen extends StatelessWidget {
               errorText,
               style: themeData.darkPinkTextTheme.font3Emphasized,
             ),
-            const SizedBox(height: 16),
+            const SizedBox(
+              height: LayoutConstants.widgetDeviationS,
+            ),
             ElevatedButton(
               onPressed: context.pop,
-              child: const Text('Go Back'),
+              child: Text(s.error_btn_label),
             ),
           ],
         ),

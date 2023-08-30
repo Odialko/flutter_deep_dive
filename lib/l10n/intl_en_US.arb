@@ -55,6 +55,16 @@
     "type": "text",
     "context": "Article's source"
   },
+  "error_label": "Error: ",
+  "@error_label": {
+    "type": "text",
+    "context": "Error title"
+  },
+  "error_btn_label": "Go Back: ",
+  "@error_btn_label": {
+    "type": "text",
+    "context": "Button label"
+  },
   "articles_screen_label": "Space Articles Screen",
   "@articles_screen_label": {
     "type": "text",

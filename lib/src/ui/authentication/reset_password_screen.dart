@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_deep_dive/generated/l10n.dart';
+import 'package:flutter_deep_dive/src/constants/constants.dart';
 import 'package:flutter_deep_dive/src/ui/authentication/auth_store.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -17,15 +18,21 @@ class ResetPasswordScreen extends ConsumerWidget {
         title: Text(s.authentication_label),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(
+          LayoutConstants.widgetDeviationS,
+        ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             TextFormField(
               controller: emailController,
-              decoration: InputDecoration(labelText: s.auth_email),
+              decoration: InputDecoration(
+                labelText: s.auth_email,
+              ),
             ),
-            const SizedBox(height: 16.0),
+            const SizedBox(
+              height: LayoutConstants.widgetDeviationS,
+            ),
             ElevatedButton(
               onPressed: () {
                 // context.goNamed(Routes.register);

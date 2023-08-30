@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_deep_dive/generated/l10n.dart';
+import 'package:flutter_deep_dive/src/constants/constants.dart';
 import 'package:flutter_deep_dive/src/router/routes.dart';
 import 'package:flutter_deep_dive/src/ui/authentication/auth_store.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -20,7 +21,9 @@ class LoginScreen extends ConsumerWidget {
         title: Text(s.authentication_label),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(
+          LayoutConstants.widgetDeviationS,
+        ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
@@ -33,21 +36,27 @@ class LoginScreen extends ConsumerWidget {
               decoration: InputDecoration(labelText: s.auth_pass),
               obscureText: true,
             ),
-            const SizedBox(height: 16.0),
+            const SizedBox(
+              height: LayoutConstants.widgetDeviationS,
+            ),
             ElevatedButton(
               onPressed: () {
                 authStore.login(emailController.text, passwordController.text);
               },
               child: Text(s.login_btn_label),
             ),
-            const SizedBox(height: 16.0),
+            const SizedBox(
+              height: LayoutConstants.widgetDeviationS,
+            ),
             ElevatedButton(
               onPressed: () {
                 context.goNamed(Routes.register);
               },
               child: Text(s.login_reg_nav),
             ),
-            const SizedBox(height: 16.0),
+            const SizedBox(
+              height: LayoutConstants.widgetDeviationS,
+            ),
             ElevatedButton(
               onPressed: () {
                 context.goNamed(Routes.resetPass);

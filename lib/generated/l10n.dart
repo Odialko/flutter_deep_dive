@@ -160,6 +160,26 @@ class S {
     );
   }
 
+  /// `Error: `
+  String get error_label {
+    return Intl.message(
+      'Error: ',
+      name: 'error_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Go Back: `
+  String get error_btn_label {
+    return Intl.message(
+      'Go Back: ',
+      name: 'error_btn_label',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Space Articles Screen`
   String get articles_screen_label {
     return Intl.message(
