@@ -5,10 +5,11 @@ import 'package:flutter_deep_dive/src/ui/menu/menu_screen.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 
-class HomeScreen extends ConsumerWidget {
-  final _drawerController = ZoomDrawerController();
+final drawerController = ZoomDrawerController();
 
-  HomeScreen({super.key});
+class HomeScreen extends ConsumerWidget {
+
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -19,13 +20,13 @@ class HomeScreen extends ConsumerWidget {
     return Scaffold(
       backgroundColor: themeData.colors.lightCreamy,
       body: ZoomDrawer(
-        controller: _drawerController,
+        controller: drawerController,
         mainScreen: homeStateNotifier.getScreen(),
         menuScreen: MenuScreen(
           currentItem: homeState.currentItem,
           onSelectedItem: (item) {
             homeStateNotifier.setCurrentItem(item);
-            _drawerController.toggle!();
+            drawerController.toggle!();
           },
         ),
         showShadow: true,

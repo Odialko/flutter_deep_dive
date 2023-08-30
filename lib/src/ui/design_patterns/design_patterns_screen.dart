@@ -24,8 +24,8 @@ class DesignPatternsScreen extends StatelessWidget {
         children: [
           PatternListTile(
             title: 'Singleton',
-            rightIcon: Icon(Icons.arrow_right),
-            // onPress: context.pushNamed(Routes.),
+            rightIcon: const Icon(Icons.arrow_right),
+            onPress: () => context.goNamed(Routes.singleton),
           ),
         ],
       ),

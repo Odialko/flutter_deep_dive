@@ -29,8 +29,8 @@ class PatternListTile extends StatelessWidget {
 
     return Container(
       padding: EdgeInsets.symmetric(
-        horizontal: horizontalPadding ?? 16,
-        vertical: verticalPadding ?? 16,
+        horizontal: horizontalPadding ?? 18,
+        vertical: verticalPadding ?? 18,
       ),
       child: GestureDetector(
         onTap: onPress,
@@ -43,7 +43,7 @@ class PatternListTile extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   leftIcon ?? Container(),
-                  leftIcon != null ? const SizedBox(width: 16.0) : Container(),
+                  leftIcon != null ? const SizedBox(width: 18.0) : Container(),
                   Expanded(
                     child: Text(
                       title,
@@ -51,7 +51,7 @@ class PatternListTile extends StatelessWidget {
                       style: themeData.cocoaTextTheme.font3Emphasized,
                     ),
                   ),
-                  rightIcon != null ? const SizedBox(width: 16.0) : Container(),
+                  rightIcon != null ? const SizedBox(width: 18.0) : Container(),
                   rightIcon ?? Container(),
                 ],
               ),

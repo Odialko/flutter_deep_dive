@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_deep_dive/src/constants/fdd_splash.dart';
+import 'package:flutter_deep_dive/src/constants/constants.dart';
 import 'package:flutter_deep_dive/src/router/routes.dart';
 import 'package:flutter_deep_dive/src/ui/flutter_deep_dive_theme.dart';
 import 'package:go_router/go_router.dart';

@@ -6,6 +6,7 @@ import 'package:flutter_deep_dive/src/ui/authentication/reset_password_screen.da
 import 'package:flutter_deep_dive/src/ui/authentication/login_screen.dart';
 import 'package:flutter_deep_dive/src/ui/authentication/register_screen.dart';
 import 'package:flutter_deep_dive/src/ui/common/error/error_screen.dart';
+import 'package:flutter_deep_dive/src/ui/design_patterns/patterns/singleton_screen.dart';
 import 'package:flutter_deep_dive/src/ui/home/home_screen.dart';
 import 'package:flutter_deep_dive/src/ui/splash/fdd_splash_screen.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -52,13 +53,13 @@ final router = Provider<GoRouter>((ref) {
               return const ArticleScreen();
             },
           ),
-          // GoRoute(
-          //   name: Routes.designPatterns,
-          //   path: Routes.designPatterns,
-          //   builder: (_, state) {
-          //     return const DesignPatternsScreen();
-          //   },
-          // ),
+          GoRoute(
+            name: Routes.singleton,
+            path: Routes.singleton,
+            builder: (_, state) {
+              return const SingletonScreen();
+            },
+          ),
         ],
       ),
     ],
