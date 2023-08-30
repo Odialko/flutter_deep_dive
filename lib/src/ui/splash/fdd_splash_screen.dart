@@ -21,7 +21,7 @@ class _FDDSplashScreenState extends State<FDDSplashScreen>
     super.initState();
     _animationController = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 1500),
+      duration: const Duration(milliseconds: FDDSplash.animationDuration),
     );
   }
 
