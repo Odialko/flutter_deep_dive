@@ -36,6 +36,24 @@ class FDDTheme extends InheritedWidget {
     return ThemeData(
       primarySwatch: Palette.createMaterialColor(_FDDColors.lightCyan),
       scaffoldBackgroundColor: _FDDColors.beige,
+      inputDecorationTheme: const InputDecorationTheme(
+        focusedBorder: UnderlineInputBorder(
+          borderSide: BorderSide(
+            color: _FDDColors.cocoa,
+          ),
+        ),
+        errorBorder: UnderlineInputBorder(
+          borderSide: BorderSide(
+            color: _FDDColors.darkPink,
+          ),
+        ),
+        errorStyle: TextStyle(
+          color: _FDDColors.darkPink,
+        ),
+        labelStyle: TextStyle(
+          color: _FDDColors.cocoa,
+        ),
+      ),
     );
   }
   //
