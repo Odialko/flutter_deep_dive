@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_deep_dive/generated/l10n.dart';
 import 'package:flutter_deep_dive/src/constants/constants.dart';
 import 'package:flutter_deep_dive/src/ui/authentication/auth_store.dart';
+import 'package:flutter_deep_dive/src/ui/flutter_deep_dive_theme.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class ResetPasswordScreen extends ConsumerWidget {
@@ -13,6 +14,7 @@ class ResetPasswordScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final authStore = ref.read(authStoreProvider.notifier);
     final s = S.of(context);
+    final themeData = FDDTheme.of(context);
     return Scaffold(
       appBar: AppBar(
         title: Text(s.authentication_label),
@@ -26,6 +28,7 @@ class ResetPasswordScreen extends ConsumerWidget {
           children: [
             TextFormField(
               controller: emailController,
+              cursorColor: themeData.colors.cocoa,
               decoration: InputDecoration(
                 labelText: s.auth_email,
               ),
