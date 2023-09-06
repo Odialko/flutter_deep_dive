@@ -42,9 +42,10 @@ class PatternStore extends StateNotifier<PatternNotifier> {
       patternType: patternType,
     );
 
-    final result = await ref
-        .read(patternsRepositoryProvider)
-        .getPatternResult(patternId: patternType.name);
+    final patternsRepository = ref.read(patternsRepositoryProvider);
+
+    final result =
+        await patternsRepository.getPatternResult(patternId: patternType.name);
 
     result.when(
       data: (data) {
@@ -54,7 +55,8 @@ class PatternStore extends StateNotifier<PatternNotifier> {
       },
       error: (error) {
         state = state.copyWith(
-          patternState: PatternState.error(errorText: error.title),
+          patternState: PatternState.error(
+              errorText: '=====getPattern> ${error.toString()}'),
         );
       },
     );
