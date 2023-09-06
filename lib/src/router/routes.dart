@@ -6,7 +6,7 @@ class Routes {
   static const resetPass = 'reset-pass';
   static const home = '/home';
   // static const designPatterns = '/design-patterns';
-  static const singleton = 'singleton';
+  static const pattern = 'pattern';
   static const article = 'article';
 
   static const error = '/error';
