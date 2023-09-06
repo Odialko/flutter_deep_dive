@@ -3,6 +3,7 @@ import 'package:flutter_deep_dive/generated/l10n.dart';
 import 'package:flutter_deep_dive/src/constants/constants.dart';
 import 'package:flutter_deep_dive/src/router/routes.dart';
 import 'package:flutter_deep_dive/src/ui/authentication/auth_store.dart';
+import 'package:flutter_deep_dive/src/ui/flutter_deep_dive_theme.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
@@ -15,6 +16,7 @@ class LoginScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final authStore = ref.read(authStoreProvider.notifier);
+    final themeData = FDDTheme.of(context);
     final s = S.of(context);
     return Scaffold(
       appBar: AppBar(
@@ -29,10 +31,15 @@ class LoginScreen extends ConsumerWidget {
           children: [
             TextFormField(
               controller: emailController,
+              cursorColor: themeData.colors.cocoa,
               decoration: InputDecoration(labelText: s.auth_email),
+            ),
+            const SizedBox(
+              height: LayoutConstants.widgetDeviationS,
             ),
             TextFormField(
               controller: passwordController,
+              cursorColor: themeData.colors.cocoa,
               decoration: InputDecoration(labelText: s.auth_pass),
               obscureText: true,
             ),
