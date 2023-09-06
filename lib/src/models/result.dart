@@ -10,7 +10,6 @@ typedef BackendExceptionBuilder = FDDBackendException? Function(
   DioException error,
 );
 
-
 // TODO(Vik): figure out errors better
 @freezed
 class Result<T> with _$Result<T> {
@@ -40,6 +39,28 @@ class Result<T> with _$Result<T> {
         response: response,
         type: DioExceptionType.badResponse,
       );
+    } catch (e) {
+      return Result.fddError(
+        e,
+      );
+    }
+  }
+
+  static Future<Result<D>> repositoryPatternGuard<R, D extends Object?>({
+    required FutureOr<Response<R>> Function() responseBuilder,
+    required FutureOr<D> Function(Response<R> response) dataBuilder,
+  }) async {
+    try {
+      final response = await responseBuilder();
+      try {
+        return Result.data(await dataBuilder(response));
+      } catch (e) {
+        throw FDDBackendException(
+          title: 'Error',
+          message: '*** Something went wrong*** ',
+          exception: e is Exception ? e : null,
+        );
+      }
     } catch (e) {
       return Result.fddError(
         e,

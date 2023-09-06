@@ -6,7 +6,7 @@ import 'package:flutter_deep_dive/src/ui/authentication/reset_password_screen.da
 import 'package:flutter_deep_dive/src/ui/authentication/login_screen.dart';
 import 'package:flutter_deep_dive/src/ui/authentication/register_screen.dart';
 import 'package:flutter_deep_dive/src/ui/common/error/error_screen.dart';
-import 'package:flutter_deep_dive/src/ui/design_patterns/patterns/singleton_screen.dart';
+import 'package:flutter_deep_dive/src/ui/design_patterns/pattern_screen/pattern_screen.dart';
 import 'package:flutter_deep_dive/src/ui/home/home_screen.dart';
 import 'package:flutter_deep_dive/src/ui/splash/fdd_splash_screen.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -44,7 +44,7 @@ final router = Provider<GoRouter>((ref) {
       GoRoute(
         name: Routes.home,
         path: Routes.home,
-        builder: (_, state) => HomeScreen(),
+        builder: (_, state) => const HomeScreen(),
         routes: [
           GoRoute(
             name: Routes.article,
@@ -54,10 +54,10 @@ final router = Provider<GoRouter>((ref) {
             },
           ),
           GoRoute(
-            name: Routes.singleton,
-            path: Routes.singleton,
+            name: Routes.pattern,
+            path: Routes.pattern,
             builder: (_, state) {
-              return const SingletonScreen();
+              return const PatternScreen();
             },
           ),
         ],

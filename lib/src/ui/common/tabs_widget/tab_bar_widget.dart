@@ -38,6 +38,12 @@ class _TabBarWidgetState extends ConsumerState<TabBarWidget>
   }
 
   @override
+  void dispose() {
+    _tabController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     final themeData = FDDTheme.of(context);
     return Scaffold(
@@ -70,11 +76,5 @@ class _TabBarWidgetState extends ConsumerState<TabBarWidget>
         ),
       ),
     );
-  }
-
-  @override
-  void dispose() {
-    _tabController.dispose();
-    super.dispose();
   }
 }

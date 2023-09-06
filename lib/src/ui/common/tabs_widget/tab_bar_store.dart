@@ -5,7 +5,7 @@ part 'tab_bar_store.freezed.dart';
 
 /// Pass TabTitles
 
-final tabBarProvider = StateNotifierProvider<TabBarNotifier, TabBarStore>(
+final tabBarProvider = StateNotifierProvider.autoDispose<TabBarNotifier, TabBarStore>(
   (ref) => TabBarNotifier(),
 );
 

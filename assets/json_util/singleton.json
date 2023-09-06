@@ -1,0 +1,59 @@
+{
+  "title": "Singleton",
+  "subtitle": "",
+  "image": "",
+  "description": [
+    {
+      "descriptionName": "Definition",
+      "imgUrl": "",
+      "descriptionItems": [
+        {
+          "descTitle": "What is Singleton?",
+          "descSubTitle": "Singleton is a creational design pattern that ensures that a class has only one instance and also provides a global point of access to it. The motivation for this pattern is stated in the <a href=\"https://en.wikipedia.org/wiki/Design_Patterns\" style=\"color: darkblue;\">GoF book</a>:<br>It’s important for some classes to have exactly one instance. Although there can be many printers in a system, there should be only one printer spooler. There should be only one file system and one window manager…<br>The main idea of this pattern is to make a class itself responsible for keeping track of its sole instance. Singleton is considered one of the simplest design patterns but it is also an easy one to get wrong if you are not careful. So let’s move to the analysis and clarify the details of Singleton and its implementation.",
+          "descImage": "",
+          "descCode": "",
+          "descToCode": ""
+        },
+        {
+          "descTitle": "Analysis",
+          "descSubTitle": "To begin with, I must mention that in the series you will find several UML class diagrams in each article. If you are not familiar with class diagrams and their notation, I strongly recommend you to read this <a href=\"https://www.uml-diagrams.org/class-reference.html\" style=\"color: darkblue;\">reference</a>.",
+          "descImage": "",
+          "descCode": "",
+          "descToCode": ""
+        },
+        {
+          "descTitle": "Applicability",
+          "descSubTitle": "Singleton could be used in cases where creating the instance of a class is expensive e.g. instantiating a class requires loading a lot of data from external sources. Also, the pattern helps when you need to access the same object over and over again across your code e.g. logger (this problem is usually resolved by applying another design pattern — dependency injection, but that’s a topic for the future \uD83D\uDE0A). Singleton could also be used when some kind of caching layer is needed — the singleton class could check and manage the cache on the instance request.",
+          "descImage": "",
+          "descCode": "",
+          "descToCode": ""
+        },
+        {
+          "descTitle": "General thoughts and dangers",
+          "descSubTitle": "<ul><li>When designing a Singleton, lazy construction should be considered — class instance should only be created when it is first needed;</li><li>In general, the Singleton class should not require parameters for its construction. If your class design requires a parameter, it could lead to the creation of a somehow different object based on that parameter — could this class still be called a Singleton, then? Some resources state that this is a valid approach, but I have a different opinion;</li><li>Thread safety — you should be aware of Singletons in multi-threaded applications. If they hold some kind of mutable data, it could lead to unexpected results, so the synchronization mechanism should be considered. Since we are talking about the Dart programming language in this series, you should know that Dart is a single-threaded programming language and its code runs in a little isolated space on the machine, called isolate. Hence, you should not worry about the thread-safety when implementing Singletons in Dart as long as you do not create a new separate isolate from the code by yourself. If you are not familiar with this topic, I strongly recommend you watch this <a href=\"https://www.youtube.com/watch?v=vl_AaCgudcY\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: darkblue;\">video</a> about isolates and event loops in Dart and Flutter.</li><li>In some cases, the Singleton design pattern is considered an anti-pattern. That is because it violates one (actually, more than one, but this example, in my opinion, is the best one) of the SOLID principles — the single responsibility principle. In addition to the main responsibility of the Singleton class, it should also manage its instance lifetime which is a separate concern. Also, the use of Singletons makes it difficult to unit test the code since it is not possible to mock a Singleton unless you provide some kind of interface that serves as its type.</li></ul>",
+          "descImage": "",
+          "descCode": "",
+          "descToCode": ""
+        }
+      ]
+    },
+    {
+      "descriptionName": "Code example",
+      "imgUrl": "",
+      "descriptionItems": [
+        {
+          "descTitle": "ExampleStateBase",
+          "descSubTitle": "Since the example’s state is implemented in several different ways, its abstraction was created to reuse it in all of the implementations. Hence, ExampleStateBase provides this abstracted state:",
+          "descCode": "base class ExampleStateBase {<br> &nbsp&nbsp @protected <br> &nbsp&nbsp late String initialText;<br> &nbsp&nbsp @protected<br> &nbsp&nbsp late String stateText;<br> &nbsp&nbsp String get currentText => stateText;<br><br> &nbsp&nbsp void setStateText(String text) {<br> &nbsp&nbsp&nbsp&nbsp stateText = text;<br> &nbsp&nbsp }<br><br> &nbsp&nbsp void reset() {<br> &nbsp&nbsp&nbsp&nbsp stateText = initialText;<br> &nbsp&nbsp }<br>}",
+          "descToCode": "As already mentioned, the example’s state consists only of a single String property stateText and its initial value initialText. Properties stateText and initialText are marked as protected — it is needed to make these properties accessible only for those classes which extend the ExampleStateBase class. However, Dart does not support the protected visibility in the same way as some of you could expect it to be coming from the other OOP language’s background such as C# or Java — we can only annotate these properties as protected but it is more as a reminder for the developer not to use them from outside of the class scope (Visual Studio Code editor even shows a warning in this case). Also, ExampleStateBase provides methods to operate the stateText."
+        },
+        {
+          "descTitle": "Singleton’s implementation using Dart magic",
+          "descSubTitle": "Class ExampleState implements a Singleton design pattern “the Dart way”:",
+          "descCode": "<br>final class ExampleState extends ExampleStateBase {<br> &nbsp&nbsp static final ExampleState _instance = ExampleState._internal(); <br><br> &nbsp&nbsp factory ExampleState() {<br> &nbsp&nbsp&nbsp&nbsp return _instance; <br> &nbsp&nbsp } <br> &nbsp&nbsp ExampleState._internal() {<br> &nbsp&nbsp&nbsp&nbsp initialText = \"A new 'ExampleState' instance has been created.\";<br> &nbsp&nbsp&nbsp&nbsp stateText = initialText;<br> &nbsp&nbsp } <br>}",
+          "descToCode": "By comparing this code with the previous implementation, you could notice that the static method getState() is missing — well, it is just not needed anymore! Dart language provides a factory constructor. It is used to implement a constructor that does not always create a new instance of its class — it is a nice and elegant way to implement the class as a Singleton, isn’t it? Now you can create the instance of the ExampleState class by calling its factory constructor in the same manner as you would do that by calling a default one — the factory constructor will create a new instance or return the existing one if it was already initiated."
+        }
+      ]
+    }
+  ]
+}
