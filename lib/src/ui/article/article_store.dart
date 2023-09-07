@@ -81,11 +81,6 @@ class NewsNotifier extends StateNotifier<NewsStoreState> {
   }
 
   Future<void> getSpaceArticles({bool isUpdate = false}) async {
-    if (isUpdate) {
-      state = state.copyWith(
-        spaceArticlesState: const SpaceArticlesState.loading(),
-      );
-    }
     state = state.copyWith(
       articleState: const ArticleState.loading(),
     );
