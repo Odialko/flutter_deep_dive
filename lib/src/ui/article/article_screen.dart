@@ -21,7 +21,7 @@ class ArticleScreen extends ConsumerWidget {
           s.articles_screen_label,
           style: themeData.cocoaTextTheme.font4Emphasized,
         ),
-        leading: const BurgerWidget(),
+        // leading: const BurgerWidget(),
       ),
       body: articleState.articleState.when(
         loading: () => Center(
