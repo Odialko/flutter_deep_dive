@@ -10,7 +10,7 @@
         {
           "descTitle": "What is Singleton?",
           "descSubTitle": "Singleton is a creational design pattern that ensures that a class has only one instance and also provides a global point of access to it. The motivation for this pattern is stated in the <a href=\"https://en.wikipedia.org/wiki/Design_Patterns\" style=\"color: darkblue;\">GoF book</a>:<br>It’s important for some classes to have exactly one instance. Although there can be many printers in a system, there should be only one printer spooler. There should be only one file system and one window manager…<br>The main idea of this pattern is to make a class itself responsible for keeping track of its sole instance. Singleton is considered one of the simplest design patterns but it is also an easy one to get wrong if you are not careful. So let’s move to the analysis and clarify the details of Singleton and its implementation.",
-          "descImage": "",
+          "descImage": "https://refactoring.guru/images/patterns/content/singleton/singleton-comic-1-en.png?id=157509c5693a657ba465c7a9d58a7c25",
           "descCode": "",
           "descToCode": ""
         },
