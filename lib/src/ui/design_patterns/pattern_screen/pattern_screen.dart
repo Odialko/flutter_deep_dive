@@ -35,7 +35,7 @@ class PatternScreen extends ConsumerWidget {
 
         return TabBarWidget(
           appBarTitle:
-              FDDMethods.capitalize(text: patternState.patternType.name),
+              FDDMethods.capitalize(text: patternState.patternType.value),
           tabs: tabs,
           tabBarView: tabBarView,
         );

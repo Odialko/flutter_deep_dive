@@ -64,6 +64,9 @@ class PatternStore extends StateNotifier<PatternNotifier> {
 }
 
 enum PatternType {
-  singleton,
-  factory,
+  singleton('Singleton'),
+  factory('Factory'),
+  factoryMethod('Factory method');
+  final String value;
+  const PatternType(this.value);
 }

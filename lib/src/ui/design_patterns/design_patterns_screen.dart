@@ -31,7 +31,7 @@ class DesignPatternsScreen extends ConsumerWidget {
             height: LayoutConstants.widgetDeviationS,
           ),
           PatternListTile(
-            title: FDDMethods.capitalize(text: PatternType.singleton.name),
+            title: FDDMethods.capitalize(text: PatternType.singleton.value),
             rightIcon: const Icon(Icons.arrow_right),
             onPress: () {
               context.goNamed(Routes.pattern);
@@ -41,12 +41,22 @@ class DesignPatternsScreen extends ConsumerWidget {
             },
           ),
           PatternListTile(
-            title: FDDMethods.capitalize(text: PatternType.factory.name),
+            title: FDDMethods.capitalize(text: PatternType.factory.value),
             rightIcon: const Icon(Icons.arrow_right),
             onPress: () {
               context.goNamed(Routes.pattern);
               patternNotifier.getPattern(
                 patternType: PatternType.factory,
+              );
+            },
+          ),
+          PatternListTile(
+            title: FDDMethods.capitalize(text: PatternType.factoryMethod.value),
+            rightIcon: const Icon(Icons.arrow_right),
+            onPress: () {
+              context.goNamed(Routes.pattern);
+              patternNotifier.getPattern(
+                patternType: PatternType.factoryMethod,
               );
             },
           ),

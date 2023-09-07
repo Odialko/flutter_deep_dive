@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_deep_dive/generated/l10n.dart';
 import 'package:flutter_deep_dive/src/models/space_article.dart';
 import 'package:flutter_deep_dive/src/ui/article/article_store.dart';
-import 'package:flutter_deep_dive/src/ui/common/burger/burger_widget.dart';
 import 'package:flutter_deep_dive/src/ui/flutter_deep_dive_theme.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -21,7 +20,7 @@ class ArticleScreen extends ConsumerWidget {
           s.articles_screen_label,
           style: themeData.cocoaTextTheme.font4Emphasized,
         ),
-        leading: const BurgerWidget(),
+        // leading: const BurgerWidget(),
       ),
       body: articleState.articleState.when(
         loading: () => Center(
