@@ -26,6 +26,7 @@ dependencies:
   dio: ^5.2.1+1
   built_collection: ^5.1.1
   flutter_widget_from_html: ^0.10.4
+  card_swiper: ^3.0.1
 
 dev_dependencies:
   flutter_test:
