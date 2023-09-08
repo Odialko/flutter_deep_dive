@@ -5,7 +5,7 @@
   "description": [
     {
       "descriptionName": "Definition",
-      "imgUrl": "",
+      "imgUrl": "https://www.pngkey.com/png/full/39-395433_crown-svg-png-icon-free-download-crown-icon.png",
       "descriptionItems": [
         {
           "descTitle": "What is Singleton?",
@@ -39,7 +39,7 @@
     },
     {
       "descriptionName": "Code example",
-      "imgUrl": "",
+      "imgUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Sample_code_icon.svg/1200px-Sample_code_icon.svg.png",
       "descriptionItems": [
         {
           "descTitle": "ExampleStateBase",

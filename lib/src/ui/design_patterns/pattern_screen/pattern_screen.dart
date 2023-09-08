@@ -23,19 +23,31 @@ class PatternScreen extends ConsumerWidget {
       ),
       error: (String? errorText) => Text(errorText ?? '#patternState error'),
       loaded: (DesignPattern designPattern) {
-        final List<String> tabs = [];
+        final List<Tab> tabs = [];
         final List<Widget> tabBarView = [];
 
         for (var item in designPattern.description ?? []) {
-          tabs.add(item.descriptionName);
+          tabs.add(
+            Tab(
+              text: item.descriptionName,
+              icon: item.imgUrl != ''
+                  ? Image.network(
+                      item.imgUrl,
+                      width: 24,
+                      height: 24,
+                    )
+                  : const Icon(Icons.info_outline),
+            ),
+          );
           tabBarView.add(
             PatternDefinition(descriptionItems: item.descriptionItems),
           );
         }
 
         return TabBarWidget(
-          appBarTitle:
-              FDDMethods.capitalize(text: patternState.patternType.value),
+          appBarTitle: FDDMethods.capitalize(
+            text: patternState.patternType.value,
+          ),
           tabs: tabs,
           tabBarView: tabBarView,
         );

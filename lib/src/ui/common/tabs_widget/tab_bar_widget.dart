@@ -11,7 +11,7 @@ class TabBarWidget extends ConsumerStatefulWidget {
     this.appBarTitle,
   }) : super(key: key);
 
-  final List<String> tabs;
+  final List<Tab> tabs;
   final List<Widget> tabBarView;
   final String? appBarTitle;
 
@@ -60,15 +60,17 @@ class _TabBarWidgetState extends ConsumerState<TabBarWidget>
         ),
       ),
       bottomNavigationBar: BottomAppBar(
+        color: themeData.colors.powderPink,
         child: SizedBox(
           height: widget.preferredSize
               .height, // Use the preferred size for consistent height
           child: TabBar(
             controller: _tabController,
-            tabs: widget.tabs
-                .map((title) =>
-                    Tab(text: title, icon: const Icon(Icons.account_box)))
-                .toList(),
+            tabs: widget.tabs,
+            // tabs: widget.tabs
+            //     .map((title) =>
+            //         Tab(text: title, icon: const Icon(Icons.account_box)))
+            //     .toList(),
             onTap: (index) {
               ref.read(tabBarProvider.notifier).updateSelectedTabIndex(index);
             },
