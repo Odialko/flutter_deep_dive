@@ -26,6 +26,7 @@ class PatternScreen extends ConsumerWidget {
         final List<Tab> tabs = [];
         final List<Widget> tabBarView = [];
 
+        // TODO: upload icons to assets and add addresses to JSON
         for (var item in designPattern.description ?? []) {
           tabs.add(
             Tab(
