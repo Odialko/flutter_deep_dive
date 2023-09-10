@@ -9,5 +9,11 @@ class Routes {
   static const pattern = 'pattern';
   static const article = 'article';
 
+
+  static const studyList = 'study_list';
+  static const flashCards = 'flash_cards';
+
+
+
   static const error = '/error';
 }
