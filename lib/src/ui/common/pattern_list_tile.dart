@@ -6,6 +6,7 @@ class PatternListTile extends StatelessWidget {
   const PatternListTile({
     Key? key,
     required this.title,
+    this.subTitle,
     this.onPress,
     this.leftIcon,
     this.rightIcon,
@@ -16,6 +17,7 @@ class PatternListTile extends StatelessWidget {
   }) : super(key: key);
 
   final String title;
+  final String? subTitle;
   final VoidCallback? onPress;
   final Icon? leftIcon;
   final Icon? rightIcon;
@@ -50,10 +52,21 @@ class PatternListTile extends StatelessWidget {
                         )
                       : Container(),
                   Expanded(
-                    child: Text(
-                      title,
-                      softWrap: true,
-                      style: themeData.cocoaTextTheme.font3Emphasized,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          title,
+                          softWrap: true,
+                          style: themeData.cocoaTextTheme.font3Emphasized,
+                        ),
+                        if (subTitle != null)
+                        Text(
+                          subTitle ?? '',
+                          softWrap: true,
+                          style: themeData.grayTextTheme.font4Emphasized,
+                        ),
+                      ],
                     ),
                   ),
                   rightIcon != null
