@@ -30,6 +30,7 @@ class DesignPatternsScreen extends ConsumerWidget {
           const SizedBox(
             height: LayoutConstants.widgetDeviationS,
           ),
+          // TODO: wrap whole row with gestrudedetector - poor clicking
           PatternListTile(
             title: FDDMethods.capitalize(text: PatternType.singleton.value),
             rightIcon: const Icon(Icons.arrow_right),
