@@ -11,6 +11,8 @@ class RegisterScreen extends ConsumerWidget {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
+  // TODO: password should match with second TextFormField(need to be created)
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final authStore = ref.read(authStoreProvider.notifier);
