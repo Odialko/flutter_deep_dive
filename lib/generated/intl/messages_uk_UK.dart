@@ -27,6 +27,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Космос новини"),
         "auth_email": MessageLookupByLibrary.simpleMessage("Електронна пошта"),
         "auth_pass": MessageLookupByLibrary.simpleMessage("Пароль"),
+        "auth_repeat_pass":
+            MessageLookupByLibrary.simpleMessage("Повторіть пароль"),
         "authentication_label":
             MessageLookupByLibrary.simpleMessage("Авторизація"),
         "login_btn_label": MessageLookupByLibrary.simpleMessage("Увійти"),
@@ -36,6 +38,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Не зареєстрований"),
         "register_btn_label":
             MessageLookupByLibrary.simpleMessage("Зареєструватись"),
+        "reset_app_title":
+            MessageLookupByLibrary.simpleMessage("Відновлення паролю"),
         "reset_btn_label":
             MessageLookupByLibrary.simpleMessage("Скинути пароль"),
         "sign_out_btn_label": MessageLookupByLibrary.simpleMessage("Вийти"),

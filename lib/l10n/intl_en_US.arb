@@ -15,7 +15,7 @@
     "type": "text",
     "context": "Label"
   },
-  "login_reg_nav": "Not registered",
+  "login_reg_nav": "Sign up",
   "@login_reg_nav": {
     "type": "text",
     "context": "Button label to registration"
@@ -29,6 +29,11 @@
   "@auth_email": {
     "type": "text",
     "context": "Input field name"
+  },
+  "auth_repeat_pass": "Repeat the password",
+  "@auth_repeat_pass": {
+    "type": "text",
+    "context": "Input field repeat password"
   },
   "auth_pass": "Password",
   "@auth_pass": {
@@ -49,6 +54,11 @@
   "@reset_btn_label": {
     "type": "text",
     "context": "Button label to reset password"
+  },
+  "reset_app_title": "Password recovery",
+  "@reset_app_title": {
+    "type": "text",
+    "context": "Recovery screen title"
   },
   "source_label": "Source: ",
   "@source_label": {

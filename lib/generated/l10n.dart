@@ -80,10 +80,10 @@ class S {
     );
   }
 
-  /// `Not registered`
+  /// `Sign up`
   String get login_reg_nav {
     return Intl.message(
-      'Not registered',
+      'Sign up',
       name: 'login_reg_nav',
       desc: '',
       args: [],
@@ -105,6 +105,16 @@ class S {
     return Intl.message(
       'Email',
       name: 'auth_email',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Repeat the password`
+  String get auth_repeat_pass {
+    return Intl.message(
+      'Repeat the password',
+      name: 'auth_repeat_pass',
       desc: '',
       args: [],
     );
@@ -145,6 +155,16 @@ class S {
     return Intl.message(
       'Reset password',
       name: 'reset_btn_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password recovery`
+  String get reset_app_title {
+    return Intl.message(
+      'Password recovery',
+      name: 'reset_app_title',
       desc: '',
       args: [],
     );

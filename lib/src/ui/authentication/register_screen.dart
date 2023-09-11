@@ -10,12 +10,13 @@ class RegisterScreen extends ConsumerWidget {
 
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
-
-  // TODO: password should match with second TextFormField(need to be created)
+  final TextEditingController passwordControllerRepeat =
+      TextEditingController();
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final authStore = ref.read(authStoreProvider.notifier);
+    final authNotifier = ref.read(authStoreProvider.notifier);
+    final authState = ref.watch(authStoreProvider);
     final s = S.of(context);
     final themeData = FDDTheme.of(context);
     return Scaffold(
@@ -33,21 +34,39 @@ class RegisterScreen extends ConsumerWidget {
               controller: emailController,
               cursorColor: themeData.colors.cocoa,
               decoration: InputDecoration(labelText: s.auth_email),
+              onChanged: (value) {
+                authNotifier.emailValidation(email: value);
+              },
+              autovalidateMode: AutovalidateMode.onUserInteraction,
             ),
             TextFormField(
               controller: passwordController,
               cursorColor: themeData.colors.cocoa,
               decoration: InputDecoration(labelText: s.auth_pass),
               obscureText: true,
+              onChanged: (_) => authNotifier.comparePasswords(
+                passFirst: passwordController.text,
+                passSecond: passwordControllerRepeat.text,
+              ),
+            ),
+            TextFormField(
+              controller: passwordControllerRepeat,
+              cursorColor: themeData.colors.cocoa,
+              decoration: InputDecoration(labelText: s.auth_repeat_pass),
+              obscureText: true,
+              onChanged: (_) => authNotifier.comparePasswords(
+                passFirst: passwordController.text,
+                passSecond: passwordControllerRepeat.text,
+              ),
             ),
             const SizedBox(
-              height: LayoutConstants.widgetDeviationS,
+              height: LayoutConstants.widgetDeviationL,
             ),
             ElevatedButton(
-              onPressed: () {
-                authStore.registration(
-                    emailController.text, passwordController.text);
-              },
+              onPressed: authState.isEmailValid && authState.isAuthBtnActive
+                  ? () => authNotifier.registration(
+                      emailController.text, passwordController.text)
+                  : null,
               child: Text(s.register_btn_label),
             ),
           ],

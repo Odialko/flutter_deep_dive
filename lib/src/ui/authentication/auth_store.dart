@@ -48,6 +48,8 @@ class AuthStoreState with _$AuthStoreState {
     required LoginState loginState,
     required RegistrationState registrationState,
     required ResetPasswordState resetPasswordState,
+    @Default(false) bool isAuthBtnActive,
+    @Default(false) bool isEmailValid,
   }) = _AuthStoreState;
 }
 
@@ -133,5 +135,24 @@ class AuthStoreNotifier extends StateNotifier<AuthStoreState> {
       loginState: const LoginState.init(),
       registrationState: const RegistrationState.init(),
     );
+  }
+
+  void comparePasswords({String? passFirst, String? passSecond}) {
+    final checked = passFirst != null && passSecond != null
+        ? passFirst == passSecond
+        : false;
+    state = state.copyWith(isAuthBtnActive: checked);
+  }
+  void emailValidation({String? email}) {
+    if (email == null || email.isEmpty) {
+      state = state.copyWith(isEmailValid: false);
+    } else {
+      final emailRegExp = RegExp(r'^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$');
+      if (!emailRegExp.hasMatch(email)) {
+        state = state.copyWith(isEmailValid: false); // Змініть на false, оскільки це неправильний формат email.
+      } else {
+        state = state.copyWith(isEmailValid: true); // Правильний формат email.
+      }
+    }
   }
 }
