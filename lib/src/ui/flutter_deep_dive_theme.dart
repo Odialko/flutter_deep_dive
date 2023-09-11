@@ -36,6 +36,14 @@ class FDDTheme extends InheritedWidget {
     return ThemeData(
       primarySwatch: Palette.createMaterialColor(_FDDColors.lightCyan),
       scaffoldBackgroundColor: _FDDColors.beige,
+      elevatedButtonTheme: ElevatedButtonThemeData(
+        style: ElevatedButton.styleFrom(
+          padding: const EdgeInsets.symmetric(vertical: 18),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(8),
+          ),
+        ),
+      ),
       inputDecorationTheme: const InputDecorationTheme(
         focusedBorder: UnderlineInputBorder(
           borderSide: BorderSide(

@@ -17,7 +17,7 @@ class ResetPasswordScreen extends ConsumerWidget {
     final themeData = FDDTheme.of(context);
     return Scaffold(
       appBar: AppBar(
-        title: Text(s.authentication_label),
+        title: Text(s.reset_app_title),
       ),
       body: Padding(
         padding: const EdgeInsets.all(
@@ -34,7 +34,7 @@ class ResetPasswordScreen extends ConsumerWidget {
               ),
             ),
             const SizedBox(
-              height: LayoutConstants.widgetDeviationS,
+              height: LayoutConstants.widgetDeviationL,
             ),
             ElevatedButton(
               onPressed: () {

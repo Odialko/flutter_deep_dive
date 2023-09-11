@@ -30,6 +30,11 @@
     "type": "text",
     "context": "Input field name"
   },
+  "auth_repeat_pass": "Повторіть пароль",
+  "@auth_repeat_pass": {
+    "type": "text",
+    "context": "Input field repeat password"
+  },
   "auth_pass": "Пароль",
   "@auth_pass": {
     "type": "text",
@@ -50,6 +55,11 @@
   "@reset_btn_label": {
     "type": "text",
     "context": "Button label to reset password"
+  },
+  "reset_app_title": "Відновлення паролю",
+  "@reset_app_title": {
+    "type": "text",
+    "context": "Recovery screen title"
   },
   "source_label": "Джерело: ",
   "@source_label": {

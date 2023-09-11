@@ -1808,6 +1808,8 @@ mixin _$AuthStoreState {
   RegistrationState get registrationState => throw _privateConstructorUsedError;
   ResetPasswordState get resetPasswordState =>
       throw _privateConstructorUsedError;
+  bool get isAuthBtnActive => throw _privateConstructorUsedError;
+  bool get isEmailValid => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $AuthStoreStateCopyWith<AuthStoreState> get copyWith =>
@@ -1823,7 +1825,9 @@ abstract class $AuthStoreStateCopyWith<$Res> {
   $Res call(
       {LoginState loginState,
       RegistrationState registrationState,
-      ResetPasswordState resetPasswordState});
+      ResetPasswordState resetPasswordState,
+      bool isAuthBtnActive,
+      bool isEmailValid});
 
   $LoginStateCopyWith<$Res> get loginState;
   $RegistrationStateCopyWith<$Res> get registrationState;
@@ -1846,6 +1850,8 @@ class _$AuthStoreStateCopyWithImpl<$Res, $Val extends AuthStoreState>
     Object? loginState = null,
     Object? registrationState = null,
     Object? resetPasswordState = null,
+    Object? isAuthBtnActive = null,
+    Object? isEmailValid = null,
   }) {
     return _then(_value.copyWith(
       loginState: null == loginState
@@ -1860,6 +1866,14 @@ class _$AuthStoreStateCopyWithImpl<$Res, $Val extends AuthStoreState>
           ? _value.resetPasswordState
           : resetPasswordState // ignore: cast_nullable_to_non_nullable
               as ResetPasswordState,
+      isAuthBtnActive: null == isAuthBtnActive
+          ? _value.isAuthBtnActive
+          : isAuthBtnActive // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isEmailValid: null == isEmailValid
+          ? _value.isEmailValid
+          : isEmailValid // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 
@@ -1900,7 +1914,9 @@ abstract class _$$_AuthStoreStateCopyWith<$Res>
   $Res call(
       {LoginState loginState,
       RegistrationState registrationState,
-      ResetPasswordState resetPasswordState});
+      ResetPasswordState resetPasswordState,
+      bool isAuthBtnActive,
+      bool isEmailValid});
 
   @override
   $LoginStateCopyWith<$Res> get loginState;
@@ -1924,6 +1940,8 @@ class __$$_AuthStoreStateCopyWithImpl<$Res>
     Object? loginState = null,
     Object? registrationState = null,
     Object? resetPasswordState = null,
+    Object? isAuthBtnActive = null,
+    Object? isEmailValid = null,
   }) {
     return _then(_$_AuthStoreState(
       loginState: null == loginState
@@ -1938,6 +1956,14 @@ class __$$_AuthStoreStateCopyWithImpl<$Res>
           ? _value.resetPasswordState
           : resetPasswordState // ignore: cast_nullable_to_non_nullable
               as ResetPasswordState,
+      isAuthBtnActive: null == isAuthBtnActive
+          ? _value.isAuthBtnActive
+          : isAuthBtnActive // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isEmailValid: null == isEmailValid
+          ? _value.isEmailValid
+          : isEmailValid // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -1948,7 +1974,9 @@ class _$_AuthStoreState implements _AuthStoreState {
   const _$_AuthStoreState(
       {required this.loginState,
       required this.registrationState,
-      required this.resetPasswordState});
+      required this.resetPasswordState,
+      this.isAuthBtnActive = false,
+      this.isEmailValid = false});
 
   @override
   final LoginState loginState;
@@ -1956,10 +1984,16 @@ class _$_AuthStoreState implements _AuthStoreState {
   final RegistrationState registrationState;
   @override
   final ResetPasswordState resetPasswordState;
+  @override
+  @JsonKey()
+  final bool isAuthBtnActive;
+  @override
+  @JsonKey()
+  final bool isEmailValid;
 
   @override
   String toString() {
-    return 'AuthStoreState(loginState: $loginState, registrationState: $registrationState, resetPasswordState: $resetPasswordState)';
+    return 'AuthStoreState(loginState: $loginState, registrationState: $registrationState, resetPasswordState: $resetPasswordState, isAuthBtnActive: $isAuthBtnActive, isEmailValid: $isEmailValid)';
   }
 
   @override
@@ -1972,12 +2006,16 @@ class _$_AuthStoreState implements _AuthStoreState {
             (identical(other.registrationState, registrationState) ||
                 other.registrationState == registrationState) &&
             (identical(other.resetPasswordState, resetPasswordState) ||
-                other.resetPasswordState == resetPasswordState));
+                other.resetPasswordState == resetPasswordState) &&
+            (identical(other.isAuthBtnActive, isAuthBtnActive) ||
+                other.isAuthBtnActive == isAuthBtnActive) &&
+            (identical(other.isEmailValid, isEmailValid) ||
+                other.isEmailValid == isEmailValid));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, loginState, registrationState, resetPasswordState);
+  int get hashCode => Object.hash(runtimeType, loginState, registrationState,
+      resetPasswordState, isAuthBtnActive, isEmailValid);
 
   @JsonKey(ignore: true)
   @override
@@ -1988,10 +2026,11 @@ class _$_AuthStoreState implements _AuthStoreState {
 
 abstract class _AuthStoreState implements AuthStoreState {
   const factory _AuthStoreState(
-          {required final LoginState loginState,
-          required final RegistrationState registrationState,
-          required final ResetPasswordState resetPasswordState}) =
-      _$_AuthStoreState;
+      {required final LoginState loginState,
+      required final RegistrationState registrationState,
+      required final ResetPasswordState resetPasswordState,
+      final bool isAuthBtnActive,
+      final bool isEmailValid}) = _$_AuthStoreState;
 
   @override
   LoginState get loginState;
@@ -1999,6 +2038,10 @@ abstract class _AuthStoreState implements AuthStoreState {
   RegistrationState get registrationState;
   @override
   ResetPasswordState get resetPasswordState;
+  @override
+  bool get isAuthBtnActive;
+  @override
+  bool get isEmailValid;
   @override
   @JsonKey(ignore: true)
   _$$_AuthStoreStateCopyWith<_$_AuthStoreState> get copyWith =>

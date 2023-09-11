@@ -27,6 +27,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Space Articles Screen"),
         "auth_email": MessageLookupByLibrary.simpleMessage("Email"),
         "auth_pass": MessageLookupByLibrary.simpleMessage("Password"),
+        "auth_repeat_pass":
+            MessageLookupByLibrary.simpleMessage("Repeat the password"),
         "authentication_label":
             MessageLookupByLibrary.simpleMessage("Authentication"),
         "error_btn_label": MessageLookupByLibrary.simpleMessage("Go Back: "),
@@ -34,8 +36,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "login_btn_label": MessageLookupByLibrary.simpleMessage("Login"),
         "login_forget_pass":
             MessageLookupByLibrary.simpleMessage("Do you forget password?"),
-        "login_reg_nav": MessageLookupByLibrary.simpleMessage("Not registered"),
+        "login_reg_nav": MessageLookupByLibrary.simpleMessage("Sign up"),
         "register_btn_label": MessageLookupByLibrary.simpleMessage("Sign up"),
+        "reset_app_title":
+            MessageLookupByLibrary.simpleMessage("Password recovery"),
         "reset_btn_label":
             MessageLookupByLibrary.simpleMessage("Reset password"),
         "sign_out_btn_label": MessageLookupByLibrary.simpleMessage("Sign out"),
