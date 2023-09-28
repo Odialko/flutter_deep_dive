@@ -4,7 +4,7 @@ import 'package:flutter_deep_dive/src/router/routes.dart';
 import 'package:flutter_deep_dive/src/ui/common/burger/burger_widget.dart';
 import 'package:flutter_deep_dive/src/ui/common/pattern_list_tile.dart';
 import 'package:flutter_deep_dive/src/ui/flutter_deep_dive_theme.dart';
-import 'package:flutter_deep_dive/src/ui/learning/learning_store.dart';
+// import 'package:flutter_deep_dive/src/ui/learning/learning_store.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
@@ -14,7 +14,7 @@ class LearningScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final themeData = FDDTheme.of(context);
-    final learningStoreNotifier = ref.read(learningStoreProvider.notifier);
+    // final learningStoreNotifier = ref.read(learningStoreProvider.notifier);
 
     return Scaffold(
       appBar: AppBar(

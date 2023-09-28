@@ -8,10 +8,10 @@ class CardSwiper extends StatefulWidget {
   const CardSwiper({super.key});
 
   @override
-  _MySwiperState createState() => _MySwiperState();
+  MySwiperState createState() => MySwiperState();
 }
 
-class _MySwiperState extends State<CardSwiper> {
+class MySwiperState extends State<CardSwiper> {
   List<String> cardTexts = [
     "Dog",
     "Cat",

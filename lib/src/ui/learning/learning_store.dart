@@ -1,6 +1,5 @@
 import 'package:flutter_deep_dive/src/providers/auth_provider.dart';
 import 'package:flutter_deep_dive/src/providers/firestore_providers.dart';
-import 'package:flutter_deep_dive/src/ui/authentication/auth_store.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
