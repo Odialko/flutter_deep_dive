@@ -65,10 +65,10 @@ class CardWidget extends StatefulWidget {
   });
 
   @override
-  _CardWidgetState createState() => _CardWidgetState();
+  CardWidgetState createState() => CardWidgetState();
 }
 
-class _CardWidgetState extends State<CardWidget>
+class CardWidgetState extends State<CardWidget>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   late Animation _animation;
