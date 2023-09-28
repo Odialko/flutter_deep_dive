@@ -6,8 +6,8 @@ part of 'pattern.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_DesignPattern _$$_DesignPatternFromJson(Map<String, dynamic> json) =>
-    _$_DesignPattern(
+_$DesignPatternImpl _$$DesignPatternImplFromJson(Map<String, dynamic> json) =>
+    _$DesignPatternImpl(
       title: json['title'] as String,
       subtitle: json['subtitle'] as String?,
       image: json['image'] as String?,
@@ -16,7 +16,7 @@ _$_DesignPattern _$$_DesignPatternFromJson(Map<String, dynamic> json) =>
           .toList(),
     );
 
-Map<String, dynamic> _$$_DesignPatternToJson(_$_DesignPattern instance) =>
+Map<String, dynamic> _$$DesignPatternImplToJson(_$DesignPatternImpl instance) =>
     <String, dynamic>{
       'title': instance.title,
       'subtitle': instance.subtitle,
@@ -24,8 +24,8 @@ Map<String, dynamic> _$$_DesignPatternToJson(_$_DesignPattern instance) =>
       'description': instance.description,
     };
 
-_$_Description _$$_DescriptionFromJson(Map<String, dynamic> json) =>
-    _$_Description(
+_$DescriptionImpl _$$DescriptionImplFromJson(Map<String, dynamic> json) =>
+    _$DescriptionImpl(
       descriptionName: json['descriptionName'] as String,
       imgUrl: json['imgUrl'] as String?,
       descriptionItems: (json['descriptionItems'] as List<dynamic>?)
@@ -33,15 +33,16 @@ _$_Description _$$_DescriptionFromJson(Map<String, dynamic> json) =>
           .toList(),
     );
 
-Map<String, dynamic> _$$_DescriptionToJson(_$_Description instance) =>
+Map<String, dynamic> _$$DescriptionImplToJson(_$DescriptionImpl instance) =>
     <String, dynamic>{
       'descriptionName': instance.descriptionName,
       'imgUrl': instance.imgUrl,
       'descriptionItems': instance.descriptionItems,
     };
 
-_$_DescriptionItem _$$_DescriptionItemFromJson(Map<String, dynamic> json) =>
-    _$_DescriptionItem(
+_$DescriptionItemImpl _$$DescriptionItemImplFromJson(
+        Map<String, dynamic> json) =>
+    _$DescriptionItemImpl(
       descTitle: json['descTitle'] as String?,
       descSubTitle: json['descSubTitle'] as String?,
       descImage: json['descImage'] as String?,
@@ -49,7 +50,8 @@ _$_DescriptionItem _$$_DescriptionItemFromJson(Map<String, dynamic> json) =>
       descToCode: json['descToCode'] as String?,
     );
 
-Map<String, dynamic> _$$_DescriptionItemToJson(_$_DescriptionItem instance) =>
+Map<String, dynamic> _$$DescriptionItemImplToJson(
+        _$DescriptionItemImpl instance) =>
     <String, dynamic>{
       'descTitle': instance.descTitle,
       'descSubTitle': instance.descSubTitle,

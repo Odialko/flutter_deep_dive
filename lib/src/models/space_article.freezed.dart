@@ -114,11 +114,11 @@ class _$SpaceArticleCopyWithImpl<$Res, $Val extends SpaceArticle>
 }
 
 /// @nodoc
-abstract class _$$_SpaceArticleCopyWith<$Res>
+abstract class _$$SpaceArticleImplCopyWith<$Res>
     implements $SpaceArticleCopyWith<$Res> {
-  factory _$$_SpaceArticleCopyWith(
-          _$_SpaceArticle value, $Res Function(_$_SpaceArticle) then) =
-      __$$_SpaceArticleCopyWithImpl<$Res>;
+  factory _$$SpaceArticleImplCopyWith(
+          _$SpaceArticleImpl value, $Res Function(_$SpaceArticleImpl) then) =
+      __$$SpaceArticleImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -134,11 +134,11 @@ abstract class _$$_SpaceArticleCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_SpaceArticleCopyWithImpl<$Res>
-    extends _$SpaceArticleCopyWithImpl<$Res, _$_SpaceArticle>
-    implements _$$_SpaceArticleCopyWith<$Res> {
-  __$$_SpaceArticleCopyWithImpl(
-      _$_SpaceArticle _value, $Res Function(_$_SpaceArticle) _then)
+class __$$SpaceArticleImplCopyWithImpl<$Res>
+    extends _$SpaceArticleCopyWithImpl<$Res, _$SpaceArticleImpl>
+    implements _$$SpaceArticleImplCopyWith<$Res> {
+  __$$SpaceArticleImplCopyWithImpl(
+      _$SpaceArticleImpl _value, $Res Function(_$SpaceArticleImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -154,7 +154,7 @@ class __$$_SpaceArticleCopyWithImpl<$Res>
     Object? updatedAt = freezed,
     Object? featured = null,
   }) {
-    return _then(_$_SpaceArticle(
+    return _then(_$SpaceArticleImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -197,8 +197,8 @@ class __$$_SpaceArticleCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SpaceArticle implements _SpaceArticle {
-  const _$_SpaceArticle(
+class _$SpaceArticleImpl implements _SpaceArticle {
+  const _$SpaceArticleImpl(
       {required this.id,
       this.title,
       this.url,
@@ -237,7 +237,7 @@ class _$_SpaceArticle implements _SpaceArticle {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SpaceArticle &&
+            other is _$SpaceArticleImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.url, url) || other.url == url) &&
@@ -261,8 +261,8 @@ class _$_SpaceArticle implements _SpaceArticle {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_SpaceArticleCopyWith<_$_SpaceArticle> get copyWith =>
-      __$$_SpaceArticleCopyWithImpl<_$_SpaceArticle>(this, _$identity);
+  _$$SpaceArticleImplCopyWith<_$SpaceArticleImpl> get copyWith =>
+      __$$SpaceArticleImplCopyWithImpl<_$SpaceArticleImpl>(this, _$identity);
 }
 
 abstract class _SpaceArticle implements SpaceArticle {
@@ -275,7 +275,7 @@ abstract class _SpaceArticle implements SpaceArticle {
       final String? summary,
       final String? publishedAt,
       final String? updatedAt,
-      required final bool featured}) = _$_SpaceArticle;
+      required final bool featured}) = _$SpaceArticleImpl;
 
   @override
   int get id;
@@ -297,6 +297,6 @@ abstract class _SpaceArticle implements SpaceArticle {
   bool get featured;
   @override
   @JsonKey(ignore: true)
-  _$$_SpaceArticleCopyWith<_$_SpaceArticle> get copyWith =>
+  _$$SpaceArticleImplCopyWith<_$SpaceArticleImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

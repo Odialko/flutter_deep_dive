@@ -18,6 +18,7 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$UserModel {
   /// only email is required because of only email is needed for auth
   String get email => throw _privateConstructorUsedError;
+  String? get uid => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $UserModelCopyWith<UserModel> get copyWith =>
@@ -29,7 +30,7 @@ abstract class $UserModelCopyWith<$Res> {
   factory $UserModelCopyWith(UserModel value, $Res Function(UserModel) then) =
       _$UserModelCopyWithImpl<$Res, UserModel>;
   @useResult
-  $Res call({String email});
+  $Res call({String email, String? uid});
 }
 
 /// @nodoc
@@ -46,89 +47,106 @@ class _$UserModelCopyWithImpl<$Res, $Val extends UserModel>
   @override
   $Res call({
     Object? email = null,
+    Object? uid = freezed,
   }) {
     return _then(_value.copyWith(
       email: null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
+      uid: freezed == uid
+          ? _value.uid
+          : uid // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$_UserModelCopyWith<$Res> implements $UserModelCopyWith<$Res> {
-  factory _$$_UserModelCopyWith(
-          _$_UserModel value, $Res Function(_$_UserModel) then) =
-      __$$_UserModelCopyWithImpl<$Res>;
+abstract class _$$UserModelImplCopyWith<$Res>
+    implements $UserModelCopyWith<$Res> {
+  factory _$$UserModelImplCopyWith(
+          _$UserModelImpl value, $Res Function(_$UserModelImpl) then) =
+      __$$UserModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String email});
+  $Res call({String email, String? uid});
 }
 
 /// @nodoc
-class __$$_UserModelCopyWithImpl<$Res>
-    extends _$UserModelCopyWithImpl<$Res, _$_UserModel>
-    implements _$$_UserModelCopyWith<$Res> {
-  __$$_UserModelCopyWithImpl(
-      _$_UserModel _value, $Res Function(_$_UserModel) _then)
+class __$$UserModelImplCopyWithImpl<$Res>
+    extends _$UserModelCopyWithImpl<$Res, _$UserModelImpl>
+    implements _$$UserModelImplCopyWith<$Res> {
+  __$$UserModelImplCopyWithImpl(
+      _$UserModelImpl _value, $Res Function(_$UserModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? email = null,
+    Object? uid = freezed,
   }) {
-    return _then(_$_UserModel(
+    return _then(_$UserModelImpl(
       email: null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
+      uid: freezed == uid
+          ? _value.uid
+          : uid // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
 
 /// @nodoc
 
-class _$_UserModel implements _UserModel {
-  const _$_UserModel({required this.email});
+class _$UserModelImpl implements _UserModel {
+  const _$UserModelImpl({required this.email, this.uid});
 
   /// only email is required because of only email is needed for auth
   @override
   final String email;
+  @override
+  final String? uid;
 
   @override
   String toString() {
-    return 'UserModel(email: $email)';
+    return 'UserModel(email: $email, uid: $uid)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_UserModel &&
-            (identical(other.email, email) || other.email == email));
+            other is _$UserModelImpl &&
+            (identical(other.email, email) || other.email == email) &&
+            (identical(other.uid, uid) || other.uid == uid));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, email);
+  int get hashCode => Object.hash(runtimeType, email, uid);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_UserModelCopyWith<_$_UserModel> get copyWith =>
-      __$$_UserModelCopyWithImpl<_$_UserModel>(this, _$identity);
+  _$$UserModelImplCopyWith<_$UserModelImpl> get copyWith =>
+      __$$UserModelImplCopyWithImpl<_$UserModelImpl>(this, _$identity);
 }
 
 abstract class _UserModel implements UserModel {
-  const factory _UserModel({required final String email}) = _$_UserModel;
+  const factory _UserModel({required final String email, final String? uid}) =
+      _$UserModelImpl;
 
   @override
 
   /// only email is required because of only email is needed for auth
   String get email;
   @override
+  String? get uid;
+  @override
   @JsonKey(ignore: true)
-  _$$_UserModelCopyWith<_$_UserModel> get copyWith =>
+  _$$UserModelImplCopyWith<_$UserModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

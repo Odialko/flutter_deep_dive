@@ -66,10 +66,11 @@ class _$HomeStoreCopyWithImpl<$Res, $Val extends HomeStore>
 }
 
 /// @nodoc
-abstract class _$$_HomeStoreCopyWith<$Res> implements $HomeStoreCopyWith<$Res> {
-  factory _$$_HomeStoreCopyWith(
-          _$_HomeStore value, $Res Function(_$_HomeStore) then) =
-      __$$_HomeStoreCopyWithImpl<$Res>;
+abstract class _$$HomeStoreImplCopyWith<$Res>
+    implements $HomeStoreCopyWith<$Res> {
+  factory _$$HomeStoreImplCopyWith(
+          _$HomeStoreImpl value, $Res Function(_$HomeStoreImpl) then) =
+      __$$HomeStoreImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({Menu currentItem});
@@ -79,11 +80,11 @@ abstract class _$$_HomeStoreCopyWith<$Res> implements $HomeStoreCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_HomeStoreCopyWithImpl<$Res>
-    extends _$HomeStoreCopyWithImpl<$Res, _$_HomeStore>
-    implements _$$_HomeStoreCopyWith<$Res> {
-  __$$_HomeStoreCopyWithImpl(
-      _$_HomeStore _value, $Res Function(_$_HomeStore) _then)
+class __$$HomeStoreImplCopyWithImpl<$Res>
+    extends _$HomeStoreCopyWithImpl<$Res, _$HomeStoreImpl>
+    implements _$$HomeStoreImplCopyWith<$Res> {
+  __$$HomeStoreImplCopyWithImpl(
+      _$HomeStoreImpl _value, $Res Function(_$HomeStoreImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -91,7 +92,7 @@ class __$$_HomeStoreCopyWithImpl<$Res>
   $Res call({
     Object? currentItem = null,
   }) {
-    return _then(_$_HomeStore(
+    return _then(_$HomeStoreImpl(
       currentItem: null == currentItem
           ? _value.currentItem
           : currentItem // ignore: cast_nullable_to_non_nullable
@@ -102,8 +103,8 @@ class __$$_HomeStoreCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_HomeStore implements _HomeStore {
-  const _$_HomeStore({this.currentItem = MenuItems.articles});
+class _$HomeStoreImpl implements _HomeStore {
+  const _$HomeStoreImpl({this.currentItem = MenuItems.articles});
 
   @override
   @JsonKey()
@@ -118,7 +119,7 @@ class _$_HomeStore implements _HomeStore {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_HomeStore &&
+            other is _$HomeStoreImpl &&
             (identical(other.currentItem, currentItem) ||
                 other.currentItem == currentItem));
   }
@@ -129,17 +130,17 @@ class _$_HomeStore implements _HomeStore {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_HomeStoreCopyWith<_$_HomeStore> get copyWith =>
-      __$$_HomeStoreCopyWithImpl<_$_HomeStore>(this, _$identity);
+  _$$HomeStoreImplCopyWith<_$HomeStoreImpl> get copyWith =>
+      __$$HomeStoreImplCopyWithImpl<_$HomeStoreImpl>(this, _$identity);
 }
 
 abstract class _HomeStore implements HomeStore {
-  const factory _HomeStore({final Menu currentItem}) = _$_HomeStore;
+  const factory _HomeStore({final Menu currentItem}) = _$HomeStoreImpl;
 
   @override
   Menu get currentItem;
   @override
   @JsonKey(ignore: true)
-  _$$_HomeStoreCopyWith<_$_HomeStore> get copyWith =>
+  _$$HomeStoreImplCopyWith<_$HomeStoreImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

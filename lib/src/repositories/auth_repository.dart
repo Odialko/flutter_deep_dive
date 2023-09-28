@@ -14,7 +14,10 @@ class AuthRepository {
         password: password,
       );
       if (response.user?.email != null) {
-        return UserModel(email: response.user!.email ?? '');
+        return UserModel(
+          email: response.user!.email ?? '',
+          uid: response.user?.uid,
+        );
       }
       throw Exception('User not created');
     } on FirebaseAuthException catch (e) {
@@ -28,7 +31,7 @@ class AuthRepository {
     }
   }
 
-  Future<User?> login(String email, String password) async {
+  Future<UserModel?> login(String email, String password) async {
     try {
       final response = await _auth.signInWithEmailAndPassword(
         email: email,
@@ -37,13 +40,14 @@ class AuthRepository {
 
 // Result
 
-      return response.user;
+      return UserModel(
+        email: response.user!.email ?? '',
+        uid: response.user?.uid,
+      );
       // if (response.user?.email != null) {
       //   return UserModel(email: response.user!.email ?? '');
       // }
       // throw Exception('User not logedIn');
-
-
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
         throw AuthException('User not found');

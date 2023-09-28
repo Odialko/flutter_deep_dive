@@ -26,7 +26,7 @@ class LoginState with _$LoginState {
   const factory LoginState.init() = LoginStateInit;
   const factory LoginState.loading() = LoginStateLoading;
   const factory LoginState.success({
-    required String email,
+    required UserModel userModel,
   }) = LoginStateSuccess;
   const factory LoginState.error({required String errorText}) = LoginStateError;
 }
@@ -36,7 +36,7 @@ class RegistrationState with _$RegistrationState {
   const factory RegistrationState.init() = RegistrationStateInit;
   const factory RegistrationState.loading() = RegistrationStateLoading;
   const factory RegistrationState.success({
-    required String email,
+    required UserModel userModel,
   }) = RegistrationStateSuccess;
   const factory RegistrationState.error({required String errorText}) =
       RegistrationStateError;
@@ -75,12 +75,12 @@ class AuthStoreNotifier extends StateNotifier<AuthStoreState> {
       final response =
           await ref.read(authRepositoryProvider).login(email, password);
 
-      final userModel = UserModel(email: response?.email ?? '');
+      final userModel = UserModel(email: response?.email ?? '', uid: response?.uid,);
       // Update the value of userProvider using UserNotifier
       ref.read(userProvider.notifier).setUser(userModel);
 
       state = state.copyWith(
-          loginState: LoginState.success(email: userModel.email));
+          loginState: LoginState.success(userModel: userModel));
     } catch (e) {
       state = state.copyWith(
           loginState: const LoginState.error(errorText: '-----------Error'));
@@ -96,13 +96,13 @@ class AuthStoreNotifier extends StateNotifier<AuthStoreState> {
 
       final response =
           await ref.read(authRepositoryProvider).register(email, password);
-      final userModel = UserModel(email: response?.email ?? '');
+      final userModel = UserModel(email: response?.email ?? '', uid: response?.uid,);
       // Update the value of userProvider using UserNotifier
       ref.read(userProvider.notifier).setUser(userModel);
 
       state = state.copyWith(
           registrationState:
-              RegistrationState.success(email: response?.email ?? ''));
+              RegistrationState.success(userModel: userModel));
     } catch (e) {
       state = state.copyWith(
           registrationState: const RegistrationState.error(errorText: 'Error'));

@@ -112,11 +112,11 @@ class _$MultimediaCopyWithImpl<$Res, $Val extends Multimedia>
 }
 
 /// @nodoc
-abstract class _$$_MultimediaCopyWith<$Res>
+abstract class _$$MultimediaImplCopyWith<$Res>
     implements $MultimediaCopyWith<$Res> {
-  factory _$$_MultimediaCopyWith(
-          _$_Multimedia value, $Res Function(_$_Multimedia) then) =
-      __$$_MultimediaCopyWithImpl<$Res>;
+  factory _$$MultimediaImplCopyWith(
+          _$MultimediaImpl value, $Res Function(_$MultimediaImpl) then) =
+      __$$MultimediaImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -131,11 +131,11 @@ abstract class _$$_MultimediaCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_MultimediaCopyWithImpl<$Res>
-    extends _$MultimediaCopyWithImpl<$Res, _$_Multimedia>
-    implements _$$_MultimediaCopyWith<$Res> {
-  __$$_MultimediaCopyWithImpl(
-      _$_Multimedia _value, $Res Function(_$_Multimedia) _then)
+class __$$MultimediaImplCopyWithImpl<$Res>
+    extends _$MultimediaCopyWithImpl<$Res, _$MultimediaImpl>
+    implements _$$MultimediaImplCopyWith<$Res> {
+  __$$MultimediaImplCopyWithImpl(
+      _$MultimediaImpl _value, $Res Function(_$MultimediaImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -150,7 +150,7 @@ class __$$_MultimediaCopyWithImpl<$Res>
     Object? caption = freezed,
     Object? copyright = freezed,
   }) {
-    return _then(_$_Multimedia(
+    return _then(_$MultimediaImpl(
       url: freezed == url
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
@@ -189,8 +189,8 @@ class __$$_MultimediaCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Multimedia implements _Multimedia {
-  const _$_Multimedia(
+class _$MultimediaImpl implements _Multimedia {
+  const _$MultimediaImpl(
       {this.url,
       this.format,
       this.height,
@@ -200,8 +200,8 @@ class _$_Multimedia implements _Multimedia {
       this.caption,
       this.copyright});
 
-  factory _$_Multimedia.fromJson(Map<String, dynamic> json) =>
-      _$$_MultimediaFromJson(json);
+  factory _$MultimediaImpl.fromJson(Map<String, dynamic> json) =>
+      _$$MultimediaImplFromJson(json);
 
   @override
   final String? url;
@@ -229,7 +229,7 @@ class _$_Multimedia implements _Multimedia {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Multimedia &&
+            other is _$MultimediaImpl &&
             (identical(other.url, url) || other.url == url) &&
             (identical(other.format, format) || other.format == format) &&
             (identical(other.height, height) || other.height == height) &&
@@ -249,12 +249,12 @@ class _$_Multimedia implements _Multimedia {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_MultimediaCopyWith<_$_Multimedia> get copyWith =>
-      __$$_MultimediaCopyWithImpl<_$_Multimedia>(this, _$identity);
+  _$$MultimediaImplCopyWith<_$MultimediaImpl> get copyWith =>
+      __$$MultimediaImplCopyWithImpl<_$MultimediaImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_MultimediaToJson(
+    return _$$MultimediaImplToJson(
       this,
     );
   }
@@ -269,10 +269,10 @@ abstract class _Multimedia implements Multimedia {
       final String? type,
       final String? subtype,
       final String? caption,
-      final String? copyright}) = _$_Multimedia;
+      final String? copyright}) = _$MultimediaImpl;
 
   factory _Multimedia.fromJson(Map<String, dynamic> json) =
-      _$_Multimedia.fromJson;
+      _$MultimediaImpl.fromJson;
 
   @override
   String? get url;
@@ -292,6 +292,6 @@ abstract class _Multimedia implements Multimedia {
   String? get copyright;
   @override
   @JsonKey(ignore: true)
-  _$$_MultimediaCopyWith<_$_Multimedia> get copyWith =>
+  _$$MultimediaImplCopyWith<_$MultimediaImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

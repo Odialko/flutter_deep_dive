@@ -8,10 +8,10 @@ class CardSwiper extends StatefulWidget {
   const CardSwiper({super.key});
 
   @override
-  _MySwiperState createState() => _MySwiperState();
+  MySwiperState createState() => MySwiperState();
 }
 
-class _MySwiperState extends State<CardSwiper> {
+class MySwiperState extends State<CardSwiper> {
   List<String> cardTexts = [
     "Dog",
     "Cat",
@@ -65,10 +65,10 @@ class CardWidget extends StatefulWidget {
   });
 
   @override
-  _CardWidgetState createState() => _CardWidgetState();
+  CardWidgetState createState() => CardWidgetState();
 }
 
-class _CardWidgetState extends State<CardWidget>
+class CardWidgetState extends State<CardWidget>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   late Animation _animation;

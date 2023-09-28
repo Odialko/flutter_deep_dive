@@ -1,17 +1,22 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_deep_dive/src/constants/constants.dart';
 import 'package:flutter_deep_dive/src/router/routes.dart';
 import 'package:flutter_deep_dive/src/ui/common/burger/burger_widget.dart';
 import 'package:flutter_deep_dive/src/ui/common/pattern_list_tile.dart';
 import 'package:flutter_deep_dive/src/ui/flutter_deep_dive_theme.dart';
+// import 'package:flutter_deep_dive/src/ui/learning/learning_store.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
-class LearningScreen extends StatelessWidget {
+class LearningScreen extends ConsumerWidget {
   const LearningScreen({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final themeData = FDDTheme.of(context);
+    // final learningStoreNotifier = ref.read(learningStoreProvider.notifier);
 
     return Scaffold(
       appBar: AppBar(
@@ -37,15 +42,22 @@ class LearningScreen extends StatelessWidget {
             height: LayoutConstants.widgetDeviationS,
           ),
           // TODO clickuble should be
-          const Padding(
-            padding: EdgeInsets.only(
-              right: LayoutConstants.mobileSidePadding,
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Text('+ add a new language to learn'),
-              ],
+          GestureDetector(
+            onTap: () async {
+              log('*----> Click-click <----*');
+              // TODO: Create adding words and collections to Firestore
+              // await learningStoreNotifier.createCollection();
+            },
+            child: const Padding(
+              padding: EdgeInsets.only(
+                right: LayoutConstants.mobileSidePadding,
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Text('+ add a new language to learn'),
+                ],
+              ),
             ),
           ),
         ],
