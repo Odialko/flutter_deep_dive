@@ -81,25 +81,25 @@ class _$PatternStateCopyWithImpl<$Res, $Val extends PatternState>
 }
 
 /// @nodoc
-abstract class _$$PatternStateLoadingCopyWith<$Res> {
-  factory _$$PatternStateLoadingCopyWith(_$PatternStateLoading value,
-          $Res Function(_$PatternStateLoading) then) =
-      __$$PatternStateLoadingCopyWithImpl<$Res>;
+abstract class _$$PatternStateLoadingImplCopyWith<$Res> {
+  factory _$$PatternStateLoadingImplCopyWith(_$PatternStateLoadingImpl value,
+          $Res Function(_$PatternStateLoadingImpl) then) =
+      __$$PatternStateLoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$PatternStateLoadingCopyWithImpl<$Res>
-    extends _$PatternStateCopyWithImpl<$Res, _$PatternStateLoading>
-    implements _$$PatternStateLoadingCopyWith<$Res> {
-  __$$PatternStateLoadingCopyWithImpl(
-      _$PatternStateLoading _value, $Res Function(_$PatternStateLoading) _then)
+class __$$PatternStateLoadingImplCopyWithImpl<$Res>
+    extends _$PatternStateCopyWithImpl<$Res, _$PatternStateLoadingImpl>
+    implements _$$PatternStateLoadingImplCopyWith<$Res> {
+  __$$PatternStateLoadingImplCopyWithImpl(_$PatternStateLoadingImpl _value,
+      $Res Function(_$PatternStateLoadingImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$PatternStateLoading implements PatternStateLoading {
-  const _$PatternStateLoading();
+class _$PatternStateLoadingImpl implements PatternStateLoading {
+  const _$PatternStateLoadingImpl();
 
   @override
   String toString() {
@@ -109,7 +109,8 @@ class _$PatternStateLoading implements PatternStateLoading {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$PatternStateLoading);
+        (other.runtimeType == runtimeType &&
+            other is _$PatternStateLoadingImpl);
   }
 
   @override
@@ -185,24 +186,24 @@ class _$PatternStateLoading implements PatternStateLoading {
 }
 
 abstract class PatternStateLoading implements PatternState {
-  const factory PatternStateLoading() = _$PatternStateLoading;
+  const factory PatternStateLoading() = _$PatternStateLoadingImpl;
 }
 
 /// @nodoc
-abstract class _$$PatternStateErrorCopyWith<$Res> {
-  factory _$$PatternStateErrorCopyWith(
-          _$PatternStateError value, $Res Function(_$PatternStateError) then) =
-      __$$PatternStateErrorCopyWithImpl<$Res>;
+abstract class _$$PatternStateErrorImplCopyWith<$Res> {
+  factory _$$PatternStateErrorImplCopyWith(_$PatternStateErrorImpl value,
+          $Res Function(_$PatternStateErrorImpl) then) =
+      __$$PatternStateErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String? errorText});
 }
 
 /// @nodoc
-class __$$PatternStateErrorCopyWithImpl<$Res>
-    extends _$PatternStateCopyWithImpl<$Res, _$PatternStateError>
-    implements _$$PatternStateErrorCopyWith<$Res> {
-  __$$PatternStateErrorCopyWithImpl(
-      _$PatternStateError _value, $Res Function(_$PatternStateError) _then)
+class __$$PatternStateErrorImplCopyWithImpl<$Res>
+    extends _$PatternStateCopyWithImpl<$Res, _$PatternStateErrorImpl>
+    implements _$$PatternStateErrorImplCopyWith<$Res> {
+  __$$PatternStateErrorImplCopyWithImpl(_$PatternStateErrorImpl _value,
+      $Res Function(_$PatternStateErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -210,7 +211,7 @@ class __$$PatternStateErrorCopyWithImpl<$Res>
   $Res call({
     Object? errorText = freezed,
   }) {
-    return _then(_$PatternStateError(
+    return _then(_$PatternStateErrorImpl(
       errorText: freezed == errorText
           ? _value.errorText
           : errorText // ignore: cast_nullable_to_non_nullable
@@ -221,8 +222,8 @@ class __$$PatternStateErrorCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$PatternStateError implements PatternStateError {
-  const _$PatternStateError({this.errorText});
+class _$PatternStateErrorImpl implements PatternStateError {
+  const _$PatternStateErrorImpl({this.errorText});
 
   @override
   final String? errorText;
@@ -236,7 +237,7 @@ class _$PatternStateError implements PatternStateError {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$PatternStateError &&
+            other is _$PatternStateErrorImpl &&
             (identical(other.errorText, errorText) ||
                 other.errorText == errorText));
   }
@@ -247,8 +248,9 @@ class _$PatternStateError implements PatternStateError {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$PatternStateErrorCopyWith<_$PatternStateError> get copyWith =>
-      __$$PatternStateErrorCopyWithImpl<_$PatternStateError>(this, _$identity);
+  _$$PatternStateErrorImplCopyWith<_$PatternStateErrorImpl> get copyWith =>
+      __$$PatternStateErrorImplCopyWithImpl<_$PatternStateErrorImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -321,19 +323,19 @@ class _$PatternStateError implements PatternStateError {
 
 abstract class PatternStateError implements PatternState {
   const factory PatternStateError({final String? errorText}) =
-      _$PatternStateError;
+      _$PatternStateErrorImpl;
 
   String? get errorText;
   @JsonKey(ignore: true)
-  _$$PatternStateErrorCopyWith<_$PatternStateError> get copyWith =>
+  _$$PatternStateErrorImplCopyWith<_$PatternStateErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$PatternStateLoadedCopyWith<$Res> {
-  factory _$$PatternStateLoadedCopyWith(_$PatternStateLoaded value,
-          $Res Function(_$PatternStateLoaded) then) =
-      __$$PatternStateLoadedCopyWithImpl<$Res>;
+abstract class _$$PatternStateLoadedImplCopyWith<$Res> {
+  factory _$$PatternStateLoadedImplCopyWith(_$PatternStateLoadedImpl value,
+          $Res Function(_$PatternStateLoadedImpl) then) =
+      __$$PatternStateLoadedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({DesignPattern designPattern});
 
@@ -341,11 +343,11 @@ abstract class _$$PatternStateLoadedCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$PatternStateLoadedCopyWithImpl<$Res>
-    extends _$PatternStateCopyWithImpl<$Res, _$PatternStateLoaded>
-    implements _$$PatternStateLoadedCopyWith<$Res> {
-  __$$PatternStateLoadedCopyWithImpl(
-      _$PatternStateLoaded _value, $Res Function(_$PatternStateLoaded) _then)
+class __$$PatternStateLoadedImplCopyWithImpl<$Res>
+    extends _$PatternStateCopyWithImpl<$Res, _$PatternStateLoadedImpl>
+    implements _$$PatternStateLoadedImplCopyWith<$Res> {
+  __$$PatternStateLoadedImplCopyWithImpl(_$PatternStateLoadedImpl _value,
+      $Res Function(_$PatternStateLoadedImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -353,7 +355,7 @@ class __$$PatternStateLoadedCopyWithImpl<$Res>
   $Res call({
     Object? designPattern = null,
   }) {
-    return _then(_$PatternStateLoaded(
+    return _then(_$PatternStateLoadedImpl(
       designPattern: null == designPattern
           ? _value.designPattern
           : designPattern // ignore: cast_nullable_to_non_nullable
@@ -372,8 +374,8 @@ class __$$PatternStateLoadedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$PatternStateLoaded implements PatternStateLoaded {
-  const _$PatternStateLoaded({required this.designPattern});
+class _$PatternStateLoadedImpl implements PatternStateLoaded {
+  const _$PatternStateLoadedImpl({required this.designPattern});
 
   @override
   final DesignPattern designPattern;
@@ -387,7 +389,7 @@ class _$PatternStateLoaded implements PatternStateLoaded {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$PatternStateLoaded &&
+            other is _$PatternStateLoadedImpl &&
             (identical(other.designPattern, designPattern) ||
                 other.designPattern == designPattern));
   }
@@ -398,8 +400,8 @@ class _$PatternStateLoaded implements PatternStateLoaded {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$PatternStateLoadedCopyWith<_$PatternStateLoaded> get copyWith =>
-      __$$PatternStateLoadedCopyWithImpl<_$PatternStateLoaded>(
+  _$$PatternStateLoadedImplCopyWith<_$PatternStateLoadedImpl> get copyWith =>
+      __$$PatternStateLoadedImplCopyWithImpl<_$PatternStateLoadedImpl>(
           this, _$identity);
 
   @override
@@ -473,11 +475,11 @@ class _$PatternStateLoaded implements PatternStateLoaded {
 
 abstract class PatternStateLoaded implements PatternState {
   const factory PatternStateLoaded(
-      {required final DesignPattern designPattern}) = _$PatternStateLoaded;
+      {required final DesignPattern designPattern}) = _$PatternStateLoadedImpl;
 
   DesignPattern get designPattern;
   @JsonKey(ignore: true)
-  _$$PatternStateLoadedCopyWith<_$PatternStateLoaded> get copyWith =>
+  _$$PatternStateLoadedImplCopyWith<_$PatternStateLoadedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -540,11 +542,11 @@ class _$PatternNotifierCopyWithImpl<$Res, $Val extends PatternNotifier>
 }
 
 /// @nodoc
-abstract class _$$_PatternNotifierCopyWith<$Res>
+abstract class _$$PatternNotifierImplCopyWith<$Res>
     implements $PatternNotifierCopyWith<$Res> {
-  factory _$$_PatternNotifierCopyWith(
-          _$_PatternNotifier value, $Res Function(_$_PatternNotifier) then) =
-      __$$_PatternNotifierCopyWithImpl<$Res>;
+  factory _$$PatternNotifierImplCopyWith(_$PatternNotifierImpl value,
+          $Res Function(_$PatternNotifierImpl) then) =
+      __$$PatternNotifierImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({PatternState patternState, PatternType patternType});
@@ -554,11 +556,11 @@ abstract class _$$_PatternNotifierCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_PatternNotifierCopyWithImpl<$Res>
-    extends _$PatternNotifierCopyWithImpl<$Res, _$_PatternNotifier>
-    implements _$$_PatternNotifierCopyWith<$Res> {
-  __$$_PatternNotifierCopyWithImpl(
-      _$_PatternNotifier _value, $Res Function(_$_PatternNotifier) _then)
+class __$$PatternNotifierImplCopyWithImpl<$Res>
+    extends _$PatternNotifierCopyWithImpl<$Res, _$PatternNotifierImpl>
+    implements _$$PatternNotifierImplCopyWith<$Res> {
+  __$$PatternNotifierImplCopyWithImpl(
+      _$PatternNotifierImpl _value, $Res Function(_$PatternNotifierImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -567,7 +569,7 @@ class __$$_PatternNotifierCopyWithImpl<$Res>
     Object? patternState = null,
     Object? patternType = null,
   }) {
-    return _then(_$_PatternNotifier(
+    return _then(_$PatternNotifierImpl(
       patternState: null == patternState
           ? _value.patternState
           : patternState // ignore: cast_nullable_to_non_nullable
@@ -582,8 +584,8 @@ class __$$_PatternNotifierCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_PatternNotifier implements _PatternNotifier {
-  const _$_PatternNotifier(
+class _$PatternNotifierImpl implements _PatternNotifier {
+  const _$PatternNotifierImpl(
       {required this.patternState, this.patternType = PatternType.singleton});
 
   @override
@@ -601,7 +603,7 @@ class _$_PatternNotifier implements _PatternNotifier {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_PatternNotifier &&
+            other is _$PatternNotifierImpl &&
             (identical(other.patternState, patternState) ||
                 other.patternState == patternState) &&
             (identical(other.patternType, patternType) ||
@@ -614,14 +616,15 @@ class _$_PatternNotifier implements _PatternNotifier {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_PatternNotifierCopyWith<_$_PatternNotifier> get copyWith =>
-      __$$_PatternNotifierCopyWithImpl<_$_PatternNotifier>(this, _$identity);
+  _$$PatternNotifierImplCopyWith<_$PatternNotifierImpl> get copyWith =>
+      __$$PatternNotifierImplCopyWithImpl<_$PatternNotifierImpl>(
+          this, _$identity);
 }
 
 abstract class _PatternNotifier implements PatternNotifier {
   const factory _PatternNotifier(
       {required final PatternState patternState,
-      final PatternType patternType}) = _$_PatternNotifier;
+      final PatternType patternType}) = _$PatternNotifierImpl;
 
   @override
   PatternState get patternState;
@@ -629,6 +632,6 @@ abstract class _PatternNotifier implements PatternNotifier {
   PatternType get patternType;
   @override
   @JsonKey(ignore: true)
-  _$$_PatternNotifierCopyWith<_$_PatternNotifier> get copyWith =>
+  _$$PatternNotifierImplCopyWith<_$PatternNotifierImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

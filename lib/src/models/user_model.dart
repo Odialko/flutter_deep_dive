@@ -7,5 +7,6 @@ abstract class UserModel with _$UserModel {
   const factory UserModel({
     /// only email is required because of only email is needed for auth
     required String email,
+    String? uid,
   }) = _UserModel;
 }

@@ -87,25 +87,27 @@ class _$ResetPasswordStateCopyWithImpl<$Res, $Val extends ResetPasswordState>
 }
 
 /// @nodoc
-abstract class _$$ResetPasswordStateInitCopyWith<$Res> {
-  factory _$$ResetPasswordStateInitCopyWith(_$ResetPasswordStateInit value,
-          $Res Function(_$ResetPasswordStateInit) then) =
-      __$$ResetPasswordStateInitCopyWithImpl<$Res>;
+abstract class _$$ResetPasswordStateInitImplCopyWith<$Res> {
+  factory _$$ResetPasswordStateInitImplCopyWith(
+          _$ResetPasswordStateInitImpl value,
+          $Res Function(_$ResetPasswordStateInitImpl) then) =
+      __$$ResetPasswordStateInitImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$ResetPasswordStateInitCopyWithImpl<$Res>
-    extends _$ResetPasswordStateCopyWithImpl<$Res, _$ResetPasswordStateInit>
-    implements _$$ResetPasswordStateInitCopyWith<$Res> {
-  __$$ResetPasswordStateInitCopyWithImpl(_$ResetPasswordStateInit _value,
-      $Res Function(_$ResetPasswordStateInit) _then)
+class __$$ResetPasswordStateInitImplCopyWithImpl<$Res>
+    extends _$ResetPasswordStateCopyWithImpl<$Res, _$ResetPasswordStateInitImpl>
+    implements _$$ResetPasswordStateInitImplCopyWith<$Res> {
+  __$$ResetPasswordStateInitImplCopyWithImpl(
+      _$ResetPasswordStateInitImpl _value,
+      $Res Function(_$ResetPasswordStateInitImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$ResetPasswordStateInit implements ResetPasswordStateInit {
-  const _$ResetPasswordStateInit();
+class _$ResetPasswordStateInitImpl implements ResetPasswordStateInit {
+  const _$ResetPasswordStateInitImpl();
 
   @override
   String toString() {
@@ -115,7 +117,8 @@ class _$ResetPasswordStateInit implements ResetPasswordStateInit {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$ResetPasswordStateInit);
+        (other.runtimeType == runtimeType &&
+            other is _$ResetPasswordStateInitImpl);
   }
 
   @override
@@ -197,30 +200,32 @@ class _$ResetPasswordStateInit implements ResetPasswordStateInit {
 }
 
 abstract class ResetPasswordStateInit implements ResetPasswordState {
-  const factory ResetPasswordStateInit() = _$ResetPasswordStateInit;
+  const factory ResetPasswordStateInit() = _$ResetPasswordStateInitImpl;
 }
 
 /// @nodoc
-abstract class _$$ResetPasswordStateLoadingCopyWith<$Res> {
-  factory _$$ResetPasswordStateLoadingCopyWith(
-          _$ResetPasswordStateLoading value,
-          $Res Function(_$ResetPasswordStateLoading) then) =
-      __$$ResetPasswordStateLoadingCopyWithImpl<$Res>;
+abstract class _$$ResetPasswordStateLoadingImplCopyWith<$Res> {
+  factory _$$ResetPasswordStateLoadingImplCopyWith(
+          _$ResetPasswordStateLoadingImpl value,
+          $Res Function(_$ResetPasswordStateLoadingImpl) then) =
+      __$$ResetPasswordStateLoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$ResetPasswordStateLoadingCopyWithImpl<$Res>
-    extends _$ResetPasswordStateCopyWithImpl<$Res, _$ResetPasswordStateLoading>
-    implements _$$ResetPasswordStateLoadingCopyWith<$Res> {
-  __$$ResetPasswordStateLoadingCopyWithImpl(_$ResetPasswordStateLoading _value,
-      $Res Function(_$ResetPasswordStateLoading) _then)
+class __$$ResetPasswordStateLoadingImplCopyWithImpl<$Res>
+    extends _$ResetPasswordStateCopyWithImpl<$Res,
+        _$ResetPasswordStateLoadingImpl>
+    implements _$$ResetPasswordStateLoadingImplCopyWith<$Res> {
+  __$$ResetPasswordStateLoadingImplCopyWithImpl(
+      _$ResetPasswordStateLoadingImpl _value,
+      $Res Function(_$ResetPasswordStateLoadingImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$ResetPasswordStateLoading implements ResetPasswordStateLoading {
-  const _$ResetPasswordStateLoading();
+class _$ResetPasswordStateLoadingImpl implements ResetPasswordStateLoading {
+  const _$ResetPasswordStateLoadingImpl();
 
   @override
   String toString() {
@@ -231,7 +236,7 @@ class _$ResetPasswordStateLoading implements ResetPasswordStateLoading {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ResetPasswordStateLoading);
+            other is _$ResetPasswordStateLoadingImpl);
   }
 
   @override
@@ -313,25 +318,27 @@ class _$ResetPasswordStateLoading implements ResetPasswordStateLoading {
 }
 
 abstract class ResetPasswordStateLoading implements ResetPasswordState {
-  const factory ResetPasswordStateLoading() = _$ResetPasswordStateLoading;
+  const factory ResetPasswordStateLoading() = _$ResetPasswordStateLoadingImpl;
 }
 
 /// @nodoc
-abstract class _$$ResetPasswordStateSuccessCopyWith<$Res> {
-  factory _$$ResetPasswordStateSuccessCopyWith(
-          _$ResetPasswordStateSuccess value,
-          $Res Function(_$ResetPasswordStateSuccess) then) =
-      __$$ResetPasswordStateSuccessCopyWithImpl<$Res>;
+abstract class _$$ResetPasswordStateSuccessImplCopyWith<$Res> {
+  factory _$$ResetPasswordStateSuccessImplCopyWith(
+          _$ResetPasswordStateSuccessImpl value,
+          $Res Function(_$ResetPasswordStateSuccessImpl) then) =
+      __$$ResetPasswordStateSuccessImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String email});
 }
 
 /// @nodoc
-class __$$ResetPasswordStateSuccessCopyWithImpl<$Res>
-    extends _$ResetPasswordStateCopyWithImpl<$Res, _$ResetPasswordStateSuccess>
-    implements _$$ResetPasswordStateSuccessCopyWith<$Res> {
-  __$$ResetPasswordStateSuccessCopyWithImpl(_$ResetPasswordStateSuccess _value,
-      $Res Function(_$ResetPasswordStateSuccess) _then)
+class __$$ResetPasswordStateSuccessImplCopyWithImpl<$Res>
+    extends _$ResetPasswordStateCopyWithImpl<$Res,
+        _$ResetPasswordStateSuccessImpl>
+    implements _$$ResetPasswordStateSuccessImplCopyWith<$Res> {
+  __$$ResetPasswordStateSuccessImplCopyWithImpl(
+      _$ResetPasswordStateSuccessImpl _value,
+      $Res Function(_$ResetPasswordStateSuccessImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -339,7 +346,7 @@ class __$$ResetPasswordStateSuccessCopyWithImpl<$Res>
   $Res call({
     Object? email = null,
   }) {
-    return _then(_$ResetPasswordStateSuccess(
+    return _then(_$ResetPasswordStateSuccessImpl(
       email: null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
@@ -350,8 +357,8 @@ class __$$ResetPasswordStateSuccessCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ResetPasswordStateSuccess implements ResetPasswordStateSuccess {
-  const _$ResetPasswordStateSuccess({required this.email});
+class _$ResetPasswordStateSuccessImpl implements ResetPasswordStateSuccess {
+  const _$ResetPasswordStateSuccessImpl({required this.email});
 
   @override
   final String email;
@@ -365,7 +372,7 @@ class _$ResetPasswordStateSuccess implements ResetPasswordStateSuccess {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ResetPasswordStateSuccess &&
+            other is _$ResetPasswordStateSuccessImpl &&
             (identical(other.email, email) || other.email == email));
   }
 
@@ -375,9 +382,9 @@ class _$ResetPasswordStateSuccess implements ResetPasswordStateSuccess {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ResetPasswordStateSuccessCopyWith<_$ResetPasswordStateSuccess>
-      get copyWith => __$$ResetPasswordStateSuccessCopyWithImpl<
-          _$ResetPasswordStateSuccess>(this, _$identity);
+  _$$ResetPasswordStateSuccessImplCopyWith<_$ResetPasswordStateSuccessImpl>
+      get copyWith => __$$ResetPasswordStateSuccessImplCopyWithImpl<
+          _$ResetPasswordStateSuccessImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -456,29 +463,32 @@ class _$ResetPasswordStateSuccess implements ResetPasswordStateSuccess {
 
 abstract class ResetPasswordStateSuccess implements ResetPasswordState {
   const factory ResetPasswordStateSuccess({required final String email}) =
-      _$ResetPasswordStateSuccess;
+      _$ResetPasswordStateSuccessImpl;
 
   String get email;
   @JsonKey(ignore: true)
-  _$$ResetPasswordStateSuccessCopyWith<_$ResetPasswordStateSuccess>
+  _$$ResetPasswordStateSuccessImplCopyWith<_$ResetPasswordStateSuccessImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$ResetPasswordStateErrorCopyWith<$Res> {
-  factory _$$ResetPasswordStateErrorCopyWith(_$ResetPasswordStateError value,
-          $Res Function(_$ResetPasswordStateError) then) =
-      __$$ResetPasswordStateErrorCopyWithImpl<$Res>;
+abstract class _$$ResetPasswordStateErrorImplCopyWith<$Res> {
+  factory _$$ResetPasswordStateErrorImplCopyWith(
+          _$ResetPasswordStateErrorImpl value,
+          $Res Function(_$ResetPasswordStateErrorImpl) then) =
+      __$$ResetPasswordStateErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String errorText});
 }
 
 /// @nodoc
-class __$$ResetPasswordStateErrorCopyWithImpl<$Res>
-    extends _$ResetPasswordStateCopyWithImpl<$Res, _$ResetPasswordStateError>
-    implements _$$ResetPasswordStateErrorCopyWith<$Res> {
-  __$$ResetPasswordStateErrorCopyWithImpl(_$ResetPasswordStateError _value,
-      $Res Function(_$ResetPasswordStateError) _then)
+class __$$ResetPasswordStateErrorImplCopyWithImpl<$Res>
+    extends _$ResetPasswordStateCopyWithImpl<$Res,
+        _$ResetPasswordStateErrorImpl>
+    implements _$$ResetPasswordStateErrorImplCopyWith<$Res> {
+  __$$ResetPasswordStateErrorImplCopyWithImpl(
+      _$ResetPasswordStateErrorImpl _value,
+      $Res Function(_$ResetPasswordStateErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -486,7 +496,7 @@ class __$$ResetPasswordStateErrorCopyWithImpl<$Res>
   $Res call({
     Object? errorText = null,
   }) {
-    return _then(_$ResetPasswordStateError(
+    return _then(_$ResetPasswordStateErrorImpl(
       errorText: null == errorText
           ? _value.errorText
           : errorText // ignore: cast_nullable_to_non_nullable
@@ -497,8 +507,8 @@ class __$$ResetPasswordStateErrorCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ResetPasswordStateError implements ResetPasswordStateError {
-  const _$ResetPasswordStateError({required this.errorText});
+class _$ResetPasswordStateErrorImpl implements ResetPasswordStateError {
+  const _$ResetPasswordStateErrorImpl({required this.errorText});
 
   @override
   final String errorText;
@@ -512,7 +522,7 @@ class _$ResetPasswordStateError implements ResetPasswordStateError {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ResetPasswordStateError &&
+            other is _$ResetPasswordStateErrorImpl &&
             (identical(other.errorText, errorText) ||
                 other.errorText == errorText));
   }
@@ -523,9 +533,9 @@ class _$ResetPasswordStateError implements ResetPasswordStateError {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ResetPasswordStateErrorCopyWith<_$ResetPasswordStateError> get copyWith =>
-      __$$ResetPasswordStateErrorCopyWithImpl<_$ResetPasswordStateError>(
-          this, _$identity);
+  _$$ResetPasswordStateErrorImplCopyWith<_$ResetPasswordStateErrorImpl>
+      get copyWith => __$$ResetPasswordStateErrorImplCopyWithImpl<
+          _$ResetPasswordStateErrorImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -604,12 +614,12 @@ class _$ResetPasswordStateError implements ResetPasswordStateError {
 
 abstract class ResetPasswordStateError implements ResetPasswordState {
   const factory ResetPasswordStateError({required final String errorText}) =
-      _$ResetPasswordStateError;
+      _$ResetPasswordStateErrorImpl;
 
   String get errorText;
   @JsonKey(ignore: true)
-  _$$ResetPasswordStateErrorCopyWith<_$ResetPasswordStateError> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$ResetPasswordStateErrorImplCopyWith<_$ResetPasswordStateErrorImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -618,7 +628,7 @@ mixin _$LoginState {
   TResult when<TResult extends Object?>({
     required TResult Function() init,
     required TResult Function() loading,
-    required TResult Function(String email) success,
+    required TResult Function(UserModel userModel) success,
     required TResult Function(String errorText) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -626,7 +636,7 @@ mixin _$LoginState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? init,
     TResult? Function()? loading,
-    TResult? Function(String email)? success,
+    TResult? Function(UserModel userModel)? success,
     TResult? Function(String errorText)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -634,7 +644,7 @@ mixin _$LoginState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? init,
     TResult Function()? loading,
-    TResult Function(String email)? success,
+    TResult Function(UserModel userModel)? success,
     TResult Function(String errorText)? error,
     required TResult orElse(),
   }) =>
@@ -685,25 +695,25 @@ class _$LoginStateCopyWithImpl<$Res, $Val extends LoginState>
 }
 
 /// @nodoc
-abstract class _$$LoginStateInitCopyWith<$Res> {
-  factory _$$LoginStateInitCopyWith(
-          _$LoginStateInit value, $Res Function(_$LoginStateInit) then) =
-      __$$LoginStateInitCopyWithImpl<$Res>;
+abstract class _$$LoginStateInitImplCopyWith<$Res> {
+  factory _$$LoginStateInitImplCopyWith(_$LoginStateInitImpl value,
+          $Res Function(_$LoginStateInitImpl) then) =
+      __$$LoginStateInitImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$LoginStateInitCopyWithImpl<$Res>
-    extends _$LoginStateCopyWithImpl<$Res, _$LoginStateInit>
-    implements _$$LoginStateInitCopyWith<$Res> {
-  __$$LoginStateInitCopyWithImpl(
-      _$LoginStateInit _value, $Res Function(_$LoginStateInit) _then)
+class __$$LoginStateInitImplCopyWithImpl<$Res>
+    extends _$LoginStateCopyWithImpl<$Res, _$LoginStateInitImpl>
+    implements _$$LoginStateInitImplCopyWith<$Res> {
+  __$$LoginStateInitImplCopyWithImpl(
+      _$LoginStateInitImpl _value, $Res Function(_$LoginStateInitImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$LoginStateInit implements LoginStateInit {
-  const _$LoginStateInit();
+class _$LoginStateInitImpl implements LoginStateInit {
+  const _$LoginStateInitImpl();
 
   @override
   String toString() {
@@ -713,7 +723,7 @@ class _$LoginStateInit implements LoginStateInit {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$LoginStateInit);
+        (other.runtimeType == runtimeType && other is _$LoginStateInitImpl);
   }
 
   @override
@@ -724,7 +734,7 @@ class _$LoginStateInit implements LoginStateInit {
   TResult when<TResult extends Object?>({
     required TResult Function() init,
     required TResult Function() loading,
-    required TResult Function(String email) success,
+    required TResult Function(UserModel userModel) success,
     required TResult Function(String errorText) error,
   }) {
     return init();
@@ -735,7 +745,7 @@ class _$LoginStateInit implements LoginStateInit {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? init,
     TResult? Function()? loading,
-    TResult? Function(String email)? success,
+    TResult? Function(UserModel userModel)? success,
     TResult? Function(String errorText)? error,
   }) {
     return init?.call();
@@ -746,7 +756,7 @@ class _$LoginStateInit implements LoginStateInit {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? init,
     TResult Function()? loading,
-    TResult Function(String email)? success,
+    TResult Function(UserModel userModel)? success,
     TResult Function(String errorText)? error,
     required TResult orElse(),
   }) {
@@ -795,29 +805,29 @@ class _$LoginStateInit implements LoginStateInit {
 }
 
 abstract class LoginStateInit implements LoginState {
-  const factory LoginStateInit() = _$LoginStateInit;
+  const factory LoginStateInit() = _$LoginStateInitImpl;
 }
 
 /// @nodoc
-abstract class _$$LoginStateLoadingCopyWith<$Res> {
-  factory _$$LoginStateLoadingCopyWith(
-          _$LoginStateLoading value, $Res Function(_$LoginStateLoading) then) =
-      __$$LoginStateLoadingCopyWithImpl<$Res>;
+abstract class _$$LoginStateLoadingImplCopyWith<$Res> {
+  factory _$$LoginStateLoadingImplCopyWith(_$LoginStateLoadingImpl value,
+          $Res Function(_$LoginStateLoadingImpl) then) =
+      __$$LoginStateLoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$LoginStateLoadingCopyWithImpl<$Res>
-    extends _$LoginStateCopyWithImpl<$Res, _$LoginStateLoading>
-    implements _$$LoginStateLoadingCopyWith<$Res> {
-  __$$LoginStateLoadingCopyWithImpl(
-      _$LoginStateLoading _value, $Res Function(_$LoginStateLoading) _then)
+class __$$LoginStateLoadingImplCopyWithImpl<$Res>
+    extends _$LoginStateCopyWithImpl<$Res, _$LoginStateLoadingImpl>
+    implements _$$LoginStateLoadingImplCopyWith<$Res> {
+  __$$LoginStateLoadingImplCopyWithImpl(_$LoginStateLoadingImpl _value,
+      $Res Function(_$LoginStateLoadingImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$LoginStateLoading implements LoginStateLoading {
-  const _$LoginStateLoading();
+class _$LoginStateLoadingImpl implements LoginStateLoading {
+  const _$LoginStateLoadingImpl();
 
   @override
   String toString() {
@@ -827,7 +837,7 @@ class _$LoginStateLoading implements LoginStateLoading {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$LoginStateLoading);
+        (other.runtimeType == runtimeType && other is _$LoginStateLoadingImpl);
   }
 
   @override
@@ -838,7 +848,7 @@ class _$LoginStateLoading implements LoginStateLoading {
   TResult when<TResult extends Object?>({
     required TResult Function() init,
     required TResult Function() loading,
-    required TResult Function(String email) success,
+    required TResult Function(UserModel userModel) success,
     required TResult Function(String errorText) error,
   }) {
     return loading();
@@ -849,7 +859,7 @@ class _$LoginStateLoading implements LoginStateLoading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? init,
     TResult? Function()? loading,
-    TResult? Function(String email)? success,
+    TResult? Function(UserModel userModel)? success,
     TResult? Function(String errorText)? error,
   }) {
     return loading?.call();
@@ -860,7 +870,7 @@ class _$LoginStateLoading implements LoginStateLoading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? init,
     TResult Function()? loading,
-    TResult Function(String email)? success,
+    TResult Function(UserModel userModel)? success,
     TResult Function(String errorText)? error,
     required TResult orElse(),
   }) {
@@ -909,79 +919,91 @@ class _$LoginStateLoading implements LoginStateLoading {
 }
 
 abstract class LoginStateLoading implements LoginState {
-  const factory LoginStateLoading() = _$LoginStateLoading;
+  const factory LoginStateLoading() = _$LoginStateLoadingImpl;
 }
 
 /// @nodoc
-abstract class _$$LoginStateSuccessCopyWith<$Res> {
-  factory _$$LoginStateSuccessCopyWith(
-          _$LoginStateSuccess value, $Res Function(_$LoginStateSuccess) then) =
-      __$$LoginStateSuccessCopyWithImpl<$Res>;
+abstract class _$$LoginStateSuccessImplCopyWith<$Res> {
+  factory _$$LoginStateSuccessImplCopyWith(_$LoginStateSuccessImpl value,
+          $Res Function(_$LoginStateSuccessImpl) then) =
+      __$$LoginStateSuccessImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({String email});
+  $Res call({UserModel userModel});
+
+  $UserModelCopyWith<$Res> get userModel;
 }
 
 /// @nodoc
-class __$$LoginStateSuccessCopyWithImpl<$Res>
-    extends _$LoginStateCopyWithImpl<$Res, _$LoginStateSuccess>
-    implements _$$LoginStateSuccessCopyWith<$Res> {
-  __$$LoginStateSuccessCopyWithImpl(
-      _$LoginStateSuccess _value, $Res Function(_$LoginStateSuccess) _then)
+class __$$LoginStateSuccessImplCopyWithImpl<$Res>
+    extends _$LoginStateCopyWithImpl<$Res, _$LoginStateSuccessImpl>
+    implements _$$LoginStateSuccessImplCopyWith<$Res> {
+  __$$LoginStateSuccessImplCopyWithImpl(_$LoginStateSuccessImpl _value,
+      $Res Function(_$LoginStateSuccessImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? email = null,
+    Object? userModel = null,
   }) {
-    return _then(_$LoginStateSuccess(
-      email: null == email
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String,
+    return _then(_$LoginStateSuccessImpl(
+      userModel: null == userModel
+          ? _value.userModel
+          : userModel // ignore: cast_nullable_to_non_nullable
+              as UserModel,
     ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $UserModelCopyWith<$Res> get userModel {
+    return $UserModelCopyWith<$Res>(_value.userModel, (value) {
+      return _then(_value.copyWith(userModel: value));
+    });
   }
 }
 
 /// @nodoc
 
-class _$LoginStateSuccess implements LoginStateSuccess {
-  const _$LoginStateSuccess({required this.email});
+class _$LoginStateSuccessImpl implements LoginStateSuccess {
+  const _$LoginStateSuccessImpl({required this.userModel});
 
   @override
-  final String email;
+  final UserModel userModel;
 
   @override
   String toString() {
-    return 'LoginState.success(email: $email)';
+    return 'LoginState.success(userModel: $userModel)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$LoginStateSuccess &&
-            (identical(other.email, email) || other.email == email));
+            other is _$LoginStateSuccessImpl &&
+            (identical(other.userModel, userModel) ||
+                other.userModel == userModel));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, email);
+  int get hashCode => Object.hash(runtimeType, userModel);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$LoginStateSuccessCopyWith<_$LoginStateSuccess> get copyWith =>
-      __$$LoginStateSuccessCopyWithImpl<_$LoginStateSuccess>(this, _$identity);
+  _$$LoginStateSuccessImplCopyWith<_$LoginStateSuccessImpl> get copyWith =>
+      __$$LoginStateSuccessImplCopyWithImpl<_$LoginStateSuccessImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() init,
     required TResult Function() loading,
-    required TResult Function(String email) success,
+    required TResult Function(UserModel userModel) success,
     required TResult Function(String errorText) error,
   }) {
-    return success(email);
+    return success(userModel);
   }
 
   @override
@@ -989,10 +1011,10 @@ class _$LoginStateSuccess implements LoginStateSuccess {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? init,
     TResult? Function()? loading,
-    TResult? Function(String email)? success,
+    TResult? Function(UserModel userModel)? success,
     TResult? Function(String errorText)? error,
   }) {
-    return success?.call(email);
+    return success?.call(userModel);
   }
 
   @override
@@ -1000,12 +1022,12 @@ class _$LoginStateSuccess implements LoginStateSuccess {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? init,
     TResult Function()? loading,
-    TResult Function(String email)? success,
+    TResult Function(UserModel userModel)? success,
     TResult Function(String errorText)? error,
     required TResult orElse(),
   }) {
     if (success != null) {
-      return success(email);
+      return success(userModel);
     }
     return orElse();
   }
@@ -1049,30 +1071,30 @@ class _$LoginStateSuccess implements LoginStateSuccess {
 }
 
 abstract class LoginStateSuccess implements LoginState {
-  const factory LoginStateSuccess({required final String email}) =
-      _$LoginStateSuccess;
+  const factory LoginStateSuccess({required final UserModel userModel}) =
+      _$LoginStateSuccessImpl;
 
-  String get email;
+  UserModel get userModel;
   @JsonKey(ignore: true)
-  _$$LoginStateSuccessCopyWith<_$LoginStateSuccess> get copyWith =>
+  _$$LoginStateSuccessImplCopyWith<_$LoginStateSuccessImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$LoginStateErrorCopyWith<$Res> {
-  factory _$$LoginStateErrorCopyWith(
-          _$LoginStateError value, $Res Function(_$LoginStateError) then) =
-      __$$LoginStateErrorCopyWithImpl<$Res>;
+abstract class _$$LoginStateErrorImplCopyWith<$Res> {
+  factory _$$LoginStateErrorImplCopyWith(_$LoginStateErrorImpl value,
+          $Res Function(_$LoginStateErrorImpl) then) =
+      __$$LoginStateErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String errorText});
 }
 
 /// @nodoc
-class __$$LoginStateErrorCopyWithImpl<$Res>
-    extends _$LoginStateCopyWithImpl<$Res, _$LoginStateError>
-    implements _$$LoginStateErrorCopyWith<$Res> {
-  __$$LoginStateErrorCopyWithImpl(
-      _$LoginStateError _value, $Res Function(_$LoginStateError) _then)
+class __$$LoginStateErrorImplCopyWithImpl<$Res>
+    extends _$LoginStateCopyWithImpl<$Res, _$LoginStateErrorImpl>
+    implements _$$LoginStateErrorImplCopyWith<$Res> {
+  __$$LoginStateErrorImplCopyWithImpl(
+      _$LoginStateErrorImpl _value, $Res Function(_$LoginStateErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1080,7 +1102,7 @@ class __$$LoginStateErrorCopyWithImpl<$Res>
   $Res call({
     Object? errorText = null,
   }) {
-    return _then(_$LoginStateError(
+    return _then(_$LoginStateErrorImpl(
       errorText: null == errorText
           ? _value.errorText
           : errorText // ignore: cast_nullable_to_non_nullable
@@ -1091,8 +1113,8 @@ class __$$LoginStateErrorCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$LoginStateError implements LoginStateError {
-  const _$LoginStateError({required this.errorText});
+class _$LoginStateErrorImpl implements LoginStateError {
+  const _$LoginStateErrorImpl({required this.errorText});
 
   @override
   final String errorText;
@@ -1106,7 +1128,7 @@ class _$LoginStateError implements LoginStateError {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$LoginStateError &&
+            other is _$LoginStateErrorImpl &&
             (identical(other.errorText, errorText) ||
                 other.errorText == errorText));
   }
@@ -1117,15 +1139,16 @@ class _$LoginStateError implements LoginStateError {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$LoginStateErrorCopyWith<_$LoginStateError> get copyWith =>
-      __$$LoginStateErrorCopyWithImpl<_$LoginStateError>(this, _$identity);
+  _$$LoginStateErrorImplCopyWith<_$LoginStateErrorImpl> get copyWith =>
+      __$$LoginStateErrorImplCopyWithImpl<_$LoginStateErrorImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() init,
     required TResult Function() loading,
-    required TResult Function(String email) success,
+    required TResult Function(UserModel userModel) success,
     required TResult Function(String errorText) error,
   }) {
     return error(errorText);
@@ -1136,7 +1159,7 @@ class _$LoginStateError implements LoginStateError {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? init,
     TResult? Function()? loading,
-    TResult? Function(String email)? success,
+    TResult? Function(UserModel userModel)? success,
     TResult? Function(String errorText)? error,
   }) {
     return error?.call(errorText);
@@ -1147,7 +1170,7 @@ class _$LoginStateError implements LoginStateError {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? init,
     TResult Function()? loading,
-    TResult Function(String email)? success,
+    TResult Function(UserModel userModel)? success,
     TResult Function(String errorText)? error,
     required TResult orElse(),
   }) {
@@ -1197,11 +1220,11 @@ class _$LoginStateError implements LoginStateError {
 
 abstract class LoginStateError implements LoginState {
   const factory LoginStateError({required final String errorText}) =
-      _$LoginStateError;
+      _$LoginStateErrorImpl;
 
   String get errorText;
   @JsonKey(ignore: true)
-  _$$LoginStateErrorCopyWith<_$LoginStateError> get copyWith =>
+  _$$LoginStateErrorImplCopyWith<_$LoginStateErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1211,7 +1234,7 @@ mixin _$RegistrationState {
   TResult when<TResult extends Object?>({
     required TResult Function() init,
     required TResult Function() loading,
-    required TResult Function(String email) success,
+    required TResult Function(UserModel userModel) success,
     required TResult Function(String errorText) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -1219,7 +1242,7 @@ mixin _$RegistrationState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? init,
     TResult? Function()? loading,
-    TResult? Function(String email)? success,
+    TResult? Function(UserModel userModel)? success,
     TResult? Function(String errorText)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -1227,7 +1250,7 @@ mixin _$RegistrationState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? init,
     TResult Function()? loading,
-    TResult Function(String email)? success,
+    TResult Function(UserModel userModel)? success,
     TResult Function(String errorText)? error,
     required TResult orElse(),
   }) =>
@@ -1278,25 +1301,26 @@ class _$RegistrationStateCopyWithImpl<$Res, $Val extends RegistrationState>
 }
 
 /// @nodoc
-abstract class _$$RegistrationStateInitCopyWith<$Res> {
-  factory _$$RegistrationStateInitCopyWith(_$RegistrationStateInit value,
-          $Res Function(_$RegistrationStateInit) then) =
-      __$$RegistrationStateInitCopyWithImpl<$Res>;
+abstract class _$$RegistrationStateInitImplCopyWith<$Res> {
+  factory _$$RegistrationStateInitImplCopyWith(
+          _$RegistrationStateInitImpl value,
+          $Res Function(_$RegistrationStateInitImpl) then) =
+      __$$RegistrationStateInitImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$RegistrationStateInitCopyWithImpl<$Res>
-    extends _$RegistrationStateCopyWithImpl<$Res, _$RegistrationStateInit>
-    implements _$$RegistrationStateInitCopyWith<$Res> {
-  __$$RegistrationStateInitCopyWithImpl(_$RegistrationStateInit _value,
-      $Res Function(_$RegistrationStateInit) _then)
+class __$$RegistrationStateInitImplCopyWithImpl<$Res>
+    extends _$RegistrationStateCopyWithImpl<$Res, _$RegistrationStateInitImpl>
+    implements _$$RegistrationStateInitImplCopyWith<$Res> {
+  __$$RegistrationStateInitImplCopyWithImpl(_$RegistrationStateInitImpl _value,
+      $Res Function(_$RegistrationStateInitImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$RegistrationStateInit implements RegistrationStateInit {
-  const _$RegistrationStateInit();
+class _$RegistrationStateInitImpl implements RegistrationStateInit {
+  const _$RegistrationStateInitImpl();
 
   @override
   String toString() {
@@ -1306,7 +1330,8 @@ class _$RegistrationStateInit implements RegistrationStateInit {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$RegistrationStateInit);
+        (other.runtimeType == runtimeType &&
+            other is _$RegistrationStateInitImpl);
   }
 
   @override
@@ -1317,7 +1342,7 @@ class _$RegistrationStateInit implements RegistrationStateInit {
   TResult when<TResult extends Object?>({
     required TResult Function() init,
     required TResult Function() loading,
-    required TResult Function(String email) success,
+    required TResult Function(UserModel userModel) success,
     required TResult Function(String errorText) error,
   }) {
     return init();
@@ -1328,7 +1353,7 @@ class _$RegistrationStateInit implements RegistrationStateInit {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? init,
     TResult? Function()? loading,
-    TResult? Function(String email)? success,
+    TResult? Function(UserModel userModel)? success,
     TResult? Function(String errorText)? error,
   }) {
     return init?.call();
@@ -1339,7 +1364,7 @@ class _$RegistrationStateInit implements RegistrationStateInit {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? init,
     TResult Function()? loading,
-    TResult Function(String email)? success,
+    TResult Function(UserModel userModel)? success,
     TResult Function(String errorText)? error,
     required TResult orElse(),
   }) {
@@ -1388,29 +1413,32 @@ class _$RegistrationStateInit implements RegistrationStateInit {
 }
 
 abstract class RegistrationStateInit implements RegistrationState {
-  const factory RegistrationStateInit() = _$RegistrationStateInit;
+  const factory RegistrationStateInit() = _$RegistrationStateInitImpl;
 }
 
 /// @nodoc
-abstract class _$$RegistrationStateLoadingCopyWith<$Res> {
-  factory _$$RegistrationStateLoadingCopyWith(_$RegistrationStateLoading value,
-          $Res Function(_$RegistrationStateLoading) then) =
-      __$$RegistrationStateLoadingCopyWithImpl<$Res>;
+abstract class _$$RegistrationStateLoadingImplCopyWith<$Res> {
+  factory _$$RegistrationStateLoadingImplCopyWith(
+          _$RegistrationStateLoadingImpl value,
+          $Res Function(_$RegistrationStateLoadingImpl) then) =
+      __$$RegistrationStateLoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$RegistrationStateLoadingCopyWithImpl<$Res>
-    extends _$RegistrationStateCopyWithImpl<$Res, _$RegistrationStateLoading>
-    implements _$$RegistrationStateLoadingCopyWith<$Res> {
-  __$$RegistrationStateLoadingCopyWithImpl(_$RegistrationStateLoading _value,
-      $Res Function(_$RegistrationStateLoading) _then)
+class __$$RegistrationStateLoadingImplCopyWithImpl<$Res>
+    extends _$RegistrationStateCopyWithImpl<$Res,
+        _$RegistrationStateLoadingImpl>
+    implements _$$RegistrationStateLoadingImplCopyWith<$Res> {
+  __$$RegistrationStateLoadingImplCopyWithImpl(
+      _$RegistrationStateLoadingImpl _value,
+      $Res Function(_$RegistrationStateLoadingImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$RegistrationStateLoading implements RegistrationStateLoading {
-  const _$RegistrationStateLoading();
+class _$RegistrationStateLoadingImpl implements RegistrationStateLoading {
+  const _$RegistrationStateLoadingImpl();
 
   @override
   String toString() {
@@ -1421,7 +1449,7 @@ class _$RegistrationStateLoading implements RegistrationStateLoading {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RegistrationStateLoading);
+            other is _$RegistrationStateLoadingImpl);
   }
 
   @override
@@ -1432,7 +1460,7 @@ class _$RegistrationStateLoading implements RegistrationStateLoading {
   TResult when<TResult extends Object?>({
     required TResult Function() init,
     required TResult Function() loading,
-    required TResult Function(String email) success,
+    required TResult Function(UserModel userModel) success,
     required TResult Function(String errorText) error,
   }) {
     return loading();
@@ -1443,7 +1471,7 @@ class _$RegistrationStateLoading implements RegistrationStateLoading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? init,
     TResult? Function()? loading,
-    TResult? Function(String email)? success,
+    TResult? Function(UserModel userModel)? success,
     TResult? Function(String errorText)? error,
   }) {
     return loading?.call();
@@ -1454,7 +1482,7 @@ class _$RegistrationStateLoading implements RegistrationStateLoading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? init,
     TResult Function()? loading,
-    TResult Function(String email)? success,
+    TResult Function(UserModel userModel)? success,
     TResult Function(String errorText)? error,
     required TResult orElse(),
   }) {
@@ -1503,81 +1531,94 @@ class _$RegistrationStateLoading implements RegistrationStateLoading {
 }
 
 abstract class RegistrationStateLoading implements RegistrationState {
-  const factory RegistrationStateLoading() = _$RegistrationStateLoading;
+  const factory RegistrationStateLoading() = _$RegistrationStateLoadingImpl;
 }
 
 /// @nodoc
-abstract class _$$RegistrationStateSuccessCopyWith<$Res> {
-  factory _$$RegistrationStateSuccessCopyWith(_$RegistrationStateSuccess value,
-          $Res Function(_$RegistrationStateSuccess) then) =
-      __$$RegistrationStateSuccessCopyWithImpl<$Res>;
+abstract class _$$RegistrationStateSuccessImplCopyWith<$Res> {
+  factory _$$RegistrationStateSuccessImplCopyWith(
+          _$RegistrationStateSuccessImpl value,
+          $Res Function(_$RegistrationStateSuccessImpl) then) =
+      __$$RegistrationStateSuccessImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({String email});
+  $Res call({UserModel userModel});
+
+  $UserModelCopyWith<$Res> get userModel;
 }
 
 /// @nodoc
-class __$$RegistrationStateSuccessCopyWithImpl<$Res>
-    extends _$RegistrationStateCopyWithImpl<$Res, _$RegistrationStateSuccess>
-    implements _$$RegistrationStateSuccessCopyWith<$Res> {
-  __$$RegistrationStateSuccessCopyWithImpl(_$RegistrationStateSuccess _value,
-      $Res Function(_$RegistrationStateSuccess) _then)
+class __$$RegistrationStateSuccessImplCopyWithImpl<$Res>
+    extends _$RegistrationStateCopyWithImpl<$Res,
+        _$RegistrationStateSuccessImpl>
+    implements _$$RegistrationStateSuccessImplCopyWith<$Res> {
+  __$$RegistrationStateSuccessImplCopyWithImpl(
+      _$RegistrationStateSuccessImpl _value,
+      $Res Function(_$RegistrationStateSuccessImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? email = null,
+    Object? userModel = null,
   }) {
-    return _then(_$RegistrationStateSuccess(
-      email: null == email
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String,
+    return _then(_$RegistrationStateSuccessImpl(
+      userModel: null == userModel
+          ? _value.userModel
+          : userModel // ignore: cast_nullable_to_non_nullable
+              as UserModel,
     ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $UserModelCopyWith<$Res> get userModel {
+    return $UserModelCopyWith<$Res>(_value.userModel, (value) {
+      return _then(_value.copyWith(userModel: value));
+    });
   }
 }
 
 /// @nodoc
 
-class _$RegistrationStateSuccess implements RegistrationStateSuccess {
-  const _$RegistrationStateSuccess({required this.email});
+class _$RegistrationStateSuccessImpl implements RegistrationStateSuccess {
+  const _$RegistrationStateSuccessImpl({required this.userModel});
 
   @override
-  final String email;
+  final UserModel userModel;
 
   @override
   String toString() {
-    return 'RegistrationState.success(email: $email)';
+    return 'RegistrationState.success(userModel: $userModel)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RegistrationStateSuccess &&
-            (identical(other.email, email) || other.email == email));
+            other is _$RegistrationStateSuccessImpl &&
+            (identical(other.userModel, userModel) ||
+                other.userModel == userModel));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, email);
+  int get hashCode => Object.hash(runtimeType, userModel);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$RegistrationStateSuccessCopyWith<_$RegistrationStateSuccess>
-      get copyWith =>
-          __$$RegistrationStateSuccessCopyWithImpl<_$RegistrationStateSuccess>(
-              this, _$identity);
+  _$$RegistrationStateSuccessImplCopyWith<_$RegistrationStateSuccessImpl>
+      get copyWith => __$$RegistrationStateSuccessImplCopyWithImpl<
+          _$RegistrationStateSuccessImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() init,
     required TResult Function() loading,
-    required TResult Function(String email) success,
+    required TResult Function(UserModel userModel) success,
     required TResult Function(String errorText) error,
   }) {
-    return success(email);
+    return success(userModel);
   }
 
   @override
@@ -1585,10 +1626,10 @@ class _$RegistrationStateSuccess implements RegistrationStateSuccess {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? init,
     TResult? Function()? loading,
-    TResult? Function(String email)? success,
+    TResult? Function(UserModel userModel)? success,
     TResult? Function(String errorText)? error,
   }) {
-    return success?.call(email);
+    return success?.call(userModel);
   }
 
   @override
@@ -1596,12 +1637,12 @@ class _$RegistrationStateSuccess implements RegistrationStateSuccess {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? init,
     TResult Function()? loading,
-    TResult Function(String email)? success,
+    TResult Function(UserModel userModel)? success,
     TResult Function(String errorText)? error,
     required TResult orElse(),
   }) {
     if (success != null) {
-      return success(email);
+      return success(userModel);
     }
     return orElse();
   }
@@ -1645,30 +1686,32 @@ class _$RegistrationStateSuccess implements RegistrationStateSuccess {
 }
 
 abstract class RegistrationStateSuccess implements RegistrationState {
-  const factory RegistrationStateSuccess({required final String email}) =
-      _$RegistrationStateSuccess;
+  const factory RegistrationStateSuccess({required final UserModel userModel}) =
+      _$RegistrationStateSuccessImpl;
 
-  String get email;
+  UserModel get userModel;
   @JsonKey(ignore: true)
-  _$$RegistrationStateSuccessCopyWith<_$RegistrationStateSuccess>
+  _$$RegistrationStateSuccessImplCopyWith<_$RegistrationStateSuccessImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$RegistrationStateErrorCopyWith<$Res> {
-  factory _$$RegistrationStateErrorCopyWith(_$RegistrationStateError value,
-          $Res Function(_$RegistrationStateError) then) =
-      __$$RegistrationStateErrorCopyWithImpl<$Res>;
+abstract class _$$RegistrationStateErrorImplCopyWith<$Res> {
+  factory _$$RegistrationStateErrorImplCopyWith(
+          _$RegistrationStateErrorImpl value,
+          $Res Function(_$RegistrationStateErrorImpl) then) =
+      __$$RegistrationStateErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String errorText});
 }
 
 /// @nodoc
-class __$$RegistrationStateErrorCopyWithImpl<$Res>
-    extends _$RegistrationStateCopyWithImpl<$Res, _$RegistrationStateError>
-    implements _$$RegistrationStateErrorCopyWith<$Res> {
-  __$$RegistrationStateErrorCopyWithImpl(_$RegistrationStateError _value,
-      $Res Function(_$RegistrationStateError) _then)
+class __$$RegistrationStateErrorImplCopyWithImpl<$Res>
+    extends _$RegistrationStateCopyWithImpl<$Res, _$RegistrationStateErrorImpl>
+    implements _$$RegistrationStateErrorImplCopyWith<$Res> {
+  __$$RegistrationStateErrorImplCopyWithImpl(
+      _$RegistrationStateErrorImpl _value,
+      $Res Function(_$RegistrationStateErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1676,7 +1719,7 @@ class __$$RegistrationStateErrorCopyWithImpl<$Res>
   $Res call({
     Object? errorText = null,
   }) {
-    return _then(_$RegistrationStateError(
+    return _then(_$RegistrationStateErrorImpl(
       errorText: null == errorText
           ? _value.errorText
           : errorText // ignore: cast_nullable_to_non_nullable
@@ -1687,8 +1730,8 @@ class __$$RegistrationStateErrorCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$RegistrationStateError implements RegistrationStateError {
-  const _$RegistrationStateError({required this.errorText});
+class _$RegistrationStateErrorImpl implements RegistrationStateError {
+  const _$RegistrationStateErrorImpl({required this.errorText});
 
   @override
   final String errorText;
@@ -1702,7 +1745,7 @@ class _$RegistrationStateError implements RegistrationStateError {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RegistrationStateError &&
+            other is _$RegistrationStateErrorImpl &&
             (identical(other.errorText, errorText) ||
                 other.errorText == errorText));
   }
@@ -1713,16 +1756,16 @@ class _$RegistrationStateError implements RegistrationStateError {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$RegistrationStateErrorCopyWith<_$RegistrationStateError> get copyWith =>
-      __$$RegistrationStateErrorCopyWithImpl<_$RegistrationStateError>(
-          this, _$identity);
+  _$$RegistrationStateErrorImplCopyWith<_$RegistrationStateErrorImpl>
+      get copyWith => __$$RegistrationStateErrorImplCopyWithImpl<
+          _$RegistrationStateErrorImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() init,
     required TResult Function() loading,
-    required TResult Function(String email) success,
+    required TResult Function(UserModel userModel) success,
     required TResult Function(String errorText) error,
   }) {
     return error(errorText);
@@ -1733,7 +1776,7 @@ class _$RegistrationStateError implements RegistrationStateError {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? init,
     TResult? Function()? loading,
-    TResult? Function(String email)? success,
+    TResult? Function(UserModel userModel)? success,
     TResult? Function(String errorText)? error,
   }) {
     return error?.call(errorText);
@@ -1744,7 +1787,7 @@ class _$RegistrationStateError implements RegistrationStateError {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? init,
     TResult Function()? loading,
-    TResult Function(String email)? success,
+    TResult Function(UserModel userModel)? success,
     TResult Function(String errorText)? error,
     required TResult orElse(),
   }) {
@@ -1794,12 +1837,12 @@ class _$RegistrationStateError implements RegistrationStateError {
 
 abstract class RegistrationStateError implements RegistrationState {
   const factory RegistrationStateError({required final String errorText}) =
-      _$RegistrationStateError;
+      _$RegistrationStateErrorImpl;
 
   String get errorText;
   @JsonKey(ignore: true)
-  _$$RegistrationStateErrorCopyWith<_$RegistrationStateError> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$RegistrationStateErrorImplCopyWith<_$RegistrationStateErrorImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1904,11 +1947,11 @@ class _$AuthStoreStateCopyWithImpl<$Res, $Val extends AuthStoreState>
 }
 
 /// @nodoc
-abstract class _$$_AuthStoreStateCopyWith<$Res>
+abstract class _$$AuthStoreStateImplCopyWith<$Res>
     implements $AuthStoreStateCopyWith<$Res> {
-  factory _$$_AuthStoreStateCopyWith(
-          _$_AuthStoreState value, $Res Function(_$_AuthStoreState) then) =
-      __$$_AuthStoreStateCopyWithImpl<$Res>;
+  factory _$$AuthStoreStateImplCopyWith(_$AuthStoreStateImpl value,
+          $Res Function(_$AuthStoreStateImpl) then) =
+      __$$AuthStoreStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -1927,11 +1970,11 @@ abstract class _$$_AuthStoreStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_AuthStoreStateCopyWithImpl<$Res>
-    extends _$AuthStoreStateCopyWithImpl<$Res, _$_AuthStoreState>
-    implements _$$_AuthStoreStateCopyWith<$Res> {
-  __$$_AuthStoreStateCopyWithImpl(
-      _$_AuthStoreState _value, $Res Function(_$_AuthStoreState) _then)
+class __$$AuthStoreStateImplCopyWithImpl<$Res>
+    extends _$AuthStoreStateCopyWithImpl<$Res, _$AuthStoreStateImpl>
+    implements _$$AuthStoreStateImplCopyWith<$Res> {
+  __$$AuthStoreStateImplCopyWithImpl(
+      _$AuthStoreStateImpl _value, $Res Function(_$AuthStoreStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1943,7 +1986,7 @@ class __$$_AuthStoreStateCopyWithImpl<$Res>
     Object? isAuthBtnActive = null,
     Object? isEmailValid = null,
   }) {
-    return _then(_$_AuthStoreState(
+    return _then(_$AuthStoreStateImpl(
       loginState: null == loginState
           ? _value.loginState
           : loginState // ignore: cast_nullable_to_non_nullable
@@ -1970,8 +2013,8 @@ class __$$_AuthStoreStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_AuthStoreState implements _AuthStoreState {
-  const _$_AuthStoreState(
+class _$AuthStoreStateImpl implements _AuthStoreState {
+  const _$AuthStoreStateImpl(
       {required this.loginState,
       required this.registrationState,
       required this.resetPasswordState,
@@ -2000,7 +2043,7 @@ class _$_AuthStoreState implements _AuthStoreState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_AuthStoreState &&
+            other is _$AuthStoreStateImpl &&
             (identical(other.loginState, loginState) ||
                 other.loginState == loginState) &&
             (identical(other.registrationState, registrationState) ||
@@ -2020,8 +2063,9 @@ class _$_AuthStoreState implements _AuthStoreState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_AuthStoreStateCopyWith<_$_AuthStoreState> get copyWith =>
-      __$$_AuthStoreStateCopyWithImpl<_$_AuthStoreState>(this, _$identity);
+  _$$AuthStoreStateImplCopyWith<_$AuthStoreStateImpl> get copyWith =>
+      __$$AuthStoreStateImplCopyWithImpl<_$AuthStoreStateImpl>(
+          this, _$identity);
 }
 
 abstract class _AuthStoreState implements AuthStoreState {
@@ -2030,7 +2074,7 @@ abstract class _AuthStoreState implements AuthStoreState {
       required final RegistrationState registrationState,
       required final ResetPasswordState resetPasswordState,
       final bool isAuthBtnActive,
-      final bool isEmailValid}) = _$_AuthStoreState;
+      final bool isEmailValid}) = _$AuthStoreStateImpl;
 
   @override
   LoginState get loginState;
@@ -2044,6 +2088,6 @@ abstract class _AuthStoreState implements AuthStoreState {
   bool get isEmailValid;
   @override
   @JsonKey(ignore: true)
-  _$$_AuthStoreStateCopyWith<_$_AuthStoreState> get copyWith =>
+  _$$AuthStoreStateImplCopyWith<_$AuthStoreStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -105,10 +105,10 @@ class _$ArticleCopyWithImpl<$Res, $Val extends Article>
 }
 
 /// @nodoc
-abstract class _$$_ArticleCopyWith<$Res> implements $ArticleCopyWith<$Res> {
-  factory _$$_ArticleCopyWith(
-          _$_Article value, $Res Function(_$_Article) then) =
-      __$$_ArticleCopyWithImpl<$Res>;
+abstract class _$$ArticleImplCopyWith<$Res> implements $ArticleCopyWith<$Res> {
+  factory _$$ArticleImplCopyWith(
+          _$ArticleImpl value, $Res Function(_$ArticleImpl) then) =
+      __$$ArticleImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -123,10 +123,11 @@ abstract class _$$_ArticleCopyWith<$Res> implements $ArticleCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_ArticleCopyWithImpl<$Res>
-    extends _$ArticleCopyWithImpl<$Res, _$_Article>
-    implements _$$_ArticleCopyWith<$Res> {
-  __$$_ArticleCopyWithImpl(_$_Article _value, $Res Function(_$_Article) _then)
+class __$$ArticleImplCopyWithImpl<$Res>
+    extends _$ArticleCopyWithImpl<$Res, _$ArticleImpl>
+    implements _$$ArticleImplCopyWith<$Res> {
+  __$$ArticleImplCopyWithImpl(
+      _$ArticleImpl _value, $Res Function(_$ArticleImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -141,7 +142,7 @@ class __$$_ArticleCopyWithImpl<$Res>
     Object? publishedDate = freezed,
     Object? multimedia = null,
   }) {
-    return _then(_$_Article(
+    return _then(_$ArticleImpl(
       title: freezed == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -180,8 +181,8 @@ class __$$_ArticleCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Article implements _Article {
-  const _$_Article(
+class _$ArticleImpl implements _Article {
+  const _$ArticleImpl(
       {this.title,
       this.abstract,
       this.url,
@@ -224,7 +225,7 @@ class _$_Article implements _Article {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Article &&
+            other is _$ArticleImpl &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.abstract, abstract) ||
                 other.abstract == abstract) &&
@@ -255,8 +256,8 @@ class _$_Article implements _Article {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ArticleCopyWith<_$_Article> get copyWith =>
-      __$$_ArticleCopyWithImpl<_$_Article>(this, _$identity);
+  _$$ArticleImplCopyWith<_$ArticleImpl> get copyWith =>
+      __$$ArticleImplCopyWithImpl<_$ArticleImpl>(this, _$identity);
 }
 
 abstract class _Article implements Article {
@@ -268,7 +269,7 @@ abstract class _Article implements Article {
       final String? updatedDate,
       final String? createdDate,
       final String? publishedDate,
-      final List<Multimedia> multimedia}) = _$_Article;
+      final List<Multimedia> multimedia}) = _$ArticleImpl;
 
   @override
   String? get title;
@@ -288,6 +289,6 @@ abstract class _Article implements Article {
   List<Multimedia> get multimedia;
   @override
   @JsonKey(ignore: true)
-  _$$_ArticleCopyWith<_$_Article> get copyWith =>
+  _$$ArticleImplCopyWith<_$ArticleImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

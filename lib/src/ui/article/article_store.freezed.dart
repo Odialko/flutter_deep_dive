@@ -81,25 +81,25 @@ class _$ArticleStateCopyWithImpl<$Res, $Val extends ArticleState>
 }
 
 /// @nodoc
-abstract class _$$ArticleStateLoadingCopyWith<$Res> {
-  factory _$$ArticleStateLoadingCopyWith(_$ArticleStateLoading value,
-          $Res Function(_$ArticleStateLoading) then) =
-      __$$ArticleStateLoadingCopyWithImpl<$Res>;
+abstract class _$$ArticleStateLoadingImplCopyWith<$Res> {
+  factory _$$ArticleStateLoadingImplCopyWith(_$ArticleStateLoadingImpl value,
+          $Res Function(_$ArticleStateLoadingImpl) then) =
+      __$$ArticleStateLoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$ArticleStateLoadingCopyWithImpl<$Res>
-    extends _$ArticleStateCopyWithImpl<$Res, _$ArticleStateLoading>
-    implements _$$ArticleStateLoadingCopyWith<$Res> {
-  __$$ArticleStateLoadingCopyWithImpl(
-      _$ArticleStateLoading _value, $Res Function(_$ArticleStateLoading) _then)
+class __$$ArticleStateLoadingImplCopyWithImpl<$Res>
+    extends _$ArticleStateCopyWithImpl<$Res, _$ArticleStateLoadingImpl>
+    implements _$$ArticleStateLoadingImplCopyWith<$Res> {
+  __$$ArticleStateLoadingImplCopyWithImpl(_$ArticleStateLoadingImpl _value,
+      $Res Function(_$ArticleStateLoadingImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$ArticleStateLoading implements ArticleStateLoading {
-  const _$ArticleStateLoading();
+class _$ArticleStateLoadingImpl implements ArticleStateLoading {
+  const _$ArticleStateLoadingImpl();
 
   @override
   String toString() {
@@ -109,7 +109,8 @@ class _$ArticleStateLoading implements ArticleStateLoading {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$ArticleStateLoading);
+        (other.runtimeType == runtimeType &&
+            other is _$ArticleStateLoadingImpl);
   }
 
   @override
@@ -185,24 +186,24 @@ class _$ArticleStateLoading implements ArticleStateLoading {
 }
 
 abstract class ArticleStateLoading implements ArticleState {
-  const factory ArticleStateLoading() = _$ArticleStateLoading;
+  const factory ArticleStateLoading() = _$ArticleStateLoadingImpl;
 }
 
 /// @nodoc
-abstract class _$$ArticleStateErrorCopyWith<$Res> {
-  factory _$$ArticleStateErrorCopyWith(
-          _$ArticleStateError value, $Res Function(_$ArticleStateError) then) =
-      __$$ArticleStateErrorCopyWithImpl<$Res>;
+abstract class _$$ArticleStateErrorImplCopyWith<$Res> {
+  factory _$$ArticleStateErrorImplCopyWith(_$ArticleStateErrorImpl value,
+          $Res Function(_$ArticleStateErrorImpl) then) =
+      __$$ArticleStateErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String? errorText});
 }
 
 /// @nodoc
-class __$$ArticleStateErrorCopyWithImpl<$Res>
-    extends _$ArticleStateCopyWithImpl<$Res, _$ArticleStateError>
-    implements _$$ArticleStateErrorCopyWith<$Res> {
-  __$$ArticleStateErrorCopyWithImpl(
-      _$ArticleStateError _value, $Res Function(_$ArticleStateError) _then)
+class __$$ArticleStateErrorImplCopyWithImpl<$Res>
+    extends _$ArticleStateCopyWithImpl<$Res, _$ArticleStateErrorImpl>
+    implements _$$ArticleStateErrorImplCopyWith<$Res> {
+  __$$ArticleStateErrorImplCopyWithImpl(_$ArticleStateErrorImpl _value,
+      $Res Function(_$ArticleStateErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -210,7 +211,7 @@ class __$$ArticleStateErrorCopyWithImpl<$Res>
   $Res call({
     Object? errorText = freezed,
   }) {
-    return _then(_$ArticleStateError(
+    return _then(_$ArticleStateErrorImpl(
       errorText: freezed == errorText
           ? _value.errorText
           : errorText // ignore: cast_nullable_to_non_nullable
@@ -221,8 +222,8 @@ class __$$ArticleStateErrorCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ArticleStateError implements ArticleStateError {
-  const _$ArticleStateError({this.errorText});
+class _$ArticleStateErrorImpl implements ArticleStateError {
+  const _$ArticleStateErrorImpl({this.errorText});
 
   @override
   final String? errorText;
@@ -236,7 +237,7 @@ class _$ArticleStateError implements ArticleStateError {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ArticleStateError &&
+            other is _$ArticleStateErrorImpl &&
             (identical(other.errorText, errorText) ||
                 other.errorText == errorText));
   }
@@ -247,8 +248,9 @@ class _$ArticleStateError implements ArticleStateError {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ArticleStateErrorCopyWith<_$ArticleStateError> get copyWith =>
-      __$$ArticleStateErrorCopyWithImpl<_$ArticleStateError>(this, _$identity);
+  _$$ArticleStateErrorImplCopyWith<_$ArticleStateErrorImpl> get copyWith =>
+      __$$ArticleStateErrorImplCopyWithImpl<_$ArticleStateErrorImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -321,19 +323,19 @@ class _$ArticleStateError implements ArticleStateError {
 
 abstract class ArticleStateError implements ArticleState {
   const factory ArticleStateError({final String? errorText}) =
-      _$ArticleStateError;
+      _$ArticleStateErrorImpl;
 
   String? get errorText;
   @JsonKey(ignore: true)
-  _$$ArticleStateErrorCopyWith<_$ArticleStateError> get copyWith =>
+  _$$ArticleStateErrorImplCopyWith<_$ArticleStateErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$ArticleStateLoadedCopyWith<$Res> {
-  factory _$$ArticleStateLoadedCopyWith(_$ArticleStateLoaded value,
-          $Res Function(_$ArticleStateLoaded) then) =
-      __$$ArticleStateLoadedCopyWithImpl<$Res>;
+abstract class _$$ArticleStateLoadedImplCopyWith<$Res> {
+  factory _$$ArticleStateLoadedImplCopyWith(_$ArticleStateLoadedImpl value,
+          $Res Function(_$ArticleStateLoadedImpl) then) =
+      __$$ArticleStateLoadedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({SpaceArticle spaceArticle});
 
@@ -341,11 +343,11 @@ abstract class _$$ArticleStateLoadedCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$ArticleStateLoadedCopyWithImpl<$Res>
-    extends _$ArticleStateCopyWithImpl<$Res, _$ArticleStateLoaded>
-    implements _$$ArticleStateLoadedCopyWith<$Res> {
-  __$$ArticleStateLoadedCopyWithImpl(
-      _$ArticleStateLoaded _value, $Res Function(_$ArticleStateLoaded) _then)
+class __$$ArticleStateLoadedImplCopyWithImpl<$Res>
+    extends _$ArticleStateCopyWithImpl<$Res, _$ArticleStateLoadedImpl>
+    implements _$$ArticleStateLoadedImplCopyWith<$Res> {
+  __$$ArticleStateLoadedImplCopyWithImpl(_$ArticleStateLoadedImpl _value,
+      $Res Function(_$ArticleStateLoadedImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -353,7 +355,7 @@ class __$$ArticleStateLoadedCopyWithImpl<$Res>
   $Res call({
     Object? spaceArticle = null,
   }) {
-    return _then(_$ArticleStateLoaded(
+    return _then(_$ArticleStateLoadedImpl(
       spaceArticle: null == spaceArticle
           ? _value.spaceArticle
           : spaceArticle // ignore: cast_nullable_to_non_nullable
@@ -372,8 +374,8 @@ class __$$ArticleStateLoadedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ArticleStateLoaded implements ArticleStateLoaded {
-  const _$ArticleStateLoaded({required this.spaceArticle});
+class _$ArticleStateLoadedImpl implements ArticleStateLoaded {
+  const _$ArticleStateLoadedImpl({required this.spaceArticle});
 
   @override
   final SpaceArticle spaceArticle;
@@ -387,7 +389,7 @@ class _$ArticleStateLoaded implements ArticleStateLoaded {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ArticleStateLoaded &&
+            other is _$ArticleStateLoadedImpl &&
             (identical(other.spaceArticle, spaceArticle) ||
                 other.spaceArticle == spaceArticle));
   }
@@ -398,8 +400,8 @@ class _$ArticleStateLoaded implements ArticleStateLoaded {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ArticleStateLoadedCopyWith<_$ArticleStateLoaded> get copyWith =>
-      __$$ArticleStateLoadedCopyWithImpl<_$ArticleStateLoaded>(
+  _$$ArticleStateLoadedImplCopyWith<_$ArticleStateLoadedImpl> get copyWith =>
+      __$$ArticleStateLoadedImplCopyWithImpl<_$ArticleStateLoadedImpl>(
           this, _$identity);
 
   @override
@@ -473,11 +475,11 @@ class _$ArticleStateLoaded implements ArticleStateLoaded {
 
 abstract class ArticleStateLoaded implements ArticleState {
   const factory ArticleStateLoaded({required final SpaceArticle spaceArticle}) =
-      _$ArticleStateLoaded;
+      _$ArticleStateLoadedImpl;
 
   SpaceArticle get spaceArticle;
   @JsonKey(ignore: true)
-  _$$ArticleStateLoadedCopyWith<_$ArticleStateLoaded> get copyWith =>
+  _$$ArticleStateLoadedImplCopyWith<_$ArticleStateLoadedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -548,26 +550,28 @@ class _$SpaceArticlesStateCopyWithImpl<$Res, $Val extends SpaceArticlesState>
 }
 
 /// @nodoc
-abstract class _$$SpaceArticlesStateLoadingCopyWith<$Res> {
-  factory _$$SpaceArticlesStateLoadingCopyWith(
-          _$SpaceArticlesStateLoading value,
-          $Res Function(_$SpaceArticlesStateLoading) then) =
-      __$$SpaceArticlesStateLoadingCopyWithImpl<$Res>;
+abstract class _$$SpaceArticlesStateLoadingImplCopyWith<$Res> {
+  factory _$$SpaceArticlesStateLoadingImplCopyWith(
+          _$SpaceArticlesStateLoadingImpl value,
+          $Res Function(_$SpaceArticlesStateLoadingImpl) then) =
+      __$$SpaceArticlesStateLoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$SpaceArticlesStateLoadingCopyWithImpl<$Res>
-    extends _$SpaceArticlesStateCopyWithImpl<$Res, _$SpaceArticlesStateLoading>
-    implements _$$SpaceArticlesStateLoadingCopyWith<$Res> {
-  __$$SpaceArticlesStateLoadingCopyWithImpl(_$SpaceArticlesStateLoading _value,
-      $Res Function(_$SpaceArticlesStateLoading) _then)
+class __$$SpaceArticlesStateLoadingImplCopyWithImpl<$Res>
+    extends _$SpaceArticlesStateCopyWithImpl<$Res,
+        _$SpaceArticlesStateLoadingImpl>
+    implements _$$SpaceArticlesStateLoadingImplCopyWith<$Res> {
+  __$$SpaceArticlesStateLoadingImplCopyWithImpl(
+      _$SpaceArticlesStateLoadingImpl _value,
+      $Res Function(_$SpaceArticlesStateLoadingImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$SpaceArticlesStateLoading implements SpaceArticlesStateLoading {
-  const _$SpaceArticlesStateLoading();
+class _$SpaceArticlesStateLoadingImpl implements SpaceArticlesStateLoading {
+  const _$SpaceArticlesStateLoadingImpl();
 
   @override
   String toString() {
@@ -578,7 +582,7 @@ class _$SpaceArticlesStateLoading implements SpaceArticlesStateLoading {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SpaceArticlesStateLoading);
+            other is _$SpaceArticlesStateLoadingImpl);
   }
 
   @override
@@ -654,24 +658,27 @@ class _$SpaceArticlesStateLoading implements SpaceArticlesStateLoading {
 }
 
 abstract class SpaceArticlesStateLoading implements SpaceArticlesState {
-  const factory SpaceArticlesStateLoading() = _$SpaceArticlesStateLoading;
+  const factory SpaceArticlesStateLoading() = _$SpaceArticlesStateLoadingImpl;
 }
 
 /// @nodoc
-abstract class _$$SpaceArticlesStateErrorCopyWith<$Res> {
-  factory _$$SpaceArticlesStateErrorCopyWith(_$SpaceArticlesStateError value,
-          $Res Function(_$SpaceArticlesStateError) then) =
-      __$$SpaceArticlesStateErrorCopyWithImpl<$Res>;
+abstract class _$$SpaceArticlesStateErrorImplCopyWith<$Res> {
+  factory _$$SpaceArticlesStateErrorImplCopyWith(
+          _$SpaceArticlesStateErrorImpl value,
+          $Res Function(_$SpaceArticlesStateErrorImpl) then) =
+      __$$SpaceArticlesStateErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String? errorText});
 }
 
 /// @nodoc
-class __$$SpaceArticlesStateErrorCopyWithImpl<$Res>
-    extends _$SpaceArticlesStateCopyWithImpl<$Res, _$SpaceArticlesStateError>
-    implements _$$SpaceArticlesStateErrorCopyWith<$Res> {
-  __$$SpaceArticlesStateErrorCopyWithImpl(_$SpaceArticlesStateError _value,
-      $Res Function(_$SpaceArticlesStateError) _then)
+class __$$SpaceArticlesStateErrorImplCopyWithImpl<$Res>
+    extends _$SpaceArticlesStateCopyWithImpl<$Res,
+        _$SpaceArticlesStateErrorImpl>
+    implements _$$SpaceArticlesStateErrorImplCopyWith<$Res> {
+  __$$SpaceArticlesStateErrorImplCopyWithImpl(
+      _$SpaceArticlesStateErrorImpl _value,
+      $Res Function(_$SpaceArticlesStateErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -679,7 +686,7 @@ class __$$SpaceArticlesStateErrorCopyWithImpl<$Res>
   $Res call({
     Object? errorText = freezed,
   }) {
-    return _then(_$SpaceArticlesStateError(
+    return _then(_$SpaceArticlesStateErrorImpl(
       errorText: freezed == errorText
           ? _value.errorText
           : errorText // ignore: cast_nullable_to_non_nullable
@@ -690,8 +697,8 @@ class __$$SpaceArticlesStateErrorCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SpaceArticlesStateError implements SpaceArticlesStateError {
-  const _$SpaceArticlesStateError({this.errorText});
+class _$SpaceArticlesStateErrorImpl implements SpaceArticlesStateError {
+  const _$SpaceArticlesStateErrorImpl({this.errorText});
 
   @override
   final String? errorText;
@@ -705,7 +712,7 @@ class _$SpaceArticlesStateError implements SpaceArticlesStateError {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SpaceArticlesStateError &&
+            other is _$SpaceArticlesStateErrorImpl &&
             (identical(other.errorText, errorText) ||
                 other.errorText == errorText));
   }
@@ -716,9 +723,9 @@ class _$SpaceArticlesStateError implements SpaceArticlesStateError {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SpaceArticlesStateErrorCopyWith<_$SpaceArticlesStateError> get copyWith =>
-      __$$SpaceArticlesStateErrorCopyWithImpl<_$SpaceArticlesStateError>(
-          this, _$identity);
+  _$$SpaceArticlesStateErrorImplCopyWith<_$SpaceArticlesStateErrorImpl>
+      get copyWith => __$$SpaceArticlesStateErrorImplCopyWithImpl<
+          _$SpaceArticlesStateErrorImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -791,29 +798,32 @@ class _$SpaceArticlesStateError implements SpaceArticlesStateError {
 
 abstract class SpaceArticlesStateError implements SpaceArticlesState {
   const factory SpaceArticlesStateError({final String? errorText}) =
-      _$SpaceArticlesStateError;
+      _$SpaceArticlesStateErrorImpl;
 
   String? get errorText;
   @JsonKey(ignore: true)
-  _$$SpaceArticlesStateErrorCopyWith<_$SpaceArticlesStateError> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$SpaceArticlesStateErrorImplCopyWith<_$SpaceArticlesStateErrorImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$SpaceArticlesStateLoadedCopyWith<$Res> {
-  factory _$$SpaceArticlesStateLoadedCopyWith(_$SpaceArticlesStateLoaded value,
-          $Res Function(_$SpaceArticlesStateLoaded) then) =
-      __$$SpaceArticlesStateLoadedCopyWithImpl<$Res>;
+abstract class _$$SpaceArticlesStateLoadedImplCopyWith<$Res> {
+  factory _$$SpaceArticlesStateLoadedImplCopyWith(
+          _$SpaceArticlesStateLoadedImpl value,
+          $Res Function(_$SpaceArticlesStateLoadedImpl) then) =
+      __$$SpaceArticlesStateLoadedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({List<SpaceArticle> spaceArticlesList});
 }
 
 /// @nodoc
-class __$$SpaceArticlesStateLoadedCopyWithImpl<$Res>
-    extends _$SpaceArticlesStateCopyWithImpl<$Res, _$SpaceArticlesStateLoaded>
-    implements _$$SpaceArticlesStateLoadedCopyWith<$Res> {
-  __$$SpaceArticlesStateLoadedCopyWithImpl(_$SpaceArticlesStateLoaded _value,
-      $Res Function(_$SpaceArticlesStateLoaded) _then)
+class __$$SpaceArticlesStateLoadedImplCopyWithImpl<$Res>
+    extends _$SpaceArticlesStateCopyWithImpl<$Res,
+        _$SpaceArticlesStateLoadedImpl>
+    implements _$$SpaceArticlesStateLoadedImplCopyWith<$Res> {
+  __$$SpaceArticlesStateLoadedImplCopyWithImpl(
+      _$SpaceArticlesStateLoadedImpl _value,
+      $Res Function(_$SpaceArticlesStateLoadedImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -821,7 +831,7 @@ class __$$SpaceArticlesStateLoadedCopyWithImpl<$Res>
   $Res call({
     Object? spaceArticlesList = null,
   }) {
-    return _then(_$SpaceArticlesStateLoaded(
+    return _then(_$SpaceArticlesStateLoadedImpl(
       spaceArticlesList: null == spaceArticlesList
           ? _value._spaceArticlesList
           : spaceArticlesList // ignore: cast_nullable_to_non_nullable
@@ -832,8 +842,8 @@ class __$$SpaceArticlesStateLoadedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SpaceArticlesStateLoaded implements SpaceArticlesStateLoaded {
-  const _$SpaceArticlesStateLoaded(
+class _$SpaceArticlesStateLoadedImpl implements SpaceArticlesStateLoaded {
+  const _$SpaceArticlesStateLoadedImpl(
       {final List<SpaceArticle> spaceArticlesList = const []})
       : _spaceArticlesList = spaceArticlesList;
 
@@ -856,7 +866,7 @@ class _$SpaceArticlesStateLoaded implements SpaceArticlesStateLoaded {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SpaceArticlesStateLoaded &&
+            other is _$SpaceArticlesStateLoadedImpl &&
             const DeepCollectionEquality()
                 .equals(other._spaceArticlesList, _spaceArticlesList));
   }
@@ -868,10 +878,9 @@ class _$SpaceArticlesStateLoaded implements SpaceArticlesStateLoaded {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SpaceArticlesStateLoadedCopyWith<_$SpaceArticlesStateLoaded>
-      get copyWith =>
-          __$$SpaceArticlesStateLoadedCopyWithImpl<_$SpaceArticlesStateLoaded>(
-              this, _$identity);
+  _$$SpaceArticlesStateLoadedImplCopyWith<_$SpaceArticlesStateLoadedImpl>
+      get copyWith => __$$SpaceArticlesStateLoadedImplCopyWithImpl<
+          _$SpaceArticlesStateLoadedImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -945,11 +954,11 @@ class _$SpaceArticlesStateLoaded implements SpaceArticlesStateLoaded {
 abstract class SpaceArticlesStateLoaded implements SpaceArticlesState {
   const factory SpaceArticlesStateLoaded(
           {final List<SpaceArticle> spaceArticlesList}) =
-      _$SpaceArticlesStateLoaded;
+      _$SpaceArticlesStateLoadedImpl;
 
   List<SpaceArticle> get spaceArticlesList;
   @JsonKey(ignore: true)
-  _$$SpaceArticlesStateLoadedCopyWith<_$SpaceArticlesStateLoaded>
+  _$$SpaceArticlesStateLoadedImplCopyWith<_$SpaceArticlesStateLoadedImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -1023,11 +1032,11 @@ class _$NewsStoreStateCopyWithImpl<$Res, $Val extends NewsStoreState>
 }
 
 /// @nodoc
-abstract class _$$_NewsStoreStateCopyWith<$Res>
+abstract class _$$NewsStoreStateImplCopyWith<$Res>
     implements $NewsStoreStateCopyWith<$Res> {
-  factory _$$_NewsStoreStateCopyWith(
-          _$_NewsStoreState value, $Res Function(_$_NewsStoreState) then) =
-      __$$_NewsStoreStateCopyWithImpl<$Res>;
+  factory _$$NewsStoreStateImplCopyWith(_$NewsStoreStateImpl value,
+          $Res Function(_$NewsStoreStateImpl) then) =
+      __$$NewsStoreStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({ArticleState articleState, SpaceArticlesState spaceArticlesState});
@@ -1039,11 +1048,11 @@ abstract class _$$_NewsStoreStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_NewsStoreStateCopyWithImpl<$Res>
-    extends _$NewsStoreStateCopyWithImpl<$Res, _$_NewsStoreState>
-    implements _$$_NewsStoreStateCopyWith<$Res> {
-  __$$_NewsStoreStateCopyWithImpl(
-      _$_NewsStoreState _value, $Res Function(_$_NewsStoreState) _then)
+class __$$NewsStoreStateImplCopyWithImpl<$Res>
+    extends _$NewsStoreStateCopyWithImpl<$Res, _$NewsStoreStateImpl>
+    implements _$$NewsStoreStateImplCopyWith<$Res> {
+  __$$NewsStoreStateImplCopyWithImpl(
+      _$NewsStoreStateImpl _value, $Res Function(_$NewsStoreStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1052,7 +1061,7 @@ class __$$_NewsStoreStateCopyWithImpl<$Res>
     Object? articleState = null,
     Object? spaceArticlesState = null,
   }) {
-    return _then(_$_NewsStoreState(
+    return _then(_$NewsStoreStateImpl(
       articleState: null == articleState
           ? _value.articleState
           : articleState // ignore: cast_nullable_to_non_nullable
@@ -1067,8 +1076,8 @@ class __$$_NewsStoreStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_NewsStoreState implements _NewsStoreState {
-  const _$_NewsStoreState(
+class _$NewsStoreStateImpl implements _NewsStoreState {
+  const _$NewsStoreStateImpl(
       {required this.articleState, required this.spaceArticlesState});
 
   @override
@@ -1085,7 +1094,7 @@ class _$_NewsStoreState implements _NewsStoreState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_NewsStoreState &&
+            other is _$NewsStoreStateImpl &&
             (identical(other.articleState, articleState) ||
                 other.articleState == articleState) &&
             (identical(other.spaceArticlesState, spaceArticlesState) ||
@@ -1099,15 +1108,16 @@ class _$_NewsStoreState implements _NewsStoreState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_NewsStoreStateCopyWith<_$_NewsStoreState> get copyWith =>
-      __$$_NewsStoreStateCopyWithImpl<_$_NewsStoreState>(this, _$identity);
+  _$$NewsStoreStateImplCopyWith<_$NewsStoreStateImpl> get copyWith =>
+      __$$NewsStoreStateImplCopyWithImpl<_$NewsStoreStateImpl>(
+          this, _$identity);
 }
 
 abstract class _NewsStoreState implements NewsStoreState {
   const factory _NewsStoreState(
           {required final ArticleState articleState,
           required final SpaceArticlesState spaceArticlesState}) =
-      _$_NewsStoreState;
+      _$NewsStoreStateImpl;
 
   @override
   ArticleState get articleState;
@@ -1115,6 +1125,6 @@ abstract class _NewsStoreState implements NewsStoreState {
   SpaceArticlesState get spaceArticlesState;
   @override
   @JsonKey(ignore: true)
-  _$$_NewsStoreStateCopyWith<_$_NewsStoreState> get copyWith =>
+  _$$NewsStoreStateImplCopyWith<_$NewsStoreStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

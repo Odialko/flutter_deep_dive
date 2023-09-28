@@ -84,11 +84,11 @@ class _$DesignPatternCopyWithImpl<$Res, $Val extends DesignPattern>
 }
 
 /// @nodoc
-abstract class _$$_DesignPatternCopyWith<$Res>
+abstract class _$$DesignPatternImplCopyWith<$Res>
     implements $DesignPatternCopyWith<$Res> {
-  factory _$$_DesignPatternCopyWith(
-          _$_DesignPattern value, $Res Function(_$_DesignPattern) then) =
-      __$$_DesignPatternCopyWithImpl<$Res>;
+  factory _$$DesignPatternImplCopyWith(
+          _$DesignPatternImpl value, $Res Function(_$DesignPatternImpl) then) =
+      __$$DesignPatternImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -99,11 +99,11 @@ abstract class _$$_DesignPatternCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_DesignPatternCopyWithImpl<$Res>
-    extends _$DesignPatternCopyWithImpl<$Res, _$_DesignPattern>
-    implements _$$_DesignPatternCopyWith<$Res> {
-  __$$_DesignPatternCopyWithImpl(
-      _$_DesignPattern _value, $Res Function(_$_DesignPattern) _then)
+class __$$DesignPatternImplCopyWithImpl<$Res>
+    extends _$DesignPatternCopyWithImpl<$Res, _$DesignPatternImpl>
+    implements _$$DesignPatternImplCopyWith<$Res> {
+  __$$DesignPatternImplCopyWithImpl(
+      _$DesignPatternImpl _value, $Res Function(_$DesignPatternImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -114,7 +114,7 @@ class __$$_DesignPatternCopyWithImpl<$Res>
     Object? image = freezed,
     Object? description = freezed,
   }) {
-    return _then(_$_DesignPattern(
+    return _then(_$DesignPatternImpl(
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -137,16 +137,16 @@ class __$$_DesignPatternCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_DesignPattern implements _DesignPattern {
-  const _$_DesignPattern(
+class _$DesignPatternImpl implements _DesignPattern {
+  const _$DesignPatternImpl(
       {required this.title,
       this.subtitle,
       this.image,
       final List<Description>? description})
       : _description = description;
 
-  factory _$_DesignPattern.fromJson(Map<String, dynamic> json) =>
-      _$$_DesignPatternFromJson(json);
+  factory _$DesignPatternImpl.fromJson(Map<String, dynamic> json) =>
+      _$$DesignPatternImplFromJson(json);
 
   @override
   final String title;
@@ -173,7 +173,7 @@ class _$_DesignPattern implements _DesignPattern {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_DesignPattern &&
+            other is _$DesignPatternImpl &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.subtitle, subtitle) ||
                 other.subtitle == subtitle) &&
@@ -190,12 +190,12 @@ class _$_DesignPattern implements _DesignPattern {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_DesignPatternCopyWith<_$_DesignPattern> get copyWith =>
-      __$$_DesignPatternCopyWithImpl<_$_DesignPattern>(this, _$identity);
+  _$$DesignPatternImplCopyWith<_$DesignPatternImpl> get copyWith =>
+      __$$DesignPatternImplCopyWithImpl<_$DesignPatternImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DesignPatternToJson(
+    return _$$DesignPatternImplToJson(
       this,
     );
   }
@@ -206,10 +206,10 @@ abstract class _DesignPattern implements DesignPattern {
       {required final String title,
       final String? subtitle,
       final String? image,
-      final List<Description>? description}) = _$_DesignPattern;
+      final List<Description>? description}) = _$DesignPatternImpl;
 
   factory _DesignPattern.fromJson(Map<String, dynamic> json) =
-      _$_DesignPattern.fromJson;
+      _$DesignPatternImpl.fromJson;
 
   @override
   String get title;
@@ -221,7 +221,7 @@ abstract class _DesignPattern implements DesignPattern {
   List<Description>? get description;
   @override
   @JsonKey(ignore: true)
-  _$$_DesignPatternCopyWith<_$_DesignPattern> get copyWith =>
+  _$$DesignPatternImplCopyWith<_$DesignPatternImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -289,11 +289,11 @@ class _$DescriptionCopyWithImpl<$Res, $Val extends Description>
 }
 
 /// @nodoc
-abstract class _$$_DescriptionCopyWith<$Res>
+abstract class _$$DescriptionImplCopyWith<$Res>
     implements $DescriptionCopyWith<$Res> {
-  factory _$$_DescriptionCopyWith(
-          _$_Description value, $Res Function(_$_Description) then) =
-      __$$_DescriptionCopyWithImpl<$Res>;
+  factory _$$DescriptionImplCopyWith(
+          _$DescriptionImpl value, $Res Function(_$DescriptionImpl) then) =
+      __$$DescriptionImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -303,11 +303,11 @@ abstract class _$$_DescriptionCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_DescriptionCopyWithImpl<$Res>
-    extends _$DescriptionCopyWithImpl<$Res, _$_Description>
-    implements _$$_DescriptionCopyWith<$Res> {
-  __$$_DescriptionCopyWithImpl(
-      _$_Description _value, $Res Function(_$_Description) _then)
+class __$$DescriptionImplCopyWithImpl<$Res>
+    extends _$DescriptionCopyWithImpl<$Res, _$DescriptionImpl>
+    implements _$$DescriptionImplCopyWith<$Res> {
+  __$$DescriptionImplCopyWithImpl(
+      _$DescriptionImpl _value, $Res Function(_$DescriptionImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -317,7 +317,7 @@ class __$$_DescriptionCopyWithImpl<$Res>
     Object? imgUrl = freezed,
     Object? descriptionItems = freezed,
   }) {
-    return _then(_$_Description(
+    return _then(_$DescriptionImpl(
       descriptionName: null == descriptionName
           ? _value.descriptionName
           : descriptionName // ignore: cast_nullable_to_non_nullable
@@ -336,15 +336,15 @@ class __$$_DescriptionCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Description implements _Description {
-  const _$_Description(
+class _$DescriptionImpl implements _Description {
+  const _$DescriptionImpl(
       {required this.descriptionName,
       this.imgUrl,
       final List<DescriptionItem>? descriptionItems})
       : _descriptionItems = descriptionItems;
 
-  factory _$_Description.fromJson(Map<String, dynamic> json) =>
-      _$$_DescriptionFromJson(json);
+  factory _$DescriptionImpl.fromJson(Map<String, dynamic> json) =>
+      _$$DescriptionImplFromJson(json);
 
   @override
   final String descriptionName;
@@ -370,7 +370,7 @@ class _$_Description implements _Description {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Description &&
+            other is _$DescriptionImpl &&
             (identical(other.descriptionName, descriptionName) ||
                 other.descriptionName == descriptionName) &&
             (identical(other.imgUrl, imgUrl) || other.imgUrl == imgUrl) &&
@@ -386,12 +386,12 @@ class _$_Description implements _Description {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_DescriptionCopyWith<_$_Description> get copyWith =>
-      __$$_DescriptionCopyWithImpl<_$_Description>(this, _$identity);
+  _$$DescriptionImplCopyWith<_$DescriptionImpl> get copyWith =>
+      __$$DescriptionImplCopyWithImpl<_$DescriptionImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DescriptionToJson(
+    return _$$DescriptionImplToJson(
       this,
     );
   }
@@ -401,10 +401,10 @@ abstract class _Description implements Description {
   const factory _Description(
       {required final String descriptionName,
       final String? imgUrl,
-      final List<DescriptionItem>? descriptionItems}) = _$_Description;
+      final List<DescriptionItem>? descriptionItems}) = _$DescriptionImpl;
 
   factory _Description.fromJson(Map<String, dynamic> json) =
-      _$_Description.fromJson;
+      _$DescriptionImpl.fromJson;
 
   @override
   String get descriptionName;
@@ -414,7 +414,7 @@ abstract class _Description implements Description {
   List<DescriptionItem>? get descriptionItems;
   @override
   @JsonKey(ignore: true)
-  _$$_DescriptionCopyWith<_$_Description> get copyWith =>
+  _$$DescriptionImplCopyWith<_$DescriptionImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -495,11 +495,11 @@ class _$DescriptionItemCopyWithImpl<$Res, $Val extends DescriptionItem>
 }
 
 /// @nodoc
-abstract class _$$_DescriptionItemCopyWith<$Res>
+abstract class _$$DescriptionItemImplCopyWith<$Res>
     implements $DescriptionItemCopyWith<$Res> {
-  factory _$$_DescriptionItemCopyWith(
-          _$_DescriptionItem value, $Res Function(_$_DescriptionItem) then) =
-      __$$_DescriptionItemCopyWithImpl<$Res>;
+  factory _$$DescriptionItemImplCopyWith(_$DescriptionItemImpl value,
+          $Res Function(_$DescriptionItemImpl) then) =
+      __$$DescriptionItemImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -511,11 +511,11 @@ abstract class _$$_DescriptionItemCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_DescriptionItemCopyWithImpl<$Res>
-    extends _$DescriptionItemCopyWithImpl<$Res, _$_DescriptionItem>
-    implements _$$_DescriptionItemCopyWith<$Res> {
-  __$$_DescriptionItemCopyWithImpl(
-      _$_DescriptionItem _value, $Res Function(_$_DescriptionItem) _then)
+class __$$DescriptionItemImplCopyWithImpl<$Res>
+    extends _$DescriptionItemCopyWithImpl<$Res, _$DescriptionItemImpl>
+    implements _$$DescriptionItemImplCopyWith<$Res> {
+  __$$DescriptionItemImplCopyWithImpl(
+      _$DescriptionItemImpl _value, $Res Function(_$DescriptionItemImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -527,7 +527,7 @@ class __$$_DescriptionItemCopyWithImpl<$Res>
     Object? descCode = freezed,
     Object? descToCode = freezed,
   }) {
-    return _then(_$_DescriptionItem(
+    return _then(_$DescriptionItemImpl(
       descTitle: freezed == descTitle
           ? _value.descTitle
           : descTitle // ignore: cast_nullable_to_non_nullable
@@ -554,16 +554,16 @@ class __$$_DescriptionItemCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_DescriptionItem implements _DescriptionItem {
-  const _$_DescriptionItem(
+class _$DescriptionItemImpl implements _DescriptionItem {
+  const _$DescriptionItemImpl(
       {this.descTitle,
       this.descSubTitle,
       this.descImage,
       this.descCode,
       this.descToCode});
 
-  factory _$_DescriptionItem.fromJson(Map<String, dynamic> json) =>
-      _$$_DescriptionItemFromJson(json);
+  factory _$DescriptionItemImpl.fromJson(Map<String, dynamic> json) =>
+      _$$DescriptionItemImplFromJson(json);
 
   @override
   final String? descTitle;
@@ -585,7 +585,7 @@ class _$_DescriptionItem implements _DescriptionItem {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_DescriptionItem &&
+            other is _$DescriptionItemImpl &&
             (identical(other.descTitle, descTitle) ||
                 other.descTitle == descTitle) &&
             (identical(other.descSubTitle, descSubTitle) ||
@@ -606,12 +606,13 @@ class _$_DescriptionItem implements _DescriptionItem {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_DescriptionItemCopyWith<_$_DescriptionItem> get copyWith =>
-      __$$_DescriptionItemCopyWithImpl<_$_DescriptionItem>(this, _$identity);
+  _$$DescriptionItemImplCopyWith<_$DescriptionItemImpl> get copyWith =>
+      __$$DescriptionItemImplCopyWithImpl<_$DescriptionItemImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DescriptionItemToJson(
+    return _$$DescriptionItemImplToJson(
       this,
     );
   }
@@ -623,10 +624,10 @@ abstract class _DescriptionItem implements DescriptionItem {
       final String? descSubTitle,
       final String? descImage,
       final String? descCode,
-      final String? descToCode}) = _$_DescriptionItem;
+      final String? descToCode}) = _$DescriptionItemImpl;
 
   factory _DescriptionItem.fromJson(Map<String, dynamic> json) =
-      _$_DescriptionItem.fromJson;
+      _$DescriptionItemImpl.fromJson;
 
   @override
   String? get descTitle;
@@ -640,6 +641,6 @@ abstract class _DescriptionItem implements DescriptionItem {
   String? get descToCode;
   @override
   @JsonKey(ignore: true)
-  _$$_DescriptionItemCopyWith<_$_DescriptionItem> get copyWith =>
+  _$$DescriptionItemImplCopyWith<_$DescriptionItemImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

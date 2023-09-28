@@ -61,18 +61,20 @@ class _$MenuCopyWithImpl<$Res, $Val extends Menu>
 }
 
 /// @nodoc
-abstract class _$$_MenuCopyWith<$Res> implements $MenuCopyWith<$Res> {
-  factory _$$_MenuCopyWith(_$_Menu value, $Res Function(_$_Menu) then) =
-      __$$_MenuCopyWithImpl<$Res>;
+abstract class _$$MenuImplCopyWith<$Res> implements $MenuCopyWith<$Res> {
+  factory _$$MenuImplCopyWith(
+          _$MenuImpl value, $Res Function(_$MenuImpl) then) =
+      __$$MenuImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({IconData icon, String title});
 }
 
 /// @nodoc
-class __$$_MenuCopyWithImpl<$Res> extends _$MenuCopyWithImpl<$Res, _$_Menu>
-    implements _$$_MenuCopyWith<$Res> {
-  __$$_MenuCopyWithImpl(_$_Menu _value, $Res Function(_$_Menu) _then)
+class __$$MenuImplCopyWithImpl<$Res>
+    extends _$MenuCopyWithImpl<$Res, _$MenuImpl>
+    implements _$$MenuImplCopyWith<$Res> {
+  __$$MenuImplCopyWithImpl(_$MenuImpl _value, $Res Function(_$MenuImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -81,7 +83,7 @@ class __$$_MenuCopyWithImpl<$Res> extends _$MenuCopyWithImpl<$Res, _$_Menu>
     Object? icon = null,
     Object? title = null,
   }) {
-    return _then(_$_Menu(
+    return _then(_$MenuImpl(
       icon: null == icon
           ? _value.icon
           : icon // ignore: cast_nullable_to_non_nullable
@@ -96,8 +98,8 @@ class __$$_MenuCopyWithImpl<$Res> extends _$MenuCopyWithImpl<$Res, _$_Menu>
 
 /// @nodoc
 
-class _$_Menu implements _Menu {
-  const _$_Menu({required this.icon, required this.title});
+class _$MenuImpl implements _Menu {
+  const _$MenuImpl({required this.icon, required this.title});
 
   @override
   final IconData icon;
@@ -113,7 +115,7 @@ class _$_Menu implements _Menu {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Menu &&
+            other is _$MenuImpl &&
             (identical(other.icon, icon) || other.icon == icon) &&
             (identical(other.title, title) || other.title == title));
   }
@@ -124,13 +126,13 @@ class _$_Menu implements _Menu {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_MenuCopyWith<_$_Menu> get copyWith =>
-      __$$_MenuCopyWithImpl<_$_Menu>(this, _$identity);
+  _$$MenuImplCopyWith<_$MenuImpl> get copyWith =>
+      __$$MenuImplCopyWithImpl<_$MenuImpl>(this, _$identity);
 }
 
 abstract class _Menu implements Menu {
   const factory _Menu(
-      {required final IconData icon, required final String title}) = _$_Menu;
+      {required final IconData icon, required final String title}) = _$MenuImpl;
 
   @override
   IconData get icon;
@@ -138,5 +140,6 @@ abstract class _Menu implements Menu {
   String get title;
   @override
   @JsonKey(ignore: true)
-  _$$_MenuCopyWith<_$_Menu> get copyWith => throw _privateConstructorUsedError;
+  _$$MenuImplCopyWith<_$MenuImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

@@ -63,22 +63,22 @@ class _$TabBarStoreCopyWithImpl<$Res, $Val extends TabBarStore>
 }
 
 /// @nodoc
-abstract class _$$_TabBarStoreCopyWith<$Res>
+abstract class _$$TabBarStoreImplCopyWith<$Res>
     implements $TabBarStoreCopyWith<$Res> {
-  factory _$$_TabBarStoreCopyWith(
-          _$_TabBarStore value, $Res Function(_$_TabBarStore) then) =
-      __$$_TabBarStoreCopyWithImpl<$Res>;
+  factory _$$TabBarStoreImplCopyWith(
+          _$TabBarStoreImpl value, $Res Function(_$TabBarStoreImpl) then) =
+      __$$TabBarStoreImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({List<String> tabTitles, int selectedTabIndex});
 }
 
 /// @nodoc
-class __$$_TabBarStoreCopyWithImpl<$Res>
-    extends _$TabBarStoreCopyWithImpl<$Res, _$_TabBarStore>
-    implements _$$_TabBarStoreCopyWith<$Res> {
-  __$$_TabBarStoreCopyWithImpl(
-      _$_TabBarStore _value, $Res Function(_$_TabBarStore) _then)
+class __$$TabBarStoreImplCopyWithImpl<$Res>
+    extends _$TabBarStoreCopyWithImpl<$Res, _$TabBarStoreImpl>
+    implements _$$TabBarStoreImplCopyWith<$Res> {
+  __$$TabBarStoreImplCopyWithImpl(
+      _$TabBarStoreImpl _value, $Res Function(_$TabBarStoreImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -87,7 +87,7 @@ class __$$_TabBarStoreCopyWithImpl<$Res>
     Object? tabTitles = null,
     Object? selectedTabIndex = null,
   }) {
-    return _then(_$_TabBarStore(
+    return _then(_$TabBarStoreImpl(
       tabTitles: null == tabTitles
           ? _value._tabTitles
           : tabTitles // ignore: cast_nullable_to_non_nullable
@@ -102,8 +102,8 @@ class __$$_TabBarStoreCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_TabBarStore implements _TabBarStore {
-  const _$_TabBarStore(
+class _$TabBarStoreImpl implements _TabBarStore {
+  const _$TabBarStoreImpl(
       {required final List<String> tabTitles, required this.selectedTabIndex})
       : _tabTitles = tabTitles;
 
@@ -127,7 +127,7 @@ class _$_TabBarStore implements _TabBarStore {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_TabBarStore &&
+            other is _$TabBarStoreImpl &&
             const DeepCollectionEquality()
                 .equals(other._tabTitles, _tabTitles) &&
             (identical(other.selectedTabIndex, selectedTabIndex) ||
@@ -141,14 +141,14 @@ class _$_TabBarStore implements _TabBarStore {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_TabBarStoreCopyWith<_$_TabBarStore> get copyWith =>
-      __$$_TabBarStoreCopyWithImpl<_$_TabBarStore>(this, _$identity);
+  _$$TabBarStoreImplCopyWith<_$TabBarStoreImpl> get copyWith =>
+      __$$TabBarStoreImplCopyWithImpl<_$TabBarStoreImpl>(this, _$identity);
 }
 
 abstract class _TabBarStore implements TabBarStore {
   const factory _TabBarStore(
       {required final List<String> tabTitles,
-      required final int selectedTabIndex}) = _$_TabBarStore;
+      required final int selectedTabIndex}) = _$TabBarStoreImpl;
 
   @override
   List<String> get tabTitles;
@@ -156,6 +156,6 @@ abstract class _TabBarStore implements TabBarStore {
   int get selectedTabIndex;
   @override
   @JsonKey(ignore: true)
-  _$$_TabBarStoreCopyWith<_$_TabBarStore> get copyWith =>
+  _$$TabBarStoreImplCopyWith<_$TabBarStoreImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
