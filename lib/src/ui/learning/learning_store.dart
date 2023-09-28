@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter_deep_dive/src/providers/auth_provider.dart';
 import 'package:flutter_deep_dive/src/providers/firestore_providers.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -52,7 +54,7 @@ class LearningNotifier extends StateNotifier<LearningStoreState> {
             // wordData: {'Dog': 'Pes', 'Cat': 'Kit', 'insist': 'Napoliahaty'},
           );
     } catch (e) {
-      print('=====ERROR create collection: $e');
+      log('=====ERROR create collection: $e');
     }
   }
 }

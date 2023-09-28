@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class FirestoreRepository {
@@ -14,7 +16,7 @@ class FirestoreRepository {
     try {
       _firestore.collection(userEmail).doc("learn-language").collection(languageName).doc("words").set(wordData);
     } catch (e) {
-      print('=====ERROR create collection: $e');
+      log('=====ERROR create collection: $e');
     }
   }
 }
