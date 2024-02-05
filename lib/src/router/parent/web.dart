@@ -9,7 +9,9 @@ import 'package:flutter_deep_dive/src/ui/common/error/error_screen.dart';
 import 'package:flutter_deep_dive/src/ui/design_patterns/pattern_screen/pattern_screen.dart';
 import 'package:flutter_deep_dive/src/ui/home/home_screen.dart';
 import 'package:flutter_deep_dive/src/ui/learning/card_screen/card_swiper.dart';
-import 'package:flutter_deep_dive/src/ui/learning/list_screen/list_screen.dart';
+import 'package:flutter_deep_dive/src/ui/learning/language_menu/language_menu_screen.dart';
+import 'package:flutter_deep_dive/src/ui/learning/learning_screen.dart';
+import 'package:flutter_deep_dive/src/ui/learning/word_list/word_list_screen.dart';
 import 'package:flutter_deep_dive/src/ui/splash/fdd_splash_screen.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -63,18 +65,34 @@ final router = Provider<GoRouter>((ref) {
             },
           ),
           GoRoute(
-            name: Routes.studyList,
-            path: Routes.studyList,
+            name: Routes.languagesList,
+            path: Routes.languagesList,
             builder: (_, state) {
               return const LearningScreen();
             },
             routes: [
               GoRoute(
-                name: Routes.flashCards,
-                path: Routes.flashCards,
-                builder: (_, state) {
-                  return const CardSwiper();
-                },
+                  name: Routes.languageMenu,
+                  path: Routes.languageMenu,
+                  builder: (_, state) {
+                    return const LanguageMenuScreen();
+                  },
+                  routes: [
+                    GoRoute(
+                      name: Routes.wordList,
+                      path: Routes.wordList,
+                      builder: (_, state) {
+                        return const WordListScreen();
+                      },
+                    ),
+                    GoRoute(
+                      name: Routes.flashCards,
+                      path: Routes.flashCards,
+                      builder: (_, state) {
+                        return const CardSwiper();
+                      },
+                    ),
+                  ]
               ),
             ],
           ),

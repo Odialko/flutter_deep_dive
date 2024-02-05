@@ -1,19 +1,24 @@
 class Routes {
 
+  // general
   static const splash = '/splash';
   static const login = '/login';
   static const register = 'register';
   static const resetPass = 'reset-pass';
   static const home = '/home';
-  // static const designPatterns = '/design-patterns';
+
+  // patterns
   static const pattern = 'pattern';
+
+  // articles
   static const article = 'article';
 
-
-  static const studyList = 'study_list';
+  // Language
+  static const languagesList = 'languages_list';
+  static const languageMenu = 'language_menu';
+  static const wordList = 'word_list';
   static const flashCards = 'flash_cards';
 
-
-
+  // Other common
   static const error = '/error';
 }
