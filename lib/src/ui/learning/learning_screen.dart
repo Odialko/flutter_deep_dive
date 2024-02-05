@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_deep_dive/src/constants/constants.dart';
 import 'package:flutter_deep_dive/src/router/routes.dart';
@@ -41,7 +43,7 @@ class LearningScreen extends ConsumerWidget {
           // TODO clickuble should be
           GestureDetector(
             onTap: () async {
-              print('*----> Click-click <----*');
+              log('*----> Click-click <----*');
               // TODO: Create adding words and collections to Firestore
               // await learningStoreNotifier.createCollection();
             },
