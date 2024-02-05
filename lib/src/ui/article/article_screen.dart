@@ -20,7 +20,6 @@ class ArticleScreen extends ConsumerWidget {
           s.articles_screen_label,
           style: themeData.cocoaTextTheme.font4Emphasized,
         ),
-        // leading: const BurgerWidget(),
       ),
       body: articleState.articleState.when(
         loading: () => Center(
@@ -38,6 +37,9 @@ class ArticleScreen extends ConsumerWidget {
           return Column(
             children: [
               Image.network(article.imageUrl ?? ''),
+              const SizedBox(
+                height: 20,
+              ),
               Padding(
                 padding: const EdgeInsets.only(
                   left: 20,
