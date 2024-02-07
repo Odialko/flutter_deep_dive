@@ -41,6 +41,11 @@ class LearningNotifier extends StateNotifier<LearningStoreState> {
 
   final Ref ref;
 
+  Future<void> getLanguages() async {
+    ref.read(firestoreProvider).getLanguagesCollection(
+        userEmail: ref.read(userProvider)?.email ?? '');
+  }
+
   Future<void> createCollection({
     required String languageName,
     required Map<String, String> wordsCollection,
