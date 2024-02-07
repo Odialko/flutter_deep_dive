@@ -70,32 +70,29 @@ final router = Provider<GoRouter>((ref) {
             builder: (_, state) {
               return const LearningScreen();
             },
-            routes: [
-              GoRoute(
-                  name: Routes.languageMenu,
-                  path: Routes.languageMenu,
-                  builder: (_, state) {
-                    return const LanguageMenuScreen();
-                  },
-                  routes: [
-                    GoRoute(
-                      name: Routes.wordList,
-                      path: Routes.wordList,
-                      builder: (_, state) {
-                        return const WordListScreen();
-                      },
-                    ),
-                    GoRoute(
-                      name: Routes.flashCards,
-                      path: Routes.flashCards,
-                      builder: (_, state) {
-                        return const CardSwiper();
-                      },
-                    ),
-                  ]
-              ),
-            ],
           ),
+          GoRoute(
+              name: Routes.languageMenu,
+              path: Routes.languageMenu,
+              builder: (_, state) {
+                return const LanguageMenuScreen();
+              },
+              routes: [
+                GoRoute(
+                  name: Routes.wordList,
+                  path: Routes.wordList,
+                  builder: (_, state) {
+                    return const WordListScreen();
+                  },
+                ),
+                GoRoute(
+                  name: Routes.flashCards,
+                  path: Routes.flashCards,
+                  builder: (_, state) {
+                    return const CardSwiper();
+                  },
+                ),
+              ]),
         ],
       ),
     ],
