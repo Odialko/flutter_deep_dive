@@ -68,6 +68,30 @@ class Result<T> with _$Result<T> {
     }
   }
 
+  static Future<Result<D>> repositoryDataGuard<R, D extends Object?>({
+    required FutureOr<Response<R>> Function() responseBuilder,
+    required FutureOr<D> Function(Response<R> response) dataExtractor,
+  }) async {
+    try {
+      final response = await responseBuilder();
+      try {
+        return Result.data(await dataExtractor(response));
+      } catch (e) {
+        throw FDDBackendException(
+          title: 'Error',
+          message: '*** Something went wrong*** ',
+          exception: e is Exception ? e : null,
+        );
+      }
+    } catch (e) {
+      throw FDDBackendException(
+        title: 'Error',
+        message: '*** Something went wrong*** ',
+        exception: e is Exception ? e : null,
+      );
+    }
+  }
+
   factory Result.fddError(Object e) {
     if (e is! Exception) return const Result.error(FDDUnknownException());
 
