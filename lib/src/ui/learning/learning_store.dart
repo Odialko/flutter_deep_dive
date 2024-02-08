@@ -11,7 +11,7 @@ final learningStoreProvider =
     StateNotifierProvider<LearningNotifier, LearningStoreState>(
   (ref) => LearningNotifier(
     ref: ref,
-  ),
+  )..getLanguages(),
 );
 
 @freezed
@@ -42,8 +42,32 @@ class LearningNotifier extends StateNotifier<LearningStoreState> {
   final Ref ref;
 
   Future<void> getLanguages() async {
-    ref.read(firestoreProvider).getLanguagesCollection(
-        userEmail: ref.read(userProvider)?.email ?? '');
+    print('======getLanguages');
+    state = state.copyWith(learningState: const LearningState.loading());
+
+    final repo = ref
+        .read(firestoreProvider)
+        .getLanguagesCollection(userEmail: ref.read(userProvider)?.email ?? '');
+
+    repo.then(
+      (userDataList) {
+        print('-----Success: $userDataList');
+
+        state = state.copyWith(learningState: const LearningState.loaded());
+        print('Success: $userDataList');
+      },
+    );
+
+    // repo.when(
+    //   data: (userDataList) {
+    //     // Handle success: userDataList contains the list of user data
+    //     print('Success: $userDataList');
+    //   },
+    //   error: (fddException) {
+    //     // Handle error: fddException contains information about the error
+    //     print('Error: $fddException');
+    //   },
+    // );
   }
 
   Future<void> createCollection({
