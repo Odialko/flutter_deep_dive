@@ -68,6 +68,7 @@ class LearningNotifier extends StateNotifier<LearningStoreState> {
     //     print('Error: $fddException');
     //   },
     // );
+
   }
 
   Future<void> createCollection({

@@ -68,6 +68,7 @@ class Result<T> with _$Result<T> {
     }
   }
 
+
   static Future<Result<D>> repositoryDataGuard<R, D extends Object?>({
     required FutureOr<Response<R>> Function() responseBuilder,
     required FutureOr<D> Function(Response<R> response) dataExtractor,

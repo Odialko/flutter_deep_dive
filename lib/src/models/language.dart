@@ -8,3 +8,4 @@ abstract class Language with _$Language {
     required Map<String, Map<String, dynamic>> languages,
 }) = _Language;
 }
+
