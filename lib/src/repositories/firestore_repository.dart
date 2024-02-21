@@ -43,6 +43,7 @@ class FirestoreRepository {
         CollectionReference<Map<String, dynamic>> usersCollectionRef =
         _firestore.collection(userEmail);
 
+
         // Get a snapshot of the users collection
         QuerySnapshot<Map<String, dynamic>> usersQuerySnapshot =
         await usersCollectionRef.get();
