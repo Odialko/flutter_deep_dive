@@ -20,21 +20,21 @@ mixin _$LearningState {
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
     required TResult Function(String? errorText) error,
-    required TResult Function(String yep) loaded,
+    required TResult Function(Language languages) loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
     TResult? Function(String? errorText)? error,
-    TResult? Function(String yep)? loaded,
+    TResult? Function(Language languages)? loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
     TResult Function(String? errorText)? error,
-    TResult Function(String yep)? loaded,
+    TResult Function(Language languages)? loaded,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -121,7 +121,7 @@ class _$LearningStateLoadingImpl implements LearningStateLoading {
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
     required TResult Function(String? errorText) error,
-    required TResult Function(String yep) loaded,
+    required TResult Function(Language languages) loaded,
   }) {
     return loading();
   }
@@ -131,7 +131,7 @@ class _$LearningStateLoadingImpl implements LearningStateLoading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
     TResult? Function(String? errorText)? error,
-    TResult? Function(String yep)? loaded,
+    TResult? Function(Language languages)? loaded,
   }) {
     return loading?.call();
   }
@@ -141,7 +141,7 @@ class _$LearningStateLoadingImpl implements LearningStateLoading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
     TResult Function(String? errorText)? error,
-    TResult Function(String yep)? loaded,
+    TResult Function(Language languages)? loaded,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -257,7 +257,7 @@ class _$LearningStateErrorImpl implements LearningStateError {
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
     required TResult Function(String? errorText) error,
-    required TResult Function(String yep) loaded,
+    required TResult Function(Language languages) loaded,
   }) {
     return error(errorText);
   }
@@ -267,7 +267,7 @@ class _$LearningStateErrorImpl implements LearningStateError {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
     TResult? Function(String? errorText)? error,
-    TResult? Function(String yep)? loaded,
+    TResult? Function(Language languages)? loaded,
   }) {
     return error?.call(errorText);
   }
@@ -277,7 +277,7 @@ class _$LearningStateErrorImpl implements LearningStateError {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
     TResult Function(String? errorText)? error,
-    TResult Function(String yep)? loaded,
+    TResult Function(Language languages)? loaded,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -337,7 +337,9 @@ abstract class _$$LearningStateLoadedImplCopyWith<$Res> {
           $Res Function(_$LearningStateLoadedImpl) then) =
       __$$LearningStateLoadedImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({String yep});
+  $Res call({Language languages});
+
+  $LanguageCopyWith<$Res> get languages;
 }
 
 /// @nodoc
@@ -351,29 +353,38 @@ class __$$LearningStateLoadedImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? yep = null,
+    Object? languages = null,
   }) {
     return _then(_$LearningStateLoadedImpl(
-      yep: null == yep
-          ? _value.yep
-          : yep // ignore: cast_nullable_to_non_nullable
-              as String,
+      languages: null == languages
+          ? _value.languages
+          : languages // ignore: cast_nullable_to_non_nullable
+              as Language,
     ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $LanguageCopyWith<$Res> get languages {
+    return $LanguageCopyWith<$Res>(_value.languages, (value) {
+      return _then(_value.copyWith(languages: value));
+    });
   }
 }
 
 /// @nodoc
 
 class _$LearningStateLoadedImpl implements LearningStateLoaded {
-  const _$LearningStateLoadedImpl({this.yep = 'Yep'});
+  const _$LearningStateLoadedImpl(
+      {this.languages = const Language(languages: [])});
 
   @override
   @JsonKey()
-  final String yep;
+  final Language languages;
 
   @override
   String toString() {
-    return 'LearningState.loaded(yep: $yep)';
+    return 'LearningState.loaded(languages: $languages)';
   }
 
   @override
@@ -381,11 +392,12 @@ class _$LearningStateLoadedImpl implements LearningStateLoaded {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LearningStateLoadedImpl &&
-            (identical(other.yep, yep) || other.yep == yep));
+            (identical(other.languages, languages) ||
+                other.languages == languages));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, yep);
+  int get hashCode => Object.hash(runtimeType, languages);
 
   @JsonKey(ignore: true)
   @override
@@ -399,9 +411,9 @@ class _$LearningStateLoadedImpl implements LearningStateLoaded {
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
     required TResult Function(String? errorText) error,
-    required TResult Function(String yep) loaded,
+    required TResult Function(Language languages) loaded,
   }) {
-    return loaded(yep);
+    return loaded(languages);
   }
 
   @override
@@ -409,9 +421,9 @@ class _$LearningStateLoadedImpl implements LearningStateLoaded {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
     TResult? Function(String? errorText)? error,
-    TResult? Function(String yep)? loaded,
+    TResult? Function(Language languages)? loaded,
   }) {
-    return loaded?.call(yep);
+    return loaded?.call(languages);
   }
 
   @override
@@ -419,11 +431,11 @@ class _$LearningStateLoadedImpl implements LearningStateLoaded {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
     TResult Function(String? errorText)? error,
-    TResult Function(String yep)? loaded,
+    TResult Function(Language languages)? loaded,
     required TResult orElse(),
   }) {
     if (loaded != null) {
-      return loaded(yep);
+      return loaded(languages);
     }
     return orElse();
   }
@@ -464,10 +476,10 @@ class _$LearningStateLoadedImpl implements LearningStateLoaded {
 }
 
 abstract class LearningStateLoaded implements LearningState {
-  const factory LearningStateLoaded({final String yep}) =
+  const factory LearningStateLoaded({final Language languages}) =
       _$LearningStateLoadedImpl;
 
-  String get yep;
+  Language get languages;
   @JsonKey(ignore: true)
   _$$LearningStateLoadedImplCopyWith<_$LearningStateLoadedImpl> get copyWith =>
       throw _privateConstructorUsedError;

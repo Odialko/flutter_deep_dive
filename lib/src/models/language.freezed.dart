@@ -16,7 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$Language {
-  Map<String, Map<String, dynamic>> get languages =>
+  List<Map<String, dynamic>> get languages =>
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -29,7 +29,7 @@ abstract class $LanguageCopyWith<$Res> {
   factory $LanguageCopyWith(Language value, $Res Function(Language) then) =
       _$LanguageCopyWithImpl<$Res, Language>;
   @useResult
-  $Res call({Map<String, Map<String, dynamic>> languages});
+  $Res call({List<Map<String, dynamic>> languages});
 }
 
 /// @nodoc
@@ -51,7 +51,7 @@ class _$LanguageCopyWithImpl<$Res, $Val extends Language>
       languages: null == languages
           ? _value.languages
           : languages // ignore: cast_nullable_to_non_nullable
-              as Map<String, Map<String, dynamic>>,
+              as List<Map<String, dynamic>>,
     ) as $Val);
   }
 }
@@ -64,7 +64,7 @@ abstract class _$$LanguageImplCopyWith<$Res>
       __$$LanguageImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({Map<String, Map<String, dynamic>> languages});
+  $Res call({List<Map<String, dynamic>> languages});
 }
 
 /// @nodoc
@@ -84,7 +84,7 @@ class __$$LanguageImplCopyWithImpl<$Res>
       languages: null == languages
           ? _value._languages
           : languages // ignore: cast_nullable_to_non_nullable
-              as Map<String, Map<String, dynamic>>,
+              as List<Map<String, dynamic>>,
     ));
   }
 }
@@ -92,16 +92,15 @@ class __$$LanguageImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$LanguageImpl implements _Language {
-  const _$LanguageImpl(
-      {required final Map<String, Map<String, dynamic>> languages})
+  const _$LanguageImpl({required final List<Map<String, dynamic>> languages})
       : _languages = languages;
 
-  final Map<String, Map<String, dynamic>> _languages;
+  final List<Map<String, dynamic>> _languages;
   @override
-  Map<String, Map<String, dynamic>> get languages {
-    if (_languages is EqualUnmodifiableMapView) return _languages;
+  List<Map<String, dynamic>> get languages {
+    if (_languages is EqualUnmodifiableListView) return _languages;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(_languages);
+    return EqualUnmodifiableListView(_languages);
   }
 
   @override
@@ -131,11 +130,10 @@ class _$LanguageImpl implements _Language {
 
 abstract class _Language implements Language {
   const factory _Language(
-          {required final Map<String, Map<String, dynamic>> languages}) =
-      _$LanguageImpl;
+      {required final List<Map<String, dynamic>> languages}) = _$LanguageImpl;
 
   @override
-  Map<String, Map<String, dynamic>> get languages;
+  List<Map<String, dynamic>> get languages;
   @override
   @JsonKey(ignore: true)
   _$$LanguageImplCopyWith<_$LanguageImpl> get copyWith =>

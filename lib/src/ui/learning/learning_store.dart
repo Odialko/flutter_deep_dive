@@ -1,5 +1,6 @@
 import 'dart:developer';
 
+import 'package:flutter_deep_dive/src/models/language.dart';
 import 'package:flutter_deep_dive/src/providers/auth_provider.dart';
 import 'package:flutter_deep_dive/src/providers/firestore_providers.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -19,7 +20,7 @@ class LearningState with _$LearningState {
   const factory LearningState.loading() = LearningStateLoading;
   const factory LearningState.error({String? errorText}) = LearningStateError;
   const factory LearningState.loaded({
-    @Default('Yep') String yep,
+    @Default(Language(languages: [])) Language languages,
   }) = LearningStateLoaded;
 }
 
@@ -45,30 +46,26 @@ class LearningNotifier extends StateNotifier<LearningStoreState> {
     print('======getLanguages');
     state = state.copyWith(learningState: const LearningState.loading());
 
-    final repo = ref
-        .read(firestoreProvider)
-        .getLanguagesCollection(userEmail: ref.read(userProvider)?.email ?? '');
+    final repo = await ref.read(firestoreProvider).getLanguagesCollection(
+          userEmail: ref.read(userProvider)?.email ?? '',
+        );
 
-    repo.then(
-      (userDataList) {
-        print('-----Success: $userDataList');
+    repo.when(
+      data: (result) {
+        // Handle success: result.data contains the Language instance
+        print('=====Success: ${result.languages}');
 
-        state = state.copyWith(learningState: const LearningState.loaded());
-        print('Success: $userDataList');
+        state = state.copyWith(
+          learningState: LearningState.loaded(
+            languages: result,
+          ),
+        );
+      },
+      error: (fddException) {
+        // Handle error: fddException contains information about the error
+        print('Error: $fddException');
       },
     );
-
-    // repo.when(
-    //   data: (userDataList) {
-    //     // Handle success: userDataList contains the list of user data
-    //     print('Success: $userDataList');
-    //   },
-    //   error: (fddException) {
-    //     // Handle error: fddException contains information about the error
-    //     print('Error: $fddException');
-    //   },
-    // );
-
   }
 
   Future<void> createCollection({

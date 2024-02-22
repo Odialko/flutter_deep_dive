@@ -2,9 +2,12 @@ import 'dart:async';
 import 'dart:developer';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter_deep_dive/src/models/language.dart';
 // import 'package:dio/dio.dart';
 // import 'package:flutter_deep_dive/src/models/language.dart';
 import 'package:flutter_deep_dive/src/models/result.dart';
+
+import '../constants/constants.dart';
 
 const String learnLanguage = 'learn-language';
 
@@ -31,7 +34,7 @@ class FirestoreRepository {
     }
   }
 
-  Future<Result<List<Map<String, dynamic>>>> getLanguagesCollection({
+  Future<Result<Language>> getLanguagesCollection({
     required String userEmail,
   }) async {
     try {
@@ -41,29 +44,21 @@ class FirestoreRepository {
         );
       } else {
         CollectionReference<Map<String, dynamic>> usersCollectionRef =
-        _firestore.collection(userEmail);
-
+            _firestore.collection(userEmail);
 
         // Get a snapshot of the users collection
         QuerySnapshot<Map<String, dynamic>> usersQuerySnapshot =
-        await usersCollectionRef.get();
+            await usersCollectionRef.get();
 
-        // Convert QuerySnapshot to List<Map<String, dynamic>>
-        List<Map<String, dynamic>> userDataList =
-        usersQuerySnapshot.docs.map((userSnapshot) {
-          return userSnapshot.data();
-        }).toList();
+        List<Map<String, dynamic>> userData = usersQuerySnapshot.docs
+            .where((userSnapshot) =>
+                userSnapshot.id == PathConstants.firebaseLearn)
+            .map((userSnapshot) => userSnapshot.data())
+            .toList();
 
-        // Iterate through the list if needed
-        // for (Map<String, dynamic> userData in userDataList) {
-        //   // Access user data
-        //   String userId = userData['userId'];
-        //   // Print or process user data
-        //   print('User ID: $userId');
-        //   print('User Data: $userData');
-        // }
+        Language language = Language(languages: userData);
 
-        return Result.data(userDataList);
+        return Result.data(language);
       }
     } catch (e) {
       print('ERROR: Getting Learning from Firebase: $e');
@@ -71,4 +66,44 @@ class FirestoreRepository {
       return Result.fddError(e is Exception ? e : Exception('Unknown error'));
     }
   }
+
+// Future<Result<List<Map<String, dynamic>>>> getLanguagesCollection({
+  //   required String userEmail,
+  //   required String docId,
+  // }) async {
+  //   try {
+  //     if (userEmail.isEmpty) {
+  //       throw Result.fddError(
+  //         Exception('UserEmail not passed to getLanguagesCollection'),
+  //       );
+  //     } else {
+  //       CollectionReference<Map<String, dynamic>> usersCollectionRef =
+  //           _firestore.collection(userEmail);
+  //
+  //       // Get a snapshot of the users collection
+  //       QuerySnapshot<Map<String, dynamic>> usersQuerySnapshot =
+  //           await usersCollectionRef.get();
+  //
+  //       // Convert QuerySnapshot to List<Map<String, dynamic>>
+  //       // List<Map<String, dynamic>> userDataList =
+  //       //     usersQuerySnapshot.docs.map((userSnapshot) {
+  //       //   if (userSnapshot.id == docId) {
+  //       //     return userSnapshot.data();
+  //       //   }
+  //       // }).toList();
+  //
+  //       List<Map<String, dynamic>> userDataList =
+  //       usersQuerySnapshot.docs
+  //           .where((userSnapshot) => userSnapshot.id == docId)
+  //           .map((userSnapshot) => userSnapshot.data())
+  //           .toList();
+  //
+  //       return Result.data(userDataList);
+  //     }
+  //   } catch (e) {
+  //     print('ERROR: Getting Learning from Firebase: $e');
+  //     // Return an error Result
+  //     return Result.fddError(e is Exception ? e : Exception('Unknown error'));
+  //   }
+  // }
 }
