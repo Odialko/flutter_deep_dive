@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_deep_dive/src/constants/constants.dart';
+import 'package:flutter_deep_dive/src/models/language.dart';
 import 'package:flutter_deep_dive/src/router/routes.dart';
 import 'package:flutter_deep_dive/src/ui/common/burger/burger_widget.dart';
 import 'package:flutter_deep_dive/src/ui/common/pattern_list_tile.dart';
@@ -19,7 +20,6 @@ class LearningScreen extends ConsumerWidget {
     // final learningStoreNotifier = ref.read(learningStoreProvider.notifier).createCollection(languageName: 'English-Ukr', wordsCollection: {'mom': 'mam','pet':'my cat'});
     // final learningStoreNotifier = ref.read(learningStoreProvider.notifier);
     final learningStoreState = ref.watch(learningStoreProvider);
-
 
     return Scaffold(
       appBar: AppBar(
@@ -41,42 +41,64 @@ class LearningScreen extends ConsumerWidget {
           ),
         ),
         error: (String? errorText) => Text(errorText ?? 'some error'),
-        loaded: (languages) => ListView(
-          children: [
-            const SizedBox(
-              height: LayoutConstants.widgetDeviationS,
-            ),
-            PatternListTile(
-              title: 'Language from Firebase',
-              rightIcon: const Icon(Icons.arrow_right),
-              onPress: () {
-                context.goNamed(Routes.languageMenu);
-              },
-            ),
-            const SizedBox(
-              height: LayoutConstants.widgetDeviationS,
-            ),
-            // TODO clickuble should be
-            GestureDetector(
-              onTap: () async {
-                log('*----> Click-click <----*');
-                // TODO: Create adding words and collections to Firestore
-                // await learningStoreNotifier.createCollection();
-              },
-              child: const Padding(
-                padding: EdgeInsets.only(
-                  right: LayoutConstants.mobileSidePadding,
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Text('+ add a new language to learn'),
-                  ],
+        loaded: (Language languages) {
+          return ListView(
+            children: [
+              const SizedBox(
+                height: LayoutConstants.widgetDeviationS,
+              ),
+              /// Considerations:
+              /// Performance: Nested loops might be more performant in certain
+              /// scenarios, as function calls in recursion can have overhead.
+              /// However, in many cases, the performance difference is
+              /// negligible.
+              /// Error Handling: Nested loops can provide more straightforward
+              /// error handling and debugging when issues arise.
+              /// Stack Depth: Recursion could lead to a stack overflow for
+              /// deeply nested structures if not managed properly. Dart has
+              /// an optimization for tail-recursive calls, but it's essential
+              /// to be aware of potential stack depth issues.
+              /// Recommendation:
+              /// Simple Structure: If your data structure is relatively simple,
+              /// and you find nested loops more intuitive, go with nested
+              /// loops.
+              /// Complex Structure: If your data structure is deeply nested or
+              /// may vary in levels, and you prefer a more abstract and modular
+              /// approach, consider recursion.
+              for (var languageMap in languages.languages)
+                for (var languageKey in languageMap.keys)
+                  PatternListTile(
+                    title: languageKey,
+                    rightIcon: const Icon(Icons.arrow_right),
+                    onPress: () {
+                      context.goNamed(Routes.languageMenu);
+                    },
+                  ),
+              const SizedBox(
+                height: LayoutConstants.widgetDeviationS,
+              ),
+              // TODO clickuble should be
+              GestureDetector(
+                onTap: () async {
+                  log('*----> Click-click <----*');
+                  // TODO: Create adding words and collections to Firestore
+                  // await learningStoreNotifier.createCollection();
+                },
+                child: const Padding(
+                  padding: EdgeInsets.only(
+                    right: LayoutConstants.mobileSidePadding,
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Text('+ add a new language to learn'),
+                    ],
+                  ),
                 ),
               ),
-            ),
-          ],
-        ),
+            ],
+          );
+        },
       ),
     );
   }
