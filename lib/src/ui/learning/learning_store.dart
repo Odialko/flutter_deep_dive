@@ -43,7 +43,6 @@ class LearningNotifier extends StateNotifier<LearningStoreState> {
   final Ref ref;
 
   Future<void> getLanguages() async {
-    print('======getLanguages');
     state = state.copyWith(learningState: const LearningState.loading());
 
     final repo = await ref.read(firestoreProvider).getLanguagesCollection(
@@ -53,8 +52,6 @@ class LearningNotifier extends StateNotifier<LearningStoreState> {
     repo.when(
       data: (result) {
         // Handle success: result.data contains the Language instance
-        print('=====Success: ${result.languages}');
-
         state = state.copyWith(
           learningState: LearningState.loaded(
             languages: result,
@@ -62,8 +59,11 @@ class LearningNotifier extends StateNotifier<LearningStoreState> {
         );
       },
       error: (fddException) {
-        // Handle error: fddException contains information about the error
-        print('Error: $fddException');
+        state = state.copyWith(
+          learningState: LearningState.error(
+            errorText: fddException.title,
+          ),
+        );
       },
     );
   }

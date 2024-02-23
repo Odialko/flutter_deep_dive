@@ -58,4 +58,6 @@ class FDDFullScreenDialog {
       },
     );
   }
+
+  // static
 }
